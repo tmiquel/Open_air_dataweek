@@ -1,0 +1,2 @@
+class TestBoomerang < ApplicationRecord
+end

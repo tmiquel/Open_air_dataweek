@@ -1,0 +1,22 @@
+<%= form_with(model: test_boomerang, local: true) do |form| %>
+  <% if test_boomerang.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(test_boomerang.errors.count, "error") %> prohibited this test_boomerang from being saved:</h2>
+
+      <ul>
+      <% test_boomerang.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :index %>
+    <%= form.text_field :index %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
