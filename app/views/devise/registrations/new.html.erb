@@ -3,7 +3,7 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="field form-group">
+	<div class="field form-group">
     <%= f.label :first_name %><br />
     <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name" %>
   </div>
@@ -13,9 +13,9 @@
     <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name" %>
   </div>
 
-	<div class="field form-group">
+  <div class="field form-group">
     <%= f.label :address %><br />
-    <%= f.text_field :address, autofocus: true, autocomplete: "adress" %> 
+    <%= f.text_field :address, autofocus: true, autocomplete: "adress" %>
   </div>
 
   <div class="field">
@@ -41,4 +41,4 @@
   </div>
 <% end %>
 
-<%= render "users/shared/links" %>
+<%= render "devise/shared/links" %>
