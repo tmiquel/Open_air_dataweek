@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2019_03_12_142840) do
   end
 
   create_table "topics", force: :cascade do |t|
+    t.string "highlighted_category"
     t.string "title"
     t.text "short_description"
     t.datetime "created_at", null: false
