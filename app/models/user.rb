@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
 	validates :first_name, presence: true, length: { maximum: 45 }
 	validates :last_name, presence: true, length: { maximum: 45 }
-	validates :adress, presence: true, length: { minimum: 15, maximum: 200 }
+	validates :address, presence: true, length: { minimum: 15, maximum: 200 }
 
 	def full_name
 		"#{self.first_name} #{self.last_name}"
