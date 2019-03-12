@@ -51,7 +51,7 @@ models_array.each do |model|
       model.create(first_name: Faker::Name.first_name,
                    last_name: Faker::Name.last_name,
                    email: email,
-                   adress: Faker::Address.street_address + " " +
+                   address: Faker::Address.street_address + " " +
                     Faker::Address.zip_code + " " +
                      Faker::Address.city,
                    password: password,
