@@ -12,13 +12,13 @@ class UserMailer < ApplicationMailer
       mail(to: @user.email, subject: 'Bienvenue dans la team OpenAir !') 
     end
 
-    def bye_email
+    def bye_email(user)
         @user = user
         mail(to: @user.email, subject: 'A bientôt !') 
 
     end
 
-    def update_info
+    def update_info(user)
         @user = user
         @url = 'http://monsite.fr/login'
         mail(to: @user.email, subject: 'Modification de vos paramètres')

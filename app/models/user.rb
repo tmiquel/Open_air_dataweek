@@ -1,6 +1,6 @@
 class User < ApplicationRecord
 	after_create :welcome_send
-	before_destroy :goodbye_user
+	before_destroy :goodbye_user, prepend: true
 	after_update :update_user
 
   # Include default devise modules. Others available are:
@@ -28,6 +28,6 @@ class User < ApplicationRecord
 	def update_user
 		UserMailer.update_info(self).deliver_now
 	end
-	
+
 
 end
