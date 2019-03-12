@@ -75,3 +75,4 @@ gem 'simple-line-icons-rails'
 gem 'table_print'
 gem 'guard-rspec', require: false
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem "letter_opener", :group => :development
