@@ -5,8 +5,6 @@ class CreateTopics < ActiveRecord::Migration[5.2]
       t.text :short_description
       t.string :highlighted_category
 
-      has_one_attached :picture_file
-
       t.timestamps
     end
   end
