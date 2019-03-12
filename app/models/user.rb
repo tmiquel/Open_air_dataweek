@@ -1,6 +1,8 @@
 class User < ApplicationRecord
 	after_create :welcome_send
+	before_destroy :goodbye_user
 	
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -19,4 +21,8 @@ class User < ApplicationRecord
 		UserMailer.welcome_email(self).deliver_now
 	end
 	
+	def goodbye_user
+		UserMailer.bye_email(self).deliver_now
+	end
+
 end

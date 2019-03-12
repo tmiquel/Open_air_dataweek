@@ -11,4 +11,16 @@ class UserMailer < ApplicationMailer
       # c'est cet appel à mail() qui permet d'envoyer l’e-mail en définissant destinataire et sujet.
       mail(to: @user.email, subject: 'Bienvenue dans la team OpenAir !') 
     end
+
+    def bye_email
+        @user = user
+        mail(to: @user.email, subject: 'A bientôt !') 
+
+    end
+
+
+
+
+
+
   end
