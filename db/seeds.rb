@@ -33,7 +33,10 @@ puts '-' * 50
 puts
 
 models_items_count = Hash[[['User', 5], ['Topic', 5]]]
-pic_path = Dir.getwd + '/lib/assets/simple_neuron.png'
+topics_pics_paths_array = Rails.env.production? ? Dir.glob(Rails.root.join("public", "assets", "air-quality", "*.jpg")) :
+ Dir.glob(Rails.root.join("app", "assets", "images", "air-quality", "*.jpg")) 
+
+
 models_array.each do |model|
   puts "Generating #{models_items_count[model.name]} items for #{model.name}"
   models_items_count[model.name].times do
@@ -57,21 +60,27 @@ models_array.each do |model|
                    password: password,
                    password_confirmation: password)
 
-    when 'Event'
-      e = model.new(admin: User.all.sample,
-                    title: Faker::Lorem.paragraph_by_chars(50, false),
-                    start_date: Faker::Date.forward(365),
-                    duration: rand(1..10) * 5,
-                    description: Faker::Lorem.paragraph_by_chars(256, false),
-                    price: rand(1..1000),
-                    location: Faker::Nation.capital_city)
+    when 'Topic'
+      if topics_pics_paths_array.size == 0
+        puts
+        puts "Issue: Unsufficient number of pics to generate the required amount (#{models_items_count[model.name]}) of topic items"
+        puts
 
-      e.picture.attach(io: File.open(pic_path), filename: ('picture ' + e.title.to_s + '.png'))
+      else
+        my_topic = model.new(title: Faker::Lorem.paragraph_by_chars(50, false),
+                      short_description: Faker::Lorem.paragraph_by_chars(256, false),
+                      highlighted_category: 'State')
 
-      e.save
+        my_topic.main_picture.attach(io: File.open(topics_pics_paths_array.pop), filename: ('picture ' + my_topic.title.to_s + '.jpg'))
+
+        my_topic.save
+      end
+
   end
 end
 end
+
+
 
 
 puts 'Done'
