@@ -15,7 +15,6 @@ class UserMailer < ApplicationMailer
     def bye_email(user)
         @user = user
         mail(to: @user.email, subject: 'A bientôt !') 
-
     end
 
     def update_info(user)
