@@ -18,7 +18,11 @@ class UserMailer < ApplicationMailer
 
     end
 
-
+    def update_info
+        @user = user
+        @url = 'http://monsite.fr/login'
+        mail(to: @user.email, subject: 'Modification de vos paramètres')
+    end
 
 
 
