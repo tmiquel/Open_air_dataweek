@@ -2,8 +2,7 @@ class CreateTopics < ActiveRecord::Migration[5.2]
   def change
     create_table :topics do |t|
       t.string :title
-      t.string :short_
-      t.text :description
+      t.text :short_description
 
       t.timestamps
     end
