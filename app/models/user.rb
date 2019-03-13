@@ -1,7 +1,7 @@
 class User < ApplicationRecord
 	after_create :welcome_send
 	before_destroy :goodbye_user
-	after_update :update_user
+	#after_update :update_user
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
