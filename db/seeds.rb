@@ -36,6 +36,11 @@ models_items_count = Hash[[['User', 5], ['Topic', 5]]]
 topics_pics_paths_array = Rails.env.production? ? Dir.glob(Rails.root.join("public", "assets", "air-quality", "*.jpg")) :
  Dir.glob(Rails.root.join("app", "assets", "images", "air-quality", "*.jpg")) 
 
+topic_driver_text = "Ceci est une introduction pour la section Driver de ma page. Je peux écrire en tant qu'admin ce que je veux afin d'introduire cette section qui contient les indicateurs de cette catégorie de mon sujet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam aliquet dui quam, vel cursus metus tempus non. Quisque id ante ac quam aliquam eleifend nec quis ante. Nulla purus orci."
+topic_pressure_text =  "Ceci est une introduction pour la section Pressure de ma page. Je peux écrire en tant qu'admin ce que je veux afin d'introduire cette section qui contient les indicateurs de cette catégorie de mon sujet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam aliquet dui quam, vel cursus metus tempus non. Quisque id ante ac quam aliquam eleifend nec quis ante. Nulla purus orci."
+topic_state_text = "Ceci est une introduction pour la section State de ma page. Je peux écrire en tant qu'admin ce que je veux afin d'introduire cette section qui contient les indicateurs de cette catégorie de mon sujet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam aliquet dui quam, vel cursus metus tempus non. Quisque id ante ac quam aliquam eleifend nec quis ante. Nulla purus orci."
+topic_impact_text = "Ceci est une introduction pour la section Impact de ma page. Je peux écrire en tant qu'admin ce que je veux afin d'introduire cette section qui contient les indicateurs de cette catégorie de mon sujet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam aliquet dui quam, vel cursus metus tempus non. Quisque id ante ac quam aliquam eleifend nec quis ante. Nulla purus orci."
+topic_response_text = "Ceci est une introduction pour la section Response de ma page. Je peux écrire en tant qu'admin ce que je veux afin d'introduire cette section qui contient les indicateurs de cette catégorie de mon sujet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam aliquet dui quam, vel cursus metus tempus non. Quisque id ante ac quam aliquam eleifend nec quis ante. Nulla purus orci."
 
 models_array.each do |model|
   puts "Generating #{models_items_count[model.name]} items for #{model.name}"
@@ -69,8 +74,17 @@ models_array.each do |model|
       else
         my_topic = model.new(title: Faker::Lorem.paragraph_by_chars(50, false),
                       short_description: Faker::Lorem.paragraph_by_chars(256, false),
-                      highlighted_category: 'State')
-
+                      highlighted_category: 'State',
+                      driver_section_title: 'Besoins socio-économiques', 
+                      driver_section_intro: topic_driver_text,
+                      pressure_section_title: 'Emissions',
+                      pressure_section_intro: topic_pressure_text,
+                      state_section_title: 'Etats', 
+                      state_section_intro: topic_state_text, 
+                      impact_section_title: 'Impacts', 
+                      impact_section_intro: topic_impact_text, 
+                      response_section_title:'Réglementations',
+                      response_section_intro: topic_response_text)
         my_topic.main_picture.attach(io: File.open(topics_pics_paths_array.pop), filename: ('picture ' + my_topic.title.to_s + '.jpg'))
 
         my_topic.save
