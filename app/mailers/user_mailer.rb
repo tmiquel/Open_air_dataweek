@@ -17,11 +17,7 @@ class UserMailer < ApplicationMailer
         mail(to: @user.email, subject: 'A bientôt !') 
     end
 
-    def update_info(user)
-        @user = user
-        @url = 'http://monsite.fr/login'
-        mail(to: @user.email, subject: 'Modification de vos paramètres')
-    end
+    
 
 
 
