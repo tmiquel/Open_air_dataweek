@@ -17,10 +17,10 @@
                 <% @topics.each do |topic| %>
                         <div class="col-lg-4 mb-5">
                             <div class="card z-depth-2-top h-auto">
-                                <div class="card-image max-height:230px">
+                                <div class="card-image">
                                     <div class="view view-first">
                                         <a href="/topics/<%=topic.id%>">
-                                            <%= image_tag (topic.main_picture) %>
+                                            <%= image_tag topic.main_picture.variant(resize: "1000 x760!") %>
                                         </a>
                                     </div>
                                 </div>
