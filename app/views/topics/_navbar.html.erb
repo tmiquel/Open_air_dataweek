@@ -31,11 +31,17 @@
                               </li>
                           </ul>
                           </div>
-                          <div class="pl-4 d-none d-lg-inline-block">
-                              <a href="https://goo.gl/9BbH7R" class="btn btn-styled btn-sm btn-base-1 btn-circle" target="_blank">
-                                  Menu
-                              </a>
-                          </div>
+                          <div class="btn-group">
+                            <button type="button" class="btn btn-info">Menu</button>
+                            <button type="button" class="btn btn-info dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <div class="dropdown-menu">
+                                <%= link_to "Log In", new_user_session_path, class: "dropdown-item"  %>
+                                <%= link_to "Sign Up", new_user_registration_path, class: "dropdown-item"  %>
+                                
+                            </div>
+                            </div>
                   </nav>
                       </div>
                       <section class="slice-xl slice--offset-top has-bg-cover bg-size-cover" style="background-image: url(<%= asset_path'prv/blog/img-wide-lg-3.jpg'%>); background-position: bottom center;">
