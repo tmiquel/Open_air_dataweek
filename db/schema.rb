@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_12_142840) do
+ActiveRecord::Schema.define(version: 2019_03_13_152630) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,16 @@ ActiveRecord::Schema.define(version: 2019_03_12_142840) do
     t.text "short_description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "driver_section_title"
+    t.text "driver_section_intro"
+    t.string "pressure_section_title"
+    t.text "pressure_section_intro"
+    t.string "state_section_title"
+    t.text "state_section_intro"
+    t.string "impact_section_title"
+    t.text "impact_section_intro"
+    t.string "response_section_title"
+    t.text "response_section_intro"
   end
 
   create_table "users", force: :cascade do |t|
