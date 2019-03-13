@@ -35,10 +35,10 @@
                                 <%= link_to "Log In", new_user_session_path, class: "dropdown-item"  %>
                                 <%= link_to "Sign Up", new_user_registration_path, class: "dropdown-item"  %>
                                 <% else %>
-                            <div class="dropdown-menu" >
+                            
                                 <%= link_to "Mon profile", edit_user_registration_path, class: "dropdown-item"  %>
                                 <%= button_to "Log out", destroy_user_session_path, :method => :delete, class: "dropdown-item" %>
-                            </div>
+                            
                             <% end %>
                             </div>
                             </div>
