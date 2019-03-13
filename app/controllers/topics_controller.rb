@@ -1,4 +1,5 @@
 class TopicsController < ApplicationController
+
     def show
         
     end
@@ -9,6 +10,10 @@ class TopicsController < ApplicationController
 
     def update
         
+    end
+
+    def index
+     
     end
 
 end
