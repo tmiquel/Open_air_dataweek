@@ -24,6 +24,22 @@
         </head>
             <body>
               <!-- MAIN WRAPPER -->
+                <div class="container">
+
+                      <% if notice %>
+                      <br>
+                      <div id="notice" class="alert alert-warning" role="alert">
+                        <%= notice %></div>
+                      <% end -%>
+
+                      <% if alert %>
+                      <br>
+                      <div id="alert" class="alert alert-warning" role="alert">
+                      <%= alert %>
+                      </div>
+                      <% end -%>
+
+                 </div>  
                           <div class="st-pusher">
                               <div class="st-content">
                                   <div class="st-content-inner">
