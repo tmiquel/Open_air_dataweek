@@ -1,5 +1,5 @@
 class UserMailer < ApplicationMailer
-    default from: 'no-reply@monsite.fr'
+    default from: 'openair@alabintheair.cc'
    
     def welcome_email(user)
       #on récupère l'instance user pour ensuite pouvoir la passer à la view en @user
@@ -17,11 +17,7 @@ class UserMailer < ApplicationMailer
         mail(to: @user.email, subject: 'A bientôt !') 
     end
 
-    def update_info(user)
-        @user = user
-        @url = 'http://monsite.fr/login'
-        mail(to: @user.email, subject: 'Modification de vos paramètres')
-    end
+    
 
 
 

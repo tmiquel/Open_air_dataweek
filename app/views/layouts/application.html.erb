@@ -15,7 +15,7 @@
             <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 
             <!-- Fonts -->
-            <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800|Roboto:400,500,700" rel="stylesheet"> 
+            <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800|Roboto:400,500,700" rel="stylesheet">
 
             <!-- Icons -->
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
@@ -35,10 +35,9 @@
                                   <div class="global-search-backdrop mask-dark--style-2">
                                   </div>
                           </section>
-
-                      <%= render "topics/navbar" %>
+                      <%= render "layouts/navbar" %>
                       <%= yield %>
-                      <%= render "topics/footer" %>                       
+                      <%= render "layouts/footer" %>                       
                     </div>
                 </div>
             </div><!-- END: st-pusher -->

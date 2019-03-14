@@ -1,7 +1,7 @@
 class TopicsController < ApplicationController
 
     def show
-        
+        @topics = Topic.find(params[:id])
     end
 
     def create
@@ -13,7 +13,7 @@ class TopicsController < ApplicationController
     end
 
     def index
-     
+        @topics = Topic.all
     end
 
 end
