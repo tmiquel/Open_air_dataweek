@@ -38,7 +38,9 @@
                           </section>
 
                       <%= render "layouts/navbar" %>
-                      <%= render 'layouts/messages' %>
+                      <div class="container">
+                        <%= render 'layouts/messages' %>
+                      </div>
                       <%= yield %>
                       <%= render "layouts/footer" %>
                     </div>
