@@ -20,7 +20,7 @@
                                 <div class="card-image">
                                     <div class="view view-first">
                                         <a href="/topics/<%=topic.id%>">
-                                            <%= image_tag topic.main_picture %>
+                                            <%= image_tag topic.main_picture.variant(resize: "1000x760!") %>
                                         </a>
                                     </div>
                                 </div>
