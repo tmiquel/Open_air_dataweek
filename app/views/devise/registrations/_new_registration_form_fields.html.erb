@@ -1,0 +1,86 @@
+
+
+
+                                    <div class="col-md-5 mx-auto my-4">
+                                        <div class="card p-5">
+                                            <div class="card-title px-4">
+                                                <h3 class="heading heading-5 strong-500">
+                                                    Create account
+                                                </h3>
+                                            </div>
+                                           
+                                                        <div class="col-12">
+                                                            <div class="form-group">
+    <%= f.label :first_name %><br />
+                                                                <div class="input-group input-group--style-1">
+    <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class: "form-control form-control-lg", placeholder: "First name" %>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    
+ 													
+ 													
+														<div class="col-12">
+                                                            <div class="form-group">
+    <%= f.label :last_name %><br />
+                                                                <div class="input-group input-group--style-1">
+    <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", class: "form-control form-control-lg", placeholder: "Last name" %>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                  
+
+
+ 													
+														<div class="col-12">
+                                                            <div class="form-group">
+    <%= f.label :address %><br />
+                                                                <div class="input-group input-group--style-1">
+    <%= f.text_field :address, autofocus: true, autocomplete: "adress", class: "form-control form-control-lg", placeholder: "Adress" %>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                             
+                                                   
+                                                        <div class="col-12">
+                                                            <div class="form-group">
+    <%= f.label :email %><br />
+                                                                <div class="input-group input-group--style-1">
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control form-control-lg", placeholder: "Email" %>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    
+
+                                                    
+                                                        <div class="col-12">
+                                                            <div class="form-group">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+                                                                <div class="input-group input-group--style-1">
+    <%= f.password_field :password, autocomplete: "new-password", class: "form-control form-control-lg", placeholder: "Password" %>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    
+
+                                                        <div class="col-12">
+                                                            <div class="form-group">
+    <%= f.label :password_confirmation %><br />
+                                                                <div class="input-group input-group--style-1">
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control form-control-lg", placeholder: "Confirm Password" %>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    <div class="row py-4">
+                                                        <div class="col-12">
+                                                            <div class="checkbox">
+                                                                <input type="checkbox" name="checkbox_example_1" id="checkboxExample_1a">
+                                                                <label for="checkboxExample_1a">Conditions of use</label>
+                                                            </div>
+<%= render "devise/shared/links" %>
+                                                        </div>
+                                                    </div>
