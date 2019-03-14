@@ -59,4 +59,3 @@
 
 //= require boomerang.min
 
-//= require circlemenu.js
