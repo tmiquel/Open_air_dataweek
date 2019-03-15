@@ -5,12 +5,12 @@
 // helpers
 
 $toggler-size: 40px;
-$toggler-color: white;
+$toggler-color: #000;
 $toggler-transition: transform .5s, top .5s;
 
-$item-count: 6;
-$item-size: $toggler-size * 2;
-$item-color: white;
+$item-count: 5;
+$item-size: $toggler-size * 4;
+$item-color: #000;
 $item-transition: .5s;
 
 @mixin size ($width, $height: $width) {
@@ -18,13 +18,13 @@ $item-transition: .5s;
   height: $height;
 }
 
-@mixin absolute-center {
-  position: absolute;
+@mixin fixed-center {
+  position: fixed;
   display: block;
   top: 0;
-  bottom: 0;
+  bottom: 35%;
   right: 0;
-  left: 0;
+  left: 60%;
   margin: auto;
 }
 
@@ -40,12 +40,12 @@ $item-transition: .5s;
 // styles
 
 body {
-  overflow: hidden;
+  //overflow: hidden;
   background: linear-gradient(to right, #fc354c, #0abfbc);
 }
 
 .menu-toggler {
-  @include absolute-center;
+  @include fixed-center;
   @include size($toggler-size);
   z-index: 2;
   opacity: 0;
@@ -89,15 +89,16 @@ body {
       transform: rotate(360deg / $item-count * $i) translateX(-$item-size - 30px);
     }
   }
-  
+ 
   .menu-item a {
     pointer-events: auto;
+		font-size : 1.4em;
   }
 }
 
 .menu-toggler + label {
   @include line;
-  @include absolute-center;
+  @include fixed-center;
   
   &:before,
   &:after {
@@ -123,7 +124,7 @@ body {
 }
 
 .menu-item {
-  @include absolute-center;
+  @include fixed-center;
   @include size($item-size);
   display: block;
   opacity: 0;
@@ -131,6 +132,7 @@ body {
 }
 
 .menu-item a {
+	border: 1px solid black;
   display: block;
   width: inherit;
   height: inherit;
