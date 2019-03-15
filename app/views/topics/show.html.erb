@@ -1,11 +1,135 @@
+<section class="slice sct-color-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="block block-post">
+                    <div class="section-title section-title--style-2 text-center mb-4">
+                        <h2 class="section-title-inner heading-2 strong-400">
+                            <span> <%=@topic.title%> </span>
+                        </h2>
+                    </div>
 
 
-                <div class="product-short-text mt-4">
-                    <h3 class="heading heading-xs strong-500 text-uppercase">
-                    Description:
-                    </h3>
-                    <p>
-                        TEST n°<%= @topics.title %>. Pellentesque habitant morbi tristique senectus et netus
-                            malesuada fames turpis egestas. Vestibulum tortor quam feugiat vitae ultricies eget tempor.
-                    </p>
-                </div>
+                    <div class="block-image">
+                        <%= image_tag Topic.first.main_picture, class: "rounded" %> 
+                    </div>
+
+                    <div class="block-body block-post-body">
+                        <p>
+                            <%=@topic.short_description%>
+                        </p>
+                    </div>
+                       
+                        <br><br>
+                    
+                    <div class="section-title section-title--style-1 text-center mb-4">
+                        <h3 class="section-title-inner heading-3 strong-400">
+                            <span> <%=@topic.driver_section_title%> </span>
+                        </h3>
+                        <span class="section-title-delimiter clearfix"></span>
+                    </div>
+                    
+                    <div class="block-body block-post-body">
+                        <p>
+                            <%=@topic.driver_section_intro%>
+                        </p>
+                    </div>
+                    <br>
+                    <div class="block-image">
+                        <%= image_tag Topic.first.main_picture, class: "rounded" %> 
+                    </div>
+                   
+                    <br><br>
+
+                    <div class="section-title section-title--style-1 text-center mb-4">
+                        <h3 class="section-title-inner heading-3 strong-400">
+                            <span> <%=@topic.pressure_section_title%> </span>
+                        </h3>
+                        <span class="section-title-delimiter clearfix"></span>
+                    </div>
+
+                    <div class="block-body block-post-body">
+                        <p>
+                            <%=@topic.pressure_section_intro%>
+                        </p>
+                    </div>
+                    <br>
+                    <div class="block-image">
+                        <%= image_tag Topic.first.main_picture, class: "rounded" %> 
+                    </div>
+
+                    <br><br>
+                    
+                    <div class="section-title section-title--style-1 text-center mb-4">
+                        <h3 class="section-title-inner heading-3 strong-400">
+                            <span> <%=@topic.state_section_title%> </span>
+                        </h3>
+                        <span class="section-title-delimiter clearfix"></span>
+                    </div>
+
+                    <div class="block-body block-post-body">
+                        <p>
+                            <%=@topic.state_section_intro%>
+                        </p>
+                    </div>
+                    <br>
+                     <div class="block-image">
+                        <%= image_tag Topic.first.main_picture, class: "rounded" %> 
+                    </div>
+                        
+                        <br><br>
+
+                    <div class="section-title section-title--style-1 text-center mb-4">
+                        <h3 class="section-title-inner heading-3 strong-400">
+                            <span> <%=@topic.impact_section_title%> </span>
+                        </h3>
+                        <span class="section-title-delimiter clearfix"></span>
+                    </div>
+
+                    <div class="block-body block-post-body">
+                        <p>
+                            <%=@topic.impact_section_intro%>
+                        </p>
+                    </div>
+                    <br>
+                     <div class="block-image">
+                        <%= image_tag Topic.first.main_picture, class: "rounded" %> 
+                    </div>
+
+                    <br><br>
+
+                    <div class="section-title section-title--style-1 text-center mb-4">
+                        <h3 class="section-title-inner heading-3 strong-400">
+                            <span> <%=@topic.response_section_title%> </span>
+                        </h3>
+                        <span class="section-title-delimiter clearfix"></span>
+                    </div>
+
+                    <div class="block-body block-post-body">
+                        <p>
+                            <%=@topic.response_section_intro%>
+                        </p>
+                    </div>
+                    <br>
+                     <div class="block-image">
+                        <%= image_tag Topic.first.main_picture, class: "rounded" %> 
+                    </div>
+                    
+                    <br>
+                        <div class="tagcloud tagcloud--style-1 clearfix">
+                            <a href="#"><span>Lien1</span></a>
+                            <a href="#"><span>Lien2</span></a>
+                            <a href="#"><span>Lien3</span></a>
+                            <a href="#"><span>Lien4</span></a>
+                        </div>
+                </div>    
+
+            </div>
+            
+        </div>       
+
+
+    </div>
+                                
+                                            
+</section>
