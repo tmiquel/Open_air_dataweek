@@ -1,22 +1,141 @@
 <nav class="menu">
-  <input checked="checked" class="menu-toggler" id="menu-toggler" type="checkbox"></input>
-  <label for="menu-toggler"></label>
-  <ul>
-    <li class="menu-item">
-      <a href="https://www.facebook.com/" target="_blank"><small>DRIVERS</small></a>
+    <input checked="checked" class="menu-toggler" id="menu-toggler" type="checkbox"></input>
+    <label for="menu-toggler"></label>
+    <ul>
+        <li class="menu-item">
+            <%= link_to topic_path(@topic, anchor: "driver") do %><small>DRIVERS</small><%end%>
+        </li>
+        <li class="menu-item">
+        <%= link_to topic_path(@topic, anchor: "pressure") do %><small>PRESSURE</small></a><%end%>
     </li>
     <li class="menu-item">
-      <a href="https://www.google.com/" target="_blank"><small>PRESSURE</small></a>
-    </li>
-    <li class="menu-item">
-      <a href="https://dribbble.com/" target="_blank"><small>IMPACT</small></a>
-    </li>
-    <li class="menu-item">
-      <a href="https://codepen.io/" target="_blank"><small>STATE</small></a>
-    </li>
-    <li class="menu-item">
-      <a href="https://codepen.io/" target="_blank"><small>RESPONSE</small></a>
-    </li>
-  </ul>
+    <%= link_to topic_path(@topic, anchor: "state") do %><small>STATE</small></a><%end%>
+</li>
+<li class="menu-item">
+<%= link_to topic_path(@topic, anchor: "impact") do %><small>IMPACT</small></a><%end%>
+</li>
+<li class="menu-item">
+<%= link_to topic_path(@topic, anchor: "response") do %><small>RESPONSE</small></a><%end%>
+</li>
+</ul>
 </nav>
+<section class="slice sct-color-1">
+<div class="container">
+<div class="row">
+<div class="col-lg-9">
+<div class="block block-post">
+    <div class="section-title section-title--style-2 text-center mb-4">
+        <h2 class="section-title-inner heading-2 strong-400">
+        <span> <%=@topic.title%> </span>
+        </h2>
+    </div>
+    <div class="block-image">
+        <%= image_tag Topic.first.main_picture, class: "rounded" %>
+    </div>
+    <div class="block-body block-post-body">
+        <p>
+            <%=@topic.short_description%>
+        </p>
+    </div>
+    
+    <br><br>
+    
+    <div id="driver" class="section-title section-title--style-1 text-center mb-4">
+        <h3 class="section-title-inner heading-3 strong-400">
+        <span> <%=@topic.driver_section_title%> </span>
+        </h3>
+        <span class="section-title-delimiter clearfix"></span>
+    </div>
+    
+    <div class="block-body block-post-body">
+        <p>
+            <%=@topic.driver_section_intro%>
+        </p>
+    </div>
+    <br>
+    <div class="block-image">
+        <%= image_tag Topic.first.main_picture, class: "rounded" %>
+    </div>
+    
+    <br><br>
+    <div id="pressure" class="section-title section-title--style-1 text-center mb-4">
+        <h3 class="section-title-inner heading-3 strong-400">
+        <span> <%=@topic.pressure_section_title%> </span>
+        </h3>
+        <span class="section-title-delimiter clearfix"></span>
+    </div>
+    <div class="block-body block-post-body">
+        <p>
+            <%=@topic.pressure_section_intro%>
+        </p>
+    </div>
+    <br>
+    <div class="block-image">
+        <%= image_tag Topic.first.main_picture, class: "rounded" %>
+    </div>
+    <br><br>
+    
+    <div id="state" class="section-title section-title--style-1 text-center mb-4">
+        <h3 class="section-title-inner heading-3 strong-400">
+        <span> <%=@topic.state_section_title%> </span>
+        </h3>
+        <span class="section-title-delimiter clearfix"></span>
+    </div>
+    <div class="block-body block-post-body">
+        <p>
+            <%=@topic.state_section_intro%>
+        </p>
+    </div>
+    <br>
+    <div class="block-image">
+        <%= image_tag Topic.first.main_picture, class: "rounded" %>
+    </div>
+    
+    <br><br>
+    <div id="impact" class="section-title section-title--style-1 text-center mb-4">
+        <h3 class="section-title-inner heading-3 strong-400">
+        <span> <%=@topic.impact_section_title%> </span>
+        </h3>
+        <span class="section-title-delimiter clearfix"></span>
+    </div>
+    <div class="block-body block-post-body">
+        <p>
+            <%=@topic.impact_section_intro%>
+        </p>
+    </div>
+    <br>
+    <div class="block-image">
+        <%= image_tag Topic.first.main_picture, class: "rounded" %>
+    </div>
+    <br><br>
+    <div id="response" class="section-title section-title--style-1 text-center mb-4">
+        <h3 class="section-title-inner heading-3 strong-400">
+        <span> <%=@topic.response_section_title%> </span>
+        </h3>
+        <span class="section-title-delimiter clearfix"></span>
+    </div>
+    <div class="block-body block-post-body">
+        <p>
+            <%=@topic.response_section_intro%>
+        </p>
+    </div>
+    <br>
+    <div class="block-image">
+        <%= image_tag Topic.first.main_picture, class: "rounded" %>
+    </div>
+    
+    <br>
+    <div class="tagcloud tagcloud--style-1 clearfix">
+        <a href="#"><span>Lien1</span></a>
+        <a href="#"><span>Lien2</span></a>
+        <a href="#"><span>Lien3</span></a>
+        <a href="#"><span>Lien4</span></a>
+    </div>
+</div>
+</div>
 
+</div>
+</div>
+
+
+</section>
