@@ -2,10 +2,10 @@
 <%= render :partial => "devise/registrations/edit_registration_form_fields", :locals => { :f => f } %>
 <div class="row align-items-center">
                                                         <div class="col-md-12 text-right d-flex justify-content-around">
-    <%= f.submit "Update", class: "btn btn-styled btn-base-1" %>
+    <%= f.submit "Sauvegarder", class: "btn btn-styled btn-base-1" %>
 <% end %>
 
-<%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Cette action est irréversible." }, method: :delete, class: "btn btn-styled btn-base-1" %>
+<%= button_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Cette action est irréversible." }, method: :delete, class: "btn btn-styled btn-base-1" %>
 </div>
 </div>
 </div>
