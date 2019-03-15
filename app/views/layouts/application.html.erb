@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
-    <meta name="description" content="Boomerang is a responsive website template based on the well known Bootstrap framework. It's very well structured with lots of features and demos ready to be used.">
-    <meta name="keywords" content="bootstrap, responsive, template, website, html, theme, ux, ui, web, design, developer, support, business, corporate, real estate, education, medical, school, education, demo, css, framework">
+    <meta name="description" content="Open Air est un portail web sur les données et indicateurs de la qualité de l'air en Région Sud. Open Air is a web portal about air quality in the Sud region in France. It features in-depth comprehensive articles based on open database.">
+    <meta name="keywords" content="Sud Région, France, Marseille, Aix, Air quality, open data, Lab in the AIR, Atmosud">
     <meta name="author" content="THP-SUD">
     <title>Open Air</title>
     <%= csrf_meta_tags %>
@@ -26,7 +26,7 @@
         <div class="st-pusher">
           <div class="st-content">
             <div class="st-content-inner">
-              <%= render "topics/navbar" %>
+              <%= render "layouts/navbar" %>
               <!-- Header -->  
               <%= render "topics/topic-index-banner" %>
               <section class="slice sct-color-1">
@@ -34,7 +34,7 @@
                   <%= yield %>
                 </div>
               </section>
-              <%= render "topics/footer" %>
+              <%= render "layouts/footer" %>
             </div>
           </div>
         </div><!-- END: st-pusher -->
