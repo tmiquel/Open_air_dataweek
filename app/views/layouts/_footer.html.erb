@@ -1,41 +1,61 @@
-<footer id="footer" class="footer">
-                          <div class="footer-top">
-                              <div class="container">
-                                  <div class="row cols-xs-space cols-sm-space cols-md-space">
-                                      <div class="col-lg-5">
-                                          <div class="col">
-                                              <%= image_tag "logo/logo-1-c.png" %>
-                                              <span class="clearfix"></span>
-                                              <span class="heading heading-sm c-gray-light strong-400">Comprendre la qualité de l'Air dans la Région Sud grâce à l'Open Data</span>
-                                              <div class="copyright mt-4">
-                                                  
+<footer id="footer" class="footer footer-inverse">
+    <div class="footer-bottom py-4">
+        <div class="container">
+            <div class="row cols-xs-space col-sm-space align-items-center">
+                <div class="col-lg-3 col-12">
+                    <div class="">
+                        <div class="copyright">
+                            <ul class="copy-links no-margin">
+                                <li>
+                                    © 2019 Open Air
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="text-center">
+                        <ul class="footer-menu footer-menu-sm">
+                            <% unless (controller_name == "topics" && action_name == "index") %>
+                            <li>
+                                <%= link_to "Accueil", root_path, style: "padding-left: 0;"  %>
+                            </li>
+                            <% end %>
+                            <li>
+                                <a href="#">À propos</a>
+                            </li>
+                            <li>
+                                <a href="mailto:openair@alabintheair.cc">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
 
 
+                <div class="col-lg-3">
+                    <div class="text-xs-center text-sm-right">
+                        <ul class="social-media social-media--style-1-v4">
+                            <li>
+                                <a href="https://www.facebook.com/A-LAB-in-the-AIR-1683991011853827/" class="facebook" target="_blank" data-toggle="tooltip" data-original-title="Facebook">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/company/a-lab-is-in-the-air/about/" class="linkedin" target="_blank" data-toggle="tooltip" data-original-title="Linkedin">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://twitter.com/lab_in_the_air?lang=en" class="twitter" target="_blank" data-toggle="tooltip" data-original-title="Twitter">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
 
-                                                  <p>
-                                                      Copyright &copy; 2019                                <a href="https://webpixels.io" target="_blank">
-                                                          <strong>Open Air</strong>
-                                                      </a> -
-                                                      All rights reserved
-                                                  </p>
-                                              </div>
-                                          </div>
-                                      </div>
-                                      <div class="col-lg-2">
-                                          <div class="col">
-                                            <h4 class="heading heading-xs strong-600 text-uppercase mb-1">
-                                                Support
-                                            </h4>
-                                            <ul class="footer-links">
-                                                  <li><a href="#" title="Help center">Help center</a></li>
-                                                  <li><a href="#" title="Discussions">Discussions</a></li>
-                                                  <li><a href="#" title="Contact support">Contact</a></li>
-                                                  <li><a href="#" title="Blog">Blog</a></li>
-                                                  <li><a href="#" title="Jobs">FAQ</a></li>
-                                              </ul>
-                                          </div>
-                                      </div>
-                                  </div>
-                              </div>
-                          </div>
-</footer
