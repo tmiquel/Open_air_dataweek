@@ -36,7 +36,7 @@
                 <%= link_to "S'inscrire", new_user_registration_path(anchor: "top"), class: "nav-link dropdown-item"  %>
                 <% end %>
                 <% else %>
-                <%= link_to "Mon profil", edit_user_registration_path, class: "dropdown-item"  %>
+                <%= link_to "Mon profil", edit_user_registration_path(anchor: "top"), class: "dropdown-item"  %>
                 <% end %>
               </li>
             </ul>
