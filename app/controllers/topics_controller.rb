@@ -1,7 +1,7 @@
 class TopicsController < ApplicationController
 
     def show
-        @topic = Topic.find(params[:id])
+        @topic = Topic.with_attached_main_picture.find(params[:id])
     end
 
     def create
@@ -13,7 +13,7 @@ class TopicsController < ApplicationController
     end
 
     def index
-        @topics = Topic.all
+        @topics = Topic.with_attached_main_picture.all
     end
 
 end

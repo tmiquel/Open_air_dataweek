@@ -72,3 +72,9 @@ Shoulda::Matchers.configure do |config|
     with.library :rails
   end
 end
+
+
+# cf https://blog.eq8.eu/til/factory-bot-trait-for-active-storange-has_attached.html
+FactoryBot::SyntaxRunner.class_eval do
+  include ActionDispatch::TestProcess
+end
