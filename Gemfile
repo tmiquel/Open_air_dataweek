@@ -61,6 +61,9 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
+  gem 'shoulda-matchers'
+  gem 'nyan-cat-formatter'
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -80,3 +83,6 @@ gem 'guard-rspec', require: false
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "letter_opener", :group => :development
 gem "aws-sdk-s3", require: false
+gem 'devise-i18n'
+gem 'high_voltage', '~> 3.1'
+

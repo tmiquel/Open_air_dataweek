@@ -1,82 +1,74 @@
-
-
-
-                                    <div class="col-md-5 mx-auto my-4">
-                                        <div class="card p-5">
-                                            <div class="card-title px-4">
-                                                <h3 class="heading heading-5 strong-500">
-                                                    Créer un compte
-                                                </h3>
-                                            </div>
-                                           
-                                                        <div class="col-12">
-                                                            <div class="form-group">
-    <%= f.label :Prénom %><br />
-                                                                <div class="input-group input-group--style-1">
-    <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class: "form-control form-control-lg", placeholder: "Prénom" %>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    
- 													
- 													
-														<div class="col-12">
-                                                            <div class="form-group">
-    <%= f.label :Nom %><br />
-                                                                <div class="input-group input-group--style-1">
-    <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", class: "form-control form-control-lg", placeholder: "Nom" %>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                  
-
-
- 													
-														<div class="col-12">
-                                                            <div class="form-group">
-    <%= f.label :Adresse %><br />
-                                                                <div class="input-group input-group--style-1">
-    <%= f.text_field :address, autofocus: true, autocomplete: "adress", class: "form-control form-control-lg", placeholder: "Adresse" %>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                             
-                                                   
-                                                        <div class="col-12">
-                                                            <div class="form-group">
-    <%= f.label :email %><br />
-                                                                <div class="input-group input-group--style-1">
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control form-control-lg", placeholder: "Email" %>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    
-
-                                                    
-                                                        <div class="col-12">
-                                                            <div class="form-group">
-    <%= f.label :Mot_de_passe %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-                                                                <div class="input-group input-group--style-1">
-    <%= f.password_field :password, autocomplete: "new-password", class: "form-control form-control-lg", placeholder: "Mot de passe" %>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    
-
-                                                        <div class="col-12">
-                                                            <div class="form-group">
-    <%= f.label :confirmer_le_mot_de_passe %><br />
-                                                                <div class="input-group input-group--style-1">
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control form-control-lg", placeholder: "Confirmer le mot de passe" %>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                    <div class="row py-4">
-                                                        <div class="col-12">
-<%= render "devise/shared/links" %>
-                                                        </div>
-                                                    </div>
+<div class="col-md-5 mx-auto my-4">
+    <div class="card p-5">
+        <div class="card-title px-4">
+            <h3 class="heading heading-5 strong-500">
+            Créer un compte
+            </h3>
+        </div>
+        
+        <div class="col-12">
+            <div class="form-group">
+                <%= f.label :Prénom %><br />
+                <div class="input-group input-group--style-1">
+                    <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", class: "form-control form-control-lg", placeholder: "Prénom" %>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <div class="col-12">
+            <div class="form-group">
+                <%= f.label :Nom %><br />
+                <div class="input-group input-group--style-1">
+                    <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", class: "form-control form-control-lg", placeholder: "Nom" %>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="col-12">
+            <div class="form-group">
+                <%= f.label :Adresse %><br />
+                <div class="input-group input-group--style-1">
+                    <%= f.text_field :address, autofocus: true, autocomplete: "adress", class: "form-control form-control-lg", placeholder: "Adresse" %>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="col-12">
+            <div class="form-group">
+                <%= f.label :Email %><br />
+                <div class="input-group input-group--style-1">
+                    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control form-control-lg", placeholder: "Email" %>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="col-12">
+            <div class="form-group">
+                <%= f.label :Mot_de_passe %>
+                <% if @minimum_password_length %>
+                <small class="font-italic">(<%= @minimum_password_length %> caractères minimum)</small>
+                <% end %><br />
+                <div class="input-group input-group--style-1">
+                    <%= f.password_field :password, autocomplete: "new-password", class: "form-control form-control-lg", placeholder: "Mot de passe" %>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-12">
+            <div class="form-group">
+                <%= f.label :confirmer_le_mot_de_passe %><br />
+                <div class="input-group input-group--style-1">
+                    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control form-control-lg", placeholder: "Confirmer le mot de passe" %>
+                </div>
+            </div>
+        </div>
+        <div class="row py-4">
+            <div class="col-12">
+                <%= render "devise/shared/links" %>
+            </div>
+        </div>

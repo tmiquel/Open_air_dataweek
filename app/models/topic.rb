@@ -5,12 +5,10 @@ class Topic < ApplicationRecord
 	validates :title, presence: true, uniqueness: true
 	validates :short_description, presence: true, uniqueness: true
 	validates :highlighted_category, presence: true
-	validate :main_picture_presence, on: :create
+	validate :main_picture_presence
 	validates :highlighted_category, :inclusion => { :in => ['Driver', 'Pressure', 'State', 'Impact', 'Response'] }
 	validates :main_picture, file_size: { less_than_or_equal_to: 5000.kilobytes },
                      file_content_type: { allow: ['image/jpeg', 'image/png'] }
-
-
     validates :driver_section_title, presence: true
     validates :pressure_section_title, presence: true
     validates :state_section_title, presence: true

@@ -65,3 +65,16 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 end
+
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+    with.library :rails
+  end
+end
+
+
+# cf https://blog.eq8.eu/til/factory-bot-trait-for-active-storange-has_attached.html
+FactoryBot::SyntaxRunner.class_eval do
+  include ActionDispatch::TestProcess
+end
