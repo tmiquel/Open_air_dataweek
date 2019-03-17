@@ -26,7 +26,9 @@
                                 <%= link_to "À propos", page_path('about') %>
                             </li>
                             <li>
-                                <a href="mailto:openair@alabintheair.cc">Contact</a>
+                                <%= mail_to "open-air@alabintheair.cc" do %>
+                                 <span>Contact</span>
+                                <% end %>
                             </li>
                         </ul>
                     </div>
