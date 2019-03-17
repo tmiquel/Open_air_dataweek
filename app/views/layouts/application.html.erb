@@ -17,9 +17,11 @@
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.css">
     <!-- Favicon -->
-    <%= favicon_link_tag 'favicon.png' %>
+    <%= render 'application/favicon' %>
+
+
   </head>
-  <body>
+  <body >
     <!-- MAIN WRAPPER -->
     <div class="body-wrap">
       <div id="st-container" class="st-container">
@@ -32,8 +34,8 @@
               <div class="container">
                 <%= render 'layouts/flash' %>
               </div>
-              <section class="slice sct-color-1">
-                <div class="container">
+              <section class="bg-base-5 slice sct-color-1">
+                <div class="bg-base-5 container">
                   <%= yield %>
                 </div>
               </section>
