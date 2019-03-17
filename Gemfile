@@ -81,3 +81,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "letter_opener", :group => :development
 gem "aws-sdk-s3", require: false
 gem 'devise-i18n'
+gem 'high_voltage', '~> 3.1'
+
