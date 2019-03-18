@@ -19,9 +19,9 @@
                             <div class="card z-depth-2-top h-auto">
                                 <div class="card-image">
                                     <div class="view view-first">
-                                        <a href="/topics/<%=topic.id%>">
-                                            <%= image_tag topic.main_picture.variant(resize: "1000x760!") %>
-                                        </a>
+                                        <%= link_to topic_path(topic) do %>
+                                        <%= image_tag topic.main_picture.variant(resize: "1000x760!") %>
+                                        <% end %>
                                     </div>
                                 </div>
                                 <div class="card-body h-25">
