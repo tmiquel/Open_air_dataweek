@@ -6,6 +6,10 @@ class TopicsController < ApplicationController
 
     def show
         @topic = Topic.with_attached_main_picture.find(params[:id])
+        @related_topics = []
+        3.times do
+            @related_topics << Topic.all.sample
+        end
     end
 
     def create
@@ -15,6 +19,5 @@ class TopicsController < ApplicationController
     def update
         
     end
-
 
 end

@@ -1,6 +1,7 @@
 class Topic < ApplicationRecord
 
 	has_one_attached :main_picture
+	has_many :datasets
 
 	validates :title, presence: true, uniqueness: true
 	validates :short_description, presence: true, uniqueness: true
