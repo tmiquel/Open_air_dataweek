@@ -1,4 +1,5 @@
 class Admin::TopicsController < ApplicationController
+before_action :is_admin?
 
 	def index
 	end 
