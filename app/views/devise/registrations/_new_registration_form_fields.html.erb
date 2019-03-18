@@ -4,16 +4,19 @@
             <div class="col-lg-8">
                 <div class="form-card form-card--style-2 z-depth-2-top">
                     <div class="form-header text-center">
-                        <div class="form-header-icon">
-                            <i class="icon ion-log-in"></i>
-                        </div>
+                        
+                            <%= image_tag asset_path("air-quality-logo/logo-1-a.svg"), height:"60px", alt:"Open Air" %>
+                        
                     </div>
                     <div class="form-body">
-                        <div class="text-center px-2">
-                            <h4 class="heading heading-4 strong-400 mb-4">Créer un compte</h4>
+                        
+                            <div class="section-title section-title--style-2 text-center mb-2">
+                            <h4 class="section-title-inner heading-2 strong-400">
+                                <span>Créer un compte</span>
+                            </h4>
                         </div>
                         
-                        <div class="col-12">
+                        <div class="col-8">
                             <div class="form-group">
                                 <%= f.label :Prénom %><br />
                                 <div class="input-group input-group--style-1">
@@ -24,7 +27,7 @@
                         
                         
                         
-                        <div class="col-12">
+                        <div class="col-8">
                             <div class="form-group">
                                 <%= f.label :Nom %><br />
                                 <div class="input-group input-group--style-1">
@@ -74,8 +77,8 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row py-4">
+                        
                             <div class="col-12">
                                 <%= render "devise/shared/links" %>
                             </div>
-                        </div>                                             
+                                                                  
