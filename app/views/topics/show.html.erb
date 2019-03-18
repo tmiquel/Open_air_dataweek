@@ -5,13 +5,14 @@
                 <div class="block block-post">
                     <div class="section-title section-title--style-2 text-center mb-4">
                         <h2 class="section-title-inner heading-2 strong-400">
-                            <span> <%=@topic.title%> </span>
+                            <span>
+                                <%=@topic.title%> </span>
                         </h2>
                     </div>
 
 
                     <div class="block-image">
-                        <%= image_tag @topic.main_picture, class: "rounded" %> 
+                        <%= image_tag @topic.main_picture, class: "rounded" %>
                     </div>
 
                     <div class="block-body block-post-body">
@@ -19,16 +20,17 @@
                             <%=@topic.short_description%>
                         </p>
                     </div>
-                       
-                        <br><br>
-                    
+
+                    <br><br>
+
                     <div class="section-title section-title--style-1 text-center mb-4">
                         <h3 class="section-title-inner heading-3 strong-400">
-                            <span> <%=@topic.driver_section_title%> </span>
+                            <span>
+                                <%=@topic.driver_section_title%> </span>
                         </h3>
                         <span class="section-title-delimiter clearfix"></span>
                     </div>
-                    
+
                     <div class="block-body block-post-body">
                         <p>
                             <%=@topic.driver_section_intro%>
@@ -36,14 +38,15 @@
                     </div>
                     <br>
                     <div class="block-image">
-                        <%= image_tag @topic.main_picture, class: "rounded" %> 
+                        <%= image_tag @topic.main_picture, class: "rounded" %>
                     </div>
-                   
+
                     <br><br>
 
                     <div class="section-title section-title--style-1 text-center mb-4">
                         <h3 class="section-title-inner heading-3 strong-400">
-                            <span> <%=@topic.pressure_section_title%> </span>
+                            <span>
+                                <%=@topic.pressure_section_title%> </span>
                         </h3>
                         <span class="section-title-delimiter clearfix"></span>
                     </div>
@@ -55,14 +58,15 @@
                     </div>
                     <br>
                     <div class="block-image">
-                        <%= image_tag @topic.main_picture, class: "rounded" %> 
+                        <%= image_tag @topic.main_picture, class: "rounded" %>
                     </div>
 
                     <br><br>
-                    
+
                     <div class="section-title section-title--style-1 text-center mb-4">
                         <h3 class="section-title-inner heading-3 strong-400">
-                            <span> <%=@topic.state_section_title%> </span>
+                            <span>
+                                <%=@topic.state_section_title%> </span>
                         </h3>
                         <span class="section-title-delimiter clearfix"></span>
                     </div>
@@ -73,15 +77,16 @@
                         </p>
                     </div>
                     <br>
-                     <div class="block-image">
-                        <%= image_tag @topic.main_picture, class: "rounded" %> 
+                    <div class="block-image">
+                        <%= image_tag @topic.main_picture, class: "rounded" %>
                     </div>
-                        
-                        <br><br>
+
+                    <br><br>
 
                     <div class="section-title section-title--style-1 text-center mb-4">
                         <h3 class="section-title-inner heading-3 strong-400">
-                            <span> <%=@topic.impact_section_title%> </span>
+                            <span>
+                                <%=@topic.impact_section_title%> </span>
                         </h3>
                         <span class="section-title-delimiter clearfix"></span>
                     </div>
@@ -92,15 +97,16 @@
                         </p>
                     </div>
                     <br>
-                     <div class="block-image">
-                        <%= image_tag @topic.main_picture, class: "rounded" %> 
+                    <div class="block-image">
+                        <%= image_tag @topic.main_picture, class: "rounded" %>
                     </div>
 
                     <br><br>
 
                     <div class="section-title section-title--style-1 text-center mb-4">
                         <h3 class="section-title-inner heading-3 strong-400">
-                            <span> <%=@topic.response_section_title%> </span>
+                            <span>
+                                <%=@topic.response_section_title%> </span>
                         </h3>
                         <span class="section-title-delimiter clearfix"></span>
                     </div>
@@ -111,20 +117,55 @@
                         </p>
                     </div>
                     <br>
-                     <div class="block-image">
-                        <%= image_tag @topic.main_picture, class: "rounded" %> 
+                    <div class="block-image">
+                        <%= image_tag @topic.main_picture, class: "rounded" %>
                     </div>
-                    
                     <br>
-                        
-                </div>    
-
+                </div>
             </div>
-            
-        </div>       
-
-
+        </div>
     </div>
-                                
-                                            
 </section>
+<hr>
+<div class="card-deck">
+    <% @related_topics.each do |topic| %>
+    <div class="col-lg-4 mb-5">
+        <div class="card z-depth-2-top h-auto">
+            <div class="card-image">
+                <div class="view view-first">
+                    <a href="/topics/<%=topic.id%>">
+                        <%= image_tag topic.main_picture.variant(resize: "1000x760!") %>
+                    </a>
+                </div>
+            </div>
+            <div class="card-body h-25">
+                <h3 class="heading heading-5 strong-600 mb-0">
+                    <a href="/topics/<%=topic.id%>">
+                        <%=topic.title%></a>
+                </h3>
+            </div>
+            <div class="card-footer">
+                <div class="row">
+                    <div class="col">
+                        <div class="block-author">
+                            <div class="author-info">
+                                <div class="author-name">
+                                    <a href="/topics/<%=topic.id%>">
+                                        <%=topic.short_description%></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col text-right">
+                    <ul class="inline-links inline-links--style-2">
+                        <li>
+                            Temps de lecture: <%= Random.rand(5..30) %> min
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% end %>
+</div>
