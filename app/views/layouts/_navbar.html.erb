@@ -19,14 +19,6 @@
           </div>
           <div class="collapse navbar-collapse align-items-center justify-content-around" id="navbar_main">
             <!-- Navbar links -->
-            <!-- LEFT ALIGNED NAVBAR  -->
-            <ul class="navbar-nav">
-              <% unless (controller_name == "topics" && action_name == "index") %>
-              <li class="nav-item dropdown megamenu">
-                  <%= link_to "Accueil", root_path, class: "nav-link"  %>
-              </li>
-              <% end %>
-            </ul>
             <!-- RIGHT ALIGNED NAVBAR -->
             <ul class="navbar-nav ml-lg-auto">
               <li class="nav-item">
