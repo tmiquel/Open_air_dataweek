@@ -86,4 +86,5 @@ gem "letter_opener", :group => :development
 gem "aws-sdk-s3", require: false
 gem 'devise-i18n'
 gem 'high_voltage', '~> 3.1'
+gem 'rails_admin', '~> 1.3'
 
