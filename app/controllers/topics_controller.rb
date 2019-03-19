@@ -6,6 +6,7 @@ class TopicsController < ApplicationController
 
     def show
         @topic = Topic.with_attached_main_picture.find(params[:id])
+				@datasets = @topic.datasets
         @related_topics = []
         3.times do
             @related_topics << Topic.all.sample

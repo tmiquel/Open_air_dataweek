@@ -22,6 +22,20 @@
                         </p>
                     </div>
                     <br><br>
+										<ul>
+											<% @datasets.each do |dataset| %>
+												<li>
+													<div>
+													<ul>
+													<li><%= dataset.title %><br /></li>
+													<li><%= dataset.db_link %><br /></li>
+													<li><%= dataset.description %><br /></li>
+													</ul>
+													</div>
+												</li>
+											<% end %>
+										</ul>
+										<br><br>
                     <div id="driver_section" class="section-title section-title--style-1 text-center mb-4">
                         <h3 class="section-title-inner heading-3 strong-400">
                         <span>
