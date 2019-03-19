@@ -25,5 +25,18 @@ FactoryBot.define do
 			}
 
     end
+
+    factory :topic_with_datasets do
+  	  transient do 
+  			datasets_count {7}
+  	  end
+
+  	  after(:create) do |topic, evaluator|
+        create_list(:dataset, evaluator.datasets_count, topic: topic)
+      end
+
+  	end
   end
 end
+
+
