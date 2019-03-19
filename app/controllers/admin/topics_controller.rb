@@ -2,12 +2,15 @@ class Admin::TopicsController < ApplicationController
 before_action :is_admin?
 
 	def index
+		@topics = Topic.all
 	end 
 	
 	def new
 	end
 
 	def create
+		@topic.save(topic_params)
+		redirect_to admin_topics_path
 	end
 
 	def edit
@@ -20,6 +23,13 @@ before_action :is_admin?
 	end
 
 	def destroy
+		@topic = Topic.find(params[:id])
+    @topic.destroy
+
+    respond_to do |format|
+      format.html { redirect_to admin_topics_path }
+
+    end
 	end
 
 end
