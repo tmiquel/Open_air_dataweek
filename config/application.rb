@@ -19,9 +19,8 @@ module OpenAirThp
 
     # cf https://devcenter.heroku.com/articles/rails-4-asset-pipeline
     config.serve_static_assets = true
-    config.session_store :cookie_store
-    config.middleware.use ActionDispatch::Cookies
-    config.middleware.use ActionDispatch::Session::CookieStore, config.session_options
-    config.middleware.use ::Rack::MethodOverride
+    config.api_only = false
+
   end
 end
+
