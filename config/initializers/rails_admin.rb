@@ -4,11 +4,10 @@ RailsAdmin.config do |config|
 
   ## == Devise ==
 
-  config.authenticate_with do
-    warden.authenticate! scope: :user
+    config.authorize_with do
+    redirect_to main_app.root_path unless (current_user && current_user.is_admin?)
   end
-  config.current_user_method(&:current_user_is_admin)
-
+  
 
   ## == Cancan ==
   # config.authorize_with :cancan
