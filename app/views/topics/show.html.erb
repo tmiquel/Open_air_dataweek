@@ -31,7 +31,11 @@
                     </div>
                     <div class="block-body block-post-body">
                         <p>
-                            <%=@topic.driver_section_intro%>
+                        <% @topic.datasets.each do |dataset|%>
+                            <%if dataset.dpsir_category == "Driver" %>
+                            <% dataset.get_iframe_string(400, 700, dataset.db_link) %>
+                            <%end%>
+                            <%end%>
                         </p>
                     </div>
                     <br>
