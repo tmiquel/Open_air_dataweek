@@ -2,7 +2,8 @@ FactoryBot.define do
   factory :dataset do
 		
 		title { "Activité maritime Marseille/Fos" }
-		topic { Topic.all.sample }
+		topic { Topic.all[1..-1].sample }
+		#First topic is the Maritime Port, for which specific datasets are linked
 		db_link { "https://trouver.datasud.fr/dataset/les-lignes-maritimes-regulieres-touchant-le-port-de-marseille-fos" }
 		dpsir_category { "driver" }
 		description { "    55 services maritimes réguliers relient le Port de Marseille-Fos à plus de 500 autres ports et desservent près de 160 pays dans le monde.
