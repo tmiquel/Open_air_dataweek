@@ -87,3 +87,5 @@ gem "aws-sdk-s3", require: false
 gem 'devise-i18n'
 gem 'high_voltage', '~> 3.1'
 
+#https://stackoverflow.com/questions/23727468/error-with-active-record-translations
+gem 'rails-i18n', '~> 5.1'
