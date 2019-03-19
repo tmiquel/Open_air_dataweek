@@ -36,6 +36,17 @@ ActiveRecord::Schema.define(version: 2019_03_19_152157) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  create_table "datasets", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "topic_id"
+    t.string "title"
+    t.string "db_link"
+    t.string "dpsir_category"
+    t.text "description"
+    t.index ["topic_id"], name: "index_datasets_on_topic_id"
+  end
+
   create_table "topics", force: :cascade do |t|
     t.string "highlighted_category"
     t.string "title"
