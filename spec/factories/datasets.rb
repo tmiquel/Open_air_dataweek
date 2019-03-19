@@ -5,7 +5,7 @@ FactoryBot.define do
 		topic { Topic.all[1..-1].sample }
 		#First topic is the Maritime Port, for which specific datasets are linked
 		db_link { "https://trouver.datasud.fr/dataset/les-lignes-maritimes-regulieres-touchant-le-port-de-marseille-fos" }
-		dpsir_category { "driver" }
+		dpsir_category { "Driver" }
 		description { "    55 services maritimes réguliers relient le Port de Marseille-Fos à plus de 500 autres ports et desservent près de 160 pays dans le monde.
     40 compagnies maritimes sont représentées, dont les 11 premières mondiales en capacité de conteneurs.
     Des lignes maritimes pour tous types de trafic - conteneur, roulant, conventionnel, car-ferry - avec des capacités de transport et des fréquences adaptées à l'évolution des échanges internationaux.
