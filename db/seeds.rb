@@ -128,7 +128,9 @@ Tableau 4 : Espérance de vie à la naissance des hommes
 Tableau 5 : Espérance de vie à la naissance des femmes
 Tableau 6 : PIB par habitant
 Tableau 7 : Nombre d’établissements SEVESO pour 1000 km2
-Tableau 8 : Part des superficies en sites « Natura 2000 »')
+Tableau 8 : Part des superficies en sites « Natura 2000 »',
+            rendered: true,
+            file_type: 'xls')
 
             #do not render
             model.create(
@@ -136,14 +138,19 @@ Tableau 8 : Part des superficies en sites « Natura 2000 »')
             title: 'Activité maritime',
             db_link: 'https://trouver.datasud.fr/dataset/les-lignes-maritimes-regulieres-touchant-le-port-de-marseille-fos/resource/57223ded-43ca-493c-8831-378aace9a8ef',
             dpsir_category: 'Driver',
-            description: '55 services maritimes réguliers relient le Port de Marseille-Fos à plus de 500 autres ports et desservent près de 160 pays dans le monde. ')
+            description: '55 services maritimes réguliers relient le Port de Marseille-Fos à plus de 500 autres ports et desservent près de 160 pays dans le monde. ',
+            rendered: false,
+            file_type: 'pdf')
 
            model.create(
             topic: Topic.first,
             title: "Emissions de polluants des EPCI (Intercommunalités) tous secteurs d'activité confondus dans la région Sud",
             db_link: 'https://trouver.datasud.fr/dataset/emissions-de-polluants-atmospheriques-tous-secteurs-dactivite-confondus-des-epci-de-la-region-sud/resource/54515d61-8274-40a4-93d2-6b4e64387307',
             dpsir_category: 'Pressure',
-            description: "Estimation des émissions annuelles totales des principaux polluants atmosphériques (SO2 - NOx équivalent NO2 - particules en suspension PM10 - particules en suspension PM2.5 - benzène C6H6 - Composés Organiques Volatils Non Méthaniques COVNM - Ammoniac NH3 - monoxyde de carbone CO - As - Cd - Ni - Pb – BaP sur la région Sud pour l'année 2016. Toutes les données fournies sont kg. Le nombre de décimales varie en fonction du polluant.")
+            description: "Estimation des émissions annuelles totales des principaux polluants atmosphériques (SO2 - NOx équivalent NO2 - particules en suspension PM10 - particules en suspension PM2.5 - benzène C6H6 - Composés Organiques Volatils Non Méthaniques COVNM - Ammoniac NH3 - monoxyde de carbone CO - As - Cd - Ni - Pb – BaP sur la région Sud pour l'année 2016. Toutes les données fournies sont kg. Le nombre de décimales varie en fonction du polluant.",
+            rendered: true,
+            file_type: 'xls'
+            )
   
 
             #kind: qml, do not render...
@@ -152,7 +159,9 @@ Tableau 8 : Part des superficies en sites « Natura 2000 »')
             title: "Évolution de l'occupation du sol en Provence-Alpes-Côte d'Azur entre 2006 et 2014 ",
             db_link: 'https://trouver.datasud.fr/dataset/evolution-de-loccupation-du-sol-en-provence-alpes-cote-dazur-entre-2006-et-2014/resource/78256182-39b7-4938-a6ae-e08a6fa54788',
             dpsir_category: 'State',
-            description: "Cartographie de l'occupation des sols de la Région PACA en 2006, réalisée par traitement d'images satellitaires, d'après la nomenclature européenne CORINE Land Cover, adaptée aux spécificités régionales.")
+            description: "Cartographie de l'occupation des sols de la Région PACA en 2006, réalisée par traitement d'images satellitaires, d'après la nomenclature européenne CORINE Land Cover, adaptée aux spécificités régionales.",
+            rendered: false,
+            file_type: 'map')
           
 
           #map, do not render#map, do not render
@@ -173,7 +182,9 @@ Tableau 8 : Part des superficies en sites « Natura 2000 »')
 Donnée créée avec un modèle de dispersion atmosphérique à l'échelle locale (ADMS Urban). Utilisation de l'inventaire des émissions de la région Sud. Statistiques comparables aux valeurs limites pour la protection de la santé : Décrets N°98-360, 2002-213, 2003-1085, 2007-1479, 2008-1152, 2010-1250 et Directive 2008/50/CE. Modélisation réalisée conformément aux recommandations du référentiel métier du Laboratoire Central de Surveillance de la Qualité de l’Air (LCSQA).
 
 La résolution est de 25 m pour toute les couches, sauf celles pour l'ozone qui sont à 1 km.
-")
+",
+            rendered: false,
+            file_type: 'map')
           
             #map, do not render
             model.create(
@@ -181,7 +192,9 @@ La résolution est de 25 m pour toute les couches, sauf celles pour l'ozone qui 
             title: "Mesures horaires de polluants",
             db_link: 'https://trouver.datasud.fr/dataset/concentrations-horaires-de-polluants-dans-lair-ambiant-issues-du-reseau-permanent-de-mesures-automa/resource/99680cee-3efe-439f-bb60-f99e25537779',
             dpsir_category: 'State',
-            description: "Concentrations moyennes horaires issues du réseau fixe des mesures européennes des principaux polluants réglementés dans l'air sur la région Sud : dioxyde de soufre SO2, monoxyde d'azote NO et dioxyde d'azote NO2, particules en suspension PM10, particules en suspension PM2.5, ozone O3, benzène C6H6, monoxyde de carbone CO. Toutes les données fournies sont en μg/m³ (microgramme par mètre cube) sauf CO (mg/m³).")
+            description: "Concentrations moyennes horaires issues du réseau fixe des mesures européennes des principaux polluants réglementés dans l'air sur la région Sud : dioxyde de soufre SO2, monoxyde d'azote NO et dioxyde d'azote NO2, particules en suspension PM10, particules en suspension PM2.5, ozone O3, benzène C6H6, monoxyde de carbone CO. Toutes les données fournies sont en μg/m³ (microgramme par mètre cube) sauf CO (mg/m³).",
+            rendered: false,
+            file_type: 'map')
           
             #map, do not render
             model.create(
@@ -191,14 +204,20 @@ La résolution est de 25 m pour toute les couches, sauf celles pour l'ozone qui 
             dpsir_category: 'Impact',
             description: "Populations et territoires exposés au dépassement des valeurs limites des PM10 et NO2 sur la région Sud pour les 5 dernières années.
 En complément, sont diffusés également les chiffres d'exposition pour d'autres valeurs de référence (valeurs cibles et lignes directrices OMS).
-")
+",
+            rendered: false,
+            file_type: 'map')
+
+
             # xls, pdf, do not render
             model.create(
             topic: Topic.first,
             title: "Lutte contre le changement climatique et protection de l'atmosphère : Indicateurs de développement durable ",
             db_link: 'https://trouver.datasud.fr/dataset/lutte-contre-le-changement-climatique-et-protection-de-latmosphere-indicateurs-de-developpement-dur',
             dpsir_category: 'Response',
-            description: "Ce tableau de bord du développement durable a pour objectif d’éclairer la prise de décision et la mise en œuvre d’actions permettant de répondre aux défis auxquels la région Provence-Alpes-Côte d’Azur est confrontée. Ce diagnostic annuel de l’état du développement durable en région a vocation à alimenter les projets territoriaux de planification comme l’Agenda 21 régional, le Schéma régional d’aménagement et de développement durable du territoire, etc..")
+            description: "Ce tableau de bord du développement durable a pour objectif d’éclairer la prise de décision et la mise en œuvre d’actions permettant de répondre aux défis auxquels la région Provence-Alpes-Côte d’Azur est confrontée. Ce diagnostic annuel de l’état du développement durable en région a vocation à alimenter les projets territoriaux de planification comme l’Agenda 21 régional, le Schéma régional d’aménagement et de développement durable du territoire, etc..",
+            rendered: false,
+            file_type: 'map')
 
       end
     end

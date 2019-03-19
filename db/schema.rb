@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_18_125600) do
+ActiveRecord::Schema.define(version: 2019_03_19_102951) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,8 @@ ActiveRecord::Schema.define(version: 2019_03_18_125600) do
     t.string "db_link"
     t.string "dpsir_category"
     t.text "description"
+    t.boolean "rendered"
+    t.string "file_type"
     t.index ["topic_id"], name: "index_datasets_on_topic_id"
   end
 
