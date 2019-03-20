@@ -1,2 +1,49 @@
-<h1>Users#ma_collection</h1>
-<p>Find me in app/views/users/ma_collection.html.erb</p>
+<div class="col-lg-8 mx-auto">
+	<div class="main-content">
+
+		<!-- Order history table -->
+		<div class="card no-border">
+			<div>
+				<table class="table table-sm table-hover">
+					<thead>
+						<tr>
+							<th>
+								
+							</th>
+							<th>Titre</th>
+							<th>Source</th>
+							<th>Téléchargement</th>
+						</tr>
+					</thead>
+
+
+					<tbody>
+						<% @datasets.each do |dataset| %>
+						<tr>
+							<td>
+								<div class="checkbox">
+									<input type="checkbox" name="checkbox_example_1">
+									<label></label>
+								</div>
+							</td>
+							<td>
+								<%= dataset.title %>
+							</td>
+							<td>
+								<span class="badge badge--2 mr-4">
+								<i class="bg-blue"></i><%= link_to "Source ", dataset.db_link, class: "text-dark" %>
+								</span>
+							</td>
+							<td>
+								<%= button_to "Download .gif", root_path, class: "btn btn-styled btn-round btn-md border border-dark" %>
+							</td>
+						</tr>
+						<% end %>
+					</tbody>
+
+
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

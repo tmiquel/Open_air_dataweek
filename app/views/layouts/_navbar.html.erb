@@ -28,6 +28,11 @@
 									<%= link_to "Espace rédaction", rails_admin.dashboard_path, class: "nav-link dropdown-item" %>
 							<% end %>
 								</li>
+								<li class="nav-item">
+              <% if (user_signed_in?) %>
+                  <%= link_to "Ma librairie", ma_collection_user_path(current_user.id), class: "nav-link dropdown-item" %>
+              <% end %>
+                </li>
               <li class="nav-item">
                 <% unless user_signed_in? %>
                 <% unless (controller_name == "devise") %>
