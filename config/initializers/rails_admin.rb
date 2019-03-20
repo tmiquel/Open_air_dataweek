@@ -44,28 +44,79 @@ RailsAdmin.config do |config|
 
   #change fields label
   
-  config.model 'Topic' do
-    list do
-      field :id
-      field :highlighted_category do
-        label "catégories"
+    config.model 'Topic' do
+      list do
+        field :id
+        field :highlighted_category do
+          label "catégories"
+        end
+        field :title do
+          label "Titre"
+        end
+        field :short_description do
+          label "description courte"
+        end
+        field :created_at do
+          label "Crée le:"
+          date_format :default
+        end
+        field :updated_at do
+          label "Modifié le:"
+          date_format :default
+        end
       end
-      field :title do
-        label "Titre"
-      end
-      field :short_description do
-        label "description courte"
-      end
-      field :created_at do
-        label "Crée le:"
-        date_format :default
-      end
-      field :updated_at do
-        label "Modifié le:"
-        date_format :default
-      end
+      #change fiels in edit page
+      
+        edit do
+          field :highlighted_category do
+            label "catégories"
+          end
+          field :title do
+            label "Titre"
+          end
+          field :short_description do
+            label "description courte"
+          end
+          field :driver_section_title do
+            label "Forces: titre"
+          end
+          field :driver_section_intro do
+            label "Forces: introduction"
+          end
+          field :pressure_section_title do
+            label "Pressions: titre"
+          end
+          field :pressure_section_intro do
+            label "Pressions: introduction"
+          end
+          field :state_section_title do
+            label "État: titre"
+          end
+          field :state_section_intro do
+            label "État: introduction"
+          end
+          field :impact_section_title do
+            label "Impacts: titre"
+          end
+          field :impact_section_intro do
+            label "Impacts: introduction"
+          end
+          field :response_section_title do
+            label "Réponses: titre"
+          end
+          field :response_section_intro do
+            label "Réponses: introduction"
+          end
+          field :main_picture do
+            label "Photo pricipale"
+          end
+          field :datasets
+        end
+
+
+
+      
     end
-  end
 
 
 
