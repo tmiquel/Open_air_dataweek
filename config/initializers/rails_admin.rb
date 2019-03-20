@@ -73,36 +73,43 @@ RailsAdmin.config do |config|
           end
           field :title do
             label "Titre"
+            help "Obligatoire - Titre de l'article" 
           end
           field :short_description do
             label "description courte"
+            help "Obligatoire - Une description qui s'affichera sur la page des articles"
           end
           field :driver_section_title do
             label "Forces: titre"
+            help "Obligatoire - Titre pour 'Driver'"
           end
           field :driver_section_intro do
             label "Forces: introduction"
           end
           field :pressure_section_title do
             label "Pressions: titre"
+            help "Obligatoire - Titre pour 'Pressure'"
           end
           field :pressure_section_intro do
             label "Pressions: introduction"
           end
           field :state_section_title do
             label "État: titre"
+            help "Obligatoire - Titre pour 'State'"
           end
           field :state_section_intro do
             label "État: introduction"
           end
           field :impact_section_title do
             label "Impacts: titre"
+            help "Obligatoire - Titre pour 'Impact'"
           end
           field :impact_section_intro do
             label "Impacts: introduction"
           end
           field :response_section_title do
             label "Réponses: titre"
+            help "Obligatoire - Titre pour 'Response'"
           end
           field :response_section_intro do
             label "Réponses: introduction"
