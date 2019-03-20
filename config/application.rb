@@ -5,6 +5,7 @@ require 'rails/all'
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
+ENV['RAILS_ADMIN_THEME'] = 'rollincode'
 
 module OpenAirThp
   class Application < Rails::Application
@@ -18,5 +19,8 @@ module OpenAirThp
 
     # cf https://devcenter.heroku.com/articles/rails-4-asset-pipeline
     config.serve_static_assets = true
+    config.api_only = false
+
   end
 end
+

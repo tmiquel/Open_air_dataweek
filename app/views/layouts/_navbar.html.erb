@@ -23,6 +23,11 @@
             <!-- Navbar links -->
             <!-- RIGHT ALIGNED NAVBAR -->
             <ul class="navbar-nav ml-lg-auto">
+								<li class="nav-item">
+							<% if (current_user && current_user.is_admin) %>
+									<%= link_to "Espace rédaction", rails_admin.dashboard_path, class: "nav-link dropdown-item" %>
+							<% end %>
+								</li>
               <li class="nav-item">
                 <% unless user_signed_in? %>
                 <% unless (controller_name == "devise") %>
@@ -30,7 +35,7 @@
                 <%= link_to "S'inscrire", new_user_registration_path(anchor: "top"), class: "nav-link dropdown-item"  %>
                 <% end %>
                 <% else %>
-                <%= link_to "Mon profil", edit_user_registration_path(anchor: "top"), class: "dropdown-item"  %>
+                <%= link_to "Mon profil", edit_user_registration_path(anchor: "top"), class: "nav-link dropdown-item" %>
                 <% end %>
               </li>
             </ul>
@@ -40,10 +45,10 @@
             <% unless user_signed_in? %>
             <% unless (controller_name == "devise") %>
             <!-- Sign in button shall not appear when user is  in  the sign in page -->
-            <%= link_to "Se connecter", new_user_session_path(anchor: "top"), class: "btn btn-styled btn-base-1 btn-circle btn-teal-blue" %>
+            <%= link_to "Se connecter", new_user_session_path(anchor: "top"), class: "btn btn-styled btn-base-1 btn-round text-white" %>
             <% end %>
             <% else %>
-            <%= button_to "Se déconnecter", destroy_user_session_path, :method => :delete, class: "btn btn-styled btn-base-1 btn-circle btn-teal-blue" %>
+            <%= button_to "Se déconnecter", destroy_user_session_path, :method => :delete, class: "btn btn-styled btn-base-1 btn-round text-white" %>
             <% end %>
           </div>
         </div>
