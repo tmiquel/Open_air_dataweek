@@ -1,22 +1,25 @@
-<div class='card border-dark'>
+<div class='card border-dark'>    
     <div class="card-body">
-        <div class="row align-items-center">
-            
-            <div class="col-10">
+        <div class="row">
+            <div class="col-9">
                 <h4 class="card-title">
                 <%= dataset.title %>
                 </h4>
             </div>
-            <div class="col-2 text-right">
-                <span class="card-title badge badge-md badge-secondary text-right">Base de données</span>
-            </div>
-            
+            <ul class="list-inline">
+                <li><div class="col-1 text-right">
+                    <span class="card-title badge badge-md badge-secondary text-right align-top">Base de données</span>
+                </div></li>
+                <li><div class='card-icon-actions text-right col-2 align-top'>
+                    <a href="#" class="favorite active" data-toggle="tooltip" data-original-title="Save to favorites"><i class="fa fa-star"></i></a>
+                </div></li>
+            </ul>    
         </div>
         <p class="card-text"> <%= dataset.description %> </p>
         <%= button_to "Source", dataset.db_link , class: "btn btn-styled btn-sm btn-green" %>
     </div>
     <% if (dataset.dpsir_category == "Driver" && dataset.rendered) %>
-    <iframe style="width:100%;" height="700" src="<%= dataset.db_link %>" frameBorder="0"></iframe>
+        <iframe style="width:100%;" height="700" src="<%= dataset.db_link %>" frameBorder="0"></iframe>
     <%end%>
 </div>
 <br>
