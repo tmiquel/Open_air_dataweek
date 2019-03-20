@@ -39,6 +39,37 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
-
+  #admin's page title
   config.main_app_name = ["Open Air"]
+
+  #change fields label
+  
+  config.model 'Topic' do
+    list do
+      field :id
+      field :highlighted_category do
+        label "catégories"
+      end
+      field :title do
+        label "Titre"
+      end
+      field :short_description do
+        label "description courte"
+      end
+      field :created_at do
+        label "Crée le:"
+        date_format :default
+      end
+      field :updated_at do
+        label "Modifié le:"
+        date_format :default
+      end
+    end
+  end
+
+
+
+
+
+
 end
