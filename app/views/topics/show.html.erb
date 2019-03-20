@@ -178,45 +178,5 @@
         </div>
     </div>
 </section>
-<hr>
-<div class="col-6">
-    <h3 class="heading heading-6 strong-600 text-uppercase mb-4">Autres articles</h3>
-</div>
-<div class="card-deck">
-    <% @related_topics.each do |topic| %>
-    <div class="col-lg-4 mb-5">
-        <div class="card z-depth-2-top h-auto">
-            <div class="card-image">
-                <div class="view view-first">
-                    <a href="/topics/<%=topic.id%>">
-                        <%= image_tag topic.main_picture.variant(resize: "1000x760!") %>
-                    </a>
-                </div>
-            </div>
-            <div class="card-body h-25">
-                <h3 class="heading heading-5 strong-600 mb-0">
-                <a href="/topics/<%=topic.id%>">
-                <%=topic.title%></a>
-                </h3>
-            </div>
-            <div class="card-footer">
-                <div class="row">
-                    <div class="col">
-                        <div class="block-author">
-                            <div class="author-info">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col text-right">
-                    <ul class="inline-links inline-links--style-2">
-                        <li>
-                            Temps de lecture: <%= Random.rand(5..30) %> min
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-    <% end %>
-</div>
+
+<%= render partial: "other_articles", locals: {related_topics: @related_topics} %>
