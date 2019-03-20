@@ -12,6 +12,11 @@ models_array = [User, Topic, Dataset]
 # Sets the locale to "France":
 Faker::Config.locale = 'fr'
 
+puts
+puts "*"*50
+puts "Open Air Seed"
+puts "*"*50
+puts
 puts "Deleting Database for the following models: #{models_array.join(' ')}."
 puts '-' * 50
 puts
@@ -118,7 +123,7 @@ Pour Marseille, par exemple, cette pollution maritime représente 5 à 10 pource
           model.create(
             topic: Topic.first,
             title: 'Synthèse des drivers économiques',
-            db_link: 'https://trouver.datasud.fr/dataset/indicateur-de-contexte-du-tableau-de-bord-regional-du-developpement-durable/resource/42bceea5-a110-47e2-baed-b0b4499f9bf2',
+            db_link: 'https://trouver.datasud.fr/dataset/indicateur-de-contexte-du-tableau-de-bord-regional-du-developpement-durable/resource/42bceea5-a110-47e2-baed-b0b4499f9bf2/view/fb69d6f0-2cae-46aa-9db7-dbf887bf7d29',
             dpsir_category: 'Driver',
             description: 'Liste des 8 indicateurs de contexte ( un par feuillet du tableur) :
 Tableau 1 : Population totale
@@ -136,22 +141,22 @@ Tableau 8 : Part des superficies en sites « Natura 2000 »',
             model.create(
             topic: Topic.first,
             title: 'Activité maritime',
-            db_link: 'https://trouver.datasud.fr/dataset/les-lignes-maritimes-regulieres-touchant-le-port-de-marseille-fos/resource/57223ded-43ca-493c-8831-378aace9a8ef',
+            db_link: 'https://trouver.datasud.fr/dataset/les-lignes-maritimes-regulieres-touchant-le-port-de-marseille-fos/resource/57223ded-43ca-493c-8831-378aace9a8ef/view/20052ead-ee6c-4c31-a159-9dff67bdf7e4',
             dpsir_category: 'Driver',
             description: '55 services maritimes réguliers relient le Port de Marseille-Fos à plus de 500 autres ports et desservent près de 160 pays dans le monde. ',
             rendered: false,
             file_type: 'pdf')
 
+
            model.create(
             topic: Topic.first,
             title: "Emissions de polluants des EPCI (Intercommunalités) tous secteurs d'activité confondus dans la région Sud",
-            db_link: 'https://trouver.datasud.fr/dataset/emissions-de-polluants-atmospheriques-tous-secteurs-dactivite-confondus-des-epci-de-la-region-sud/resource/54515d61-8274-40a4-93d2-6b4e64387307',
+            db_link: "https://trouver.datasud.fr/dataset/emissions-de-polluants-atmospheriques-tous-secteurs-dactivite-confondus-des-epci-de-la-region-sud/resource/54515d61-8274-40a4-93d2-6b4e64387307/view/9f6b117c-badf-4d0e-a11a-206122277194",
             dpsir_category: 'Pressure',
             description: "Estimation des émissions annuelles totales des principaux polluants atmosphériques (SO2 - NOx équivalent NO2 - particules en suspension PM10 - particules en suspension PM2.5 - benzène C6H6 - Composés Organiques Volatils Non Méthaniques COVNM - Ammoniac NH3 - monoxyde de carbone CO - As - Cd - Ni - Pb – BaP sur la région Sud pour l'année 2016. Toutes les données fournies sont kg. Le nombre de décimales varie en fonction du polluant.",
             rendered: true,
             file_type: 'xls'
             )
-  
 
             #kind: qml, do not render...
             model.create(
