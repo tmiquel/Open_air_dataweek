@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/Nic0b/rails_admin_theme.git
-  revision: d8f188499ed24b4b39dbbb611e63ff3325a78c93
+  revision: 52c00c1f7a6edcdc0c4d35c1ca46b3d07525f771
   specs:
     rails_admin_rollincode (1.2.1)
       rails (>= 4.0, < 6)
