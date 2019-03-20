@@ -91,3 +91,5 @@ gem 'rails_admin_rollincode', '~> 1.0', git:'https://github.com/Nic0b/rails_admi
 
 #https://stackoverflow.com/questions/23727468/error-with-active-record-translations
 gem 'rails-i18n', '~> 5.1'
+
+gem 'leaflet-rails'

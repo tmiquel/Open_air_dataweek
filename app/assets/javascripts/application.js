@@ -58,3 +58,5 @@
 //= require deso-slide/js/jquery.desoslide.min
 
 //= require boomerang.min
+
+//= require leaflet
