@@ -10,6 +10,12 @@ class TopicsController < ApplicationController
         3.times do
             @related_topics << Topic.all.sample
         end
+        @driver_datasets, 
+        @pressure_datasets, 
+        @state_datasets, 
+        @impact_datasets, 
+        @response_datasets  = @topic.get_datasets_by_categories
+
     end
 
     def create

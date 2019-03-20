@@ -21,6 +21,13 @@ class Topic < ApplicationRecord
     errors.add(:main_picture, "is not present") unless self.main_picture.attached?
   end
 
-
+  def get_datasets_by_categories
+    driver_datasets = self.datasets.select{|dataset| dataset.dpsir_category == "Driver"}
+    pressure_datasets = self.datasets.select{|dataset| dataset.dpsir_category == "Pressure"}
+    state_datasets = self.datasets.select{|dataset| dataset.dpsir_category == "State"}
+    impact_datasets = self.datasets.select{|dataset| dataset.dpsir_category == "Impact"}
+    response_datasets = self.datasets.select{|dataset| dataset.dpsir_category == "Response"}
+    [driver_datasets, pressure_datasets, state_datasets, impact_datasets, response_datasets]
+  end
 
 end
