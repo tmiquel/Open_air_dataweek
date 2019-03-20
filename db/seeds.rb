@@ -8,7 +8,7 @@
 # frozen_string_literal: true
 
 Rails.application.eager_load!
-models_array = [User, Topic, Dataset]
+models_array = [User, Topic, Dataset, DatasetCollection]
 # Sets the locale to "France":
 Faker::Config.locale = 'fr'
 
@@ -36,7 +36,7 @@ puts "Database generation for #{models_array.join(' ')}"
 puts '-' * 50
 puts
 
-models_items_count = Hash[[['User', 5], ['Topic', 9], ['Dataset', 15]]]
+models_items_count = Hash[[['User', 5], ['Topic', 9], ['Dataset', 15], ['DatasetCollection', 12]]]
 topics_pics_paths_array = Rails.env.production? ? Dir.glob(Rails.root.join("public", "assets", "air-quality", "*.jpg")) :
  Dir.glob(Rails.root.join("app", "assets", "images", "air-quality", "*.jpg")) 
 
@@ -64,9 +64,6 @@ models_array.each do |model|
       model.create(first_name: Faker::Name.first_name,
                    last_name: Faker::Name.last_name,
                    email: email,
-                   address: Faker::Address.street_address + " " +
-                    Faker::Address.zip_code + " " +
-                     Faker::Address.city,
                    password: password,
                    password_confirmation: password)
 
@@ -89,7 +86,7 @@ models_array.each do |model|
                         state_section_intro: topic_state_text, 
                         impact_section_title: 'Impacts', 
                         impact_section_intro: topic_impact_text, 
-                        response_section_title:'Réglementations',
+                        response_section_title: 'Réglementations',
                         response_section_intro: topic_response_text)
           my_topic.main_picture.attach(io: File.open(topics_pics_paths_array.pop), filename: ('picture ' + my_topic.title.to_s + '.jpg'))
         else
@@ -115,6 +112,12 @@ Pour Marseille, par exemple, cette pollution maritime représente 5 à 10 pource
         my_topic.save
         topic_count +=  1
       end
+		when 'DatasetCollection'
+			while true
+      	dataset_collection = model.new(user: User.all.sample, dataset: Dataset.all.sample)
+				break if dataset_collection.save
+			end
+
     when 'Dataset'
       if Dataset.all.size  > 7  #once we have created datasets linked to Topic.first - Maritime pollution
         FactoryBot.create(:dataset) if Dataset.all.size < models_items_count[model.name]
