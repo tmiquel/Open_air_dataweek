@@ -15,7 +15,7 @@
                 <div class="block block-post">
                     <div class="container-fluid">
                         <div class="text-center">
-                        <%= image_tag @topic.main_picture, class: "img-responsive rounded" %>
+                            <%= image_tag @topic.main_picture, class: "img-responsive rounded" %>
                         </div>
                     </div>
                     <div class="block-body block-post-body">
@@ -24,102 +24,115 @@
                         </p>
                     </div>
                     <br><br>
-                    <div id="driver_section" class="section-title section-title--style-1 text-center mb-4">
-                        <h3 class="section-title-inner heading-3 strong-400">
+                    <div id="driver_section" class="section-title section-title--style-1 text-center mb-4 ">
+                        <h3 class="section-title-inner heading-3 strong-400 ">
                         <span>
                         <%=@topic.driver_section_title%> </span>
                         </h3>
                         <span class="section-title-delimiter clearfix"></span>
                     </div>
+                    <p class="text-justify">
+                        <%=@topic.driver_section_intro%>
+                    </p>
                     <div class="block-body block-post-body">
-                        <p class="text-justify">
-                            <%=@topic.driver_section_intro%>
-                        </p>
+                        <%= render partial: "dataset", collection: @driver_datasets  %>
                     </div>
-                    <br>
-                    <div class="container-fluid">
-                        <div class="text-center">
-                        <%= image_tag @topic.main_picture, class: "img-responsive rounded" %>
-                        </div>
-                    </div>
-                    <br><br>
-                    <div id="pressure_section" class="section-title section-title--style-1 text-center mb-4">
-                        <h3 class="section-title-inner heading-3 strong-400">
-                        <span>
-                        <%=@topic.pressure_section_title%> </span>
-                        </h3>
-                        <span class="section-title-delimiter clearfix"></span>
-                    </div>
-                    <div class="block-body block-post-body">
-                        <p class="text-justify">
-                            <%=@topic.pressure_section_intro%>
-                        </p>
-                    </div>
-                    <br>
-                    <div class="container-fluid">
-                        <div class="text-center">
-                        <%= image_tag @topic.main_picture, class: "img-responsive rounded" %>
-                        </div>
-                    </div>
-                    <br><br>
-                    <div id="state_section" class="section-title section-title--style-1 text-center mb-4">
-                        <h3 class="section-title-inner heading-3 strong-400">
-                        <span>
-                        <%=@topic.state_section_title%> </span>
-                        </h3>
-                        <span class="section-title-delimiter clearfix"></span>
-                    </div>
-                    <div class="block-body block-post-body">
-                        <p class="text-justify">
-                            <%=@topic.state_section_intro%>
-                        </p>
-                    </div>
-                    <br>
-                    <div class="container-fluid">
-                        <div class="text-center">
-                        <%= image_tag @topic.main_picture, class: "img-responsive rounded" %>
-                        </div>
-                    </div>
-                    <br><br>
-                    <div id="impact_section" class="section-title section-title--style-1 text-center mb-4">
-                        <h3 class="section-title-inner heading-3 strong-400">
-                        <span>
-                        <%=@topic.impact_section_title%> </span>
-                        </h3>
-                        <span class="section-title-delimiter clearfix"></span>
-                    </div>
-                    <div class="block-body block-post-body">
-                        <p class="text-justify">
-                            <%=@topic.impact_section_intro%>
-                        </p>
-                    </div>
-                    <br>
-                    <div class="container-fluid">
-                        <div class="text-center">
-                        <%= image_tag @topic.main_picture, class: "img-responsive rounded" %>
-                        </div>
-                    </div>
-                    <br><br>
-                    <div id="response_section" class="section-title section-title--style-1 text-center mb-4">
-                        <h3 class="section-title-inner heading-3 strong-400">
-                        <span>
-                        <%=@topic.response_section_title%> </span>
-                        </h3>
-                        <span class="section-title-delimiter clearfix"></span>
-                    </div>
-                    <div class="block-body block-post-body">
-                        <p class="text-justify">
-                            <%=@topic.response_section_intro%>
-                        </p>
-                    </div>
-                    <br>
-                    <div class="container-fluid">
-                        <div class="text-center">
-                        <%= image_tag @topic.main_picture, class: "img-responsive rounded" %>
-                        </div>
-                    </div>
-                    <br>
                 </div>
+                <br>
+                <div class="container-fluid">
+                    <div class="text-center">
+                        <%= image_tag @topic.main_picture, class: "img-responsive rounded" %>
+                    </div>
+                </div>
+                <br><br>
+                <div id="pressure_section" class="section-title section-title--style-1 text-center mb-4 ">
+                    <h3 class="section-title-inner heading-3 strong-400">
+                    <span>
+                    <%=@topic.pressure_section_title%> </span>
+                    </h3>
+                    <span class="section-title-delimiter clearfix"></span>
+                </div>
+                <div class="block-body block-post-body">
+                    <p class="text-justify">
+                        <%=@topic.pressure_section_intro%>
+                    </p>
+                    <div class="block-body block-post-body">
+                        <%= render partial: "dataset", collection: @pressure_datasets  %>
+                    </div>
+                </div>
+                <br>
+                <div class="container-fluid">
+                    <div class="text-center">
+                        <%= image_tag @topic.main_picture, class: "img-responsive rounded" %>
+                    </div>
+                </div>
+                <br><br>
+                <div id="state_section" class="section-title section-title--style-1 text-center mb-4 ">
+                    <h3 class="section-title-inner heading-3 strong-400">
+                    <span>
+                    <%=@topic.state_section_title%> </span>
+                    </h3>
+                    <span class="section-title-delimiter clearfix"></span>
+                </div>
+                <div class="block-body block-post-body">
+                    <p class="text-justify">
+                        <%=@topic.state_section_intro%>
+                    </p>
+                    <div class="block-body block-post-body">
+                        <%= render partial: "dataset", collection: @state_datasets  %>
+                    </div>
+                </div>
+                <br>
+                <div class="container-fluid">
+                    <div class="text-center">
+                        <%= image_tag @topic.main_picture, class: "img-responsive rounded" %>
+                    </div>
+                </div>
+                <br><br>
+                <div id="impact_section" class="section-title section-title--style-1 text-center mb-4 ">
+                    <h3 class="section-title-inner heading-3 strong-400">
+                    <span>
+                    <%=@topic.impact_section_title%> </span>
+                    </h3>
+                    <span class="section-title-delimiter clearfix"></span>
+                </div>
+                <div class="block-body block-post-body">
+                    <p class="text-justify">
+                        <%=@topic.impact_section_intro%>
+                    </p>
+                    <div class="block-body block-post-body">
+                        <%= render partial: "dataset", collection: @impact_datasets  %>
+                    </div>
+                </div>
+                <br>
+                <div class="container-fluid">
+                    <div class="text-center">
+                        <%= image_tag @topic.main_picture, class: "img-responsive rounded" %>
+                    </div>
+                </div>
+                <br><br>
+                <div id="response_section" class="section-title section-title--style-1 text-center mb-4 ">
+                    <h3 class="section-title-inner heading-3 strong-400">
+                    <span>
+                    <%=@topic.response_section_title%> </span>
+                    </h3>
+                    <span class="section-title-delimiter clearfix"></span>
+                </div>
+                <div class="block-body block-post-body">
+                    <p class="text-justify">
+                        <%=@topic.response_section_intro%>
+                    </p>
+                    <div class="block-body block-post-body">
+                        <%= render partial: "dataset", collection: @response_datasets  %>
+                    </div>
+                </div>
+                <br>
+                <div class="container-fluid">
+                    <div class="text-center">
+                        <%= image_tag @topic.main_picture, class: "img-responsive rounded" %>
+                    </div>
+                </div>
+                <br>
             </div>
             <div class="col-lg-3">
                 <div class="sidebar--sticky" data-stick-in-parent="true" id="scroll_data_target">

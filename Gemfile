@@ -89,3 +89,5 @@ gem 'high_voltage', '~> 3.1'
 gem 'rails_admin', '~> 1.3'
 gem 'rails_admin_rollincode', '~> 1.0', git:'https://github.com/Nic0b/rails_admin_theme.git'
 
+#https://stackoverflow.com/questions/23727468/error-with-active-record-translations
+gem 'rails-i18n', '~> 5.1'
