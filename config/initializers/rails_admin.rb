@@ -47,9 +47,6 @@ RailsAdmin.config do |config|
     config.model 'Topic' do
       list do
         field :id
-        field :highlighted_category do
-          label "catégories"
-        end
         field :title do
           label "Titre"
         end
@@ -68,9 +65,6 @@ RailsAdmin.config do |config|
       #change fiels in edit page
       
         edit do
-          field :highlighted_category do
-            label "catégories"
-          end
           field :title do
             label "Titre"
             help "Obligatoire - Titre de l'article" 
