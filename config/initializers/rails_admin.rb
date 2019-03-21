@@ -42,7 +42,7 @@ RailsAdmin.config do |config|
   #admin's page title
   config.main_app_name = ["Open Air"]
 
-  #change fields label
+  #change fields label for Articles
   
     config.model 'Topic' do
       label "Articles"
@@ -66,7 +66,7 @@ RailsAdmin.config do |config|
           date_format :default
         end
       end
-      #change fiels in edit page
+      #change fiels in Article's edit page
       
         edit do
           field :highlighted_category do
@@ -120,12 +120,56 @@ RailsAdmin.config do |config|
           end
           field :datasets
         end
-
-
-
-      
     end
 
+    #change fields label for Datasets
+  
+    config.model 'Dataset' do
+      list do
+        field :id
+        field :created_at do
+          label "Crée le:"
+          date_format :default
+        end
+        field :updated_at do
+          label "Modifié le:"
+          date_format :default
+        end
+        field :topic do
+          label "Articles"
+        end
+        field :title do
+          label "Titre"
+        end
+        field :db_link do
+          label "Lien BDD"
+        end
+      end
+
+      #change fiels in dataset's edit page
+      
+      edit do
+        field :topic do
+          label "Article"
+        end
+        field :title do
+          label "Titre"
+          help "Obligatoire - Titre de l'article" 
+        end
+        field :db_link do
+          label "Lien BDD"
+          help "Obligatoire - Lien vers la base de donnée, ex:"
+        end
+        field :dpsir_category do
+          label "Catégorie DPSIR"
+          help "Obligatoire - Driver, Pressure, State, Impact ou Response"
+        end
+        field :description do
+          help "Obligatoire"
+        end
+        field :dataset_collections
+      end
+    end
 
 
 
