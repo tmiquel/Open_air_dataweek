@@ -17,7 +17,11 @@ Dotenv.load
 	  end
 	  return client
 	end
+	def tweet_text
+		atmosud = "marseille" + AtmoSud.new.marseille_air_indice
+
+	end
 	def tweet
-	  login_twitter.update('test de mon api')
+	  login_twitter.update(tweet_text)
 	end
 end
