@@ -18,7 +18,7 @@ Dotenv.load
 	  return client
 	end
 	def tweet_text
-		atmosud = "marseille" + AtmoSud.new.marseille_air_indice
+		text = "Un article vient d'être publié: " + Topic.last.title
 
 	end
 	def tweet

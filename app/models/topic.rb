@@ -1,5 +1,5 @@
 class Topic < ApplicationRecord
-
+  after_create :tweet_new_topic
 	has_one_attached :main_picture
 	has_many :datasets
 
@@ -26,6 +26,10 @@ class Topic < ApplicationRecord
     impact_datasets = self.datasets.select{|dataset| dataset.dpsir_category == "Impact"}
     response_datasets = self.datasets.select{|dataset| dataset.dpsir_category == "Response"}
     [driver_datasets, pressure_datasets, state_datasets, impact_datasets, response_datasets]
+  end
+
+  def tweet_new_topic
+    Tweet.new.tweet
   end
 
 end
