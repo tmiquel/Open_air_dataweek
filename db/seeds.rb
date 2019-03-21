@@ -56,17 +56,20 @@ models_array.each do |model|
     #                zip_code: Faker::Number.number(5).to_s)
 
     when 'User'
-      password = Faker::Internet.password(13, 25, true, true)
-      email = Faker::Internet.unique.email
+			if (User.all.size == models_items_count[model.name] - 1)
+				User.create(first_name: "Had", last_name: "Minh", email: "admin@admin.com", password: "AdminAdmin", is_admin: true)
+			else
+				password = Faker::Internet.password(13, 25, true, true)
+				email = Faker::Internet.unique.email
 
-      puts "The password of User #{email} is #{password}"
+				puts "The password of User #{email} is #{password}"
 
-      model.create(first_name: Faker::Name.first_name,
-                   last_name: Faker::Name.last_name,
-                   email: email,
-                   password: password,
-                   password_confirmation: password)
-
+				model.create(first_name: Faker::Name.first_name,
+										 last_name: Faker::Name.last_name,
+										 email: email,
+										 password: password,
+										 password_confirmation: password)
+			end
     when 'Topic'
       if topics_pics_paths_array.size == 0
         puts
@@ -252,9 +255,5 @@ models_array.each do |model|
   puts
   tp model.last(3)
   puts
-
-	puts "create admin user"
-	User.create(first_name: "Had", last_name: "Minh", email: "admin@admin.com", password: "AdminAdmin")
-	puts "done."
 
 end

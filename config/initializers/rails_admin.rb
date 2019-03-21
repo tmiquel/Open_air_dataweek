@@ -7,7 +7,6 @@ RailsAdmin.config do |config|
     config.authorize_with do
     redirect_to main_app.root_path unless (current_user && current_user.is_admin?)
   end
-  
 
   ## == Cancan ==
   # config.authorize_with :cancan
@@ -42,27 +41,32 @@ RailsAdmin.config do |config|
   #admin's page title
   config.main_app_name = ["Open Air"]
 
-  #--------------------ARTICLES--------------------------#
-  #change fields label for Articles
+
+    config.model 'DatasetCollection' do
+      visible false
+    end
+#--------------------------TOPICS--------------------#
+
+  #change fields label 
   
     config.model 'Topic' do
       label "Articles"
-      list do
-        field :id
-        field :title do
-          label "Titre"
-        end
-        field :short_description do
-          label "description courte"
-        end
-        field :created_at do
-          label "Crée le:"
-          date_format :default
-        end
-        field :updated_at do
-          label "Modifié le:"
-          date_format :default
-        end
+        list do
+          field :id
+          field :title do
+            label "Titre"
+          end
+          field :short_description do
+            label "description courte"
+          end
+          field :created_at do
+            label "Crée le:"
+            date_format :default
+          end
+          field :updated_at do
+            label "Modifié le:"
+            date_format :default
+          end
       end
       #change fiels in Article's edit page
       
@@ -193,36 +197,33 @@ RailsAdmin.config do |config|
         end
         field :dataset_collections
       end
-      #Chage fields label for users edit page
-    edit do
-      field :first_name do
-        label "Prènom"
-        help "Obligatoire."
+      
+      edit do
+        field :first_name do
+          label "Prènom"
+          help "Obligatoire."
+        end
+        field :last_name do
+          label "Nom"
+          help "Obligatoire."
+        end
+        field :email do
+          label "Courriel"
+          help "Obligatoire."
+        end
+        field :encrypted_password do
+          label "Mot de passe"
+          help "Obligatoire - 6 caractères minimum."
+        end
+        field :password_confirmation do
+          label "Confirmation du mot de passe"
+          help "Obligatoire."
+        end
+        field :is_admin
+        field :dataset_collections
       end
-      field :last_name do
-        label "Nom"
-        help "Obligatoire."
-      end
-      field :email do
-        label "Courriel"
-        help "Obligatoire."
-      end
-      field :encrypted_password do
-        label "Mot de passe"
-        help "Obligatoire - 6 caractères minimum."
-      end
-      field :password_confirmation do
-        label "Confirmation du mot de passe"
-        help "Obligatoire."
-      end
-      field :is_admin
-      field :dataset_collections
     end
-    
-    
-  end
-
-
-
-
 end
+
+
+
