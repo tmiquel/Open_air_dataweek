@@ -36,17 +36,21 @@
                         <%=@topic.driver_section_intro%>
                     </p>
                     <br><br>
+                    <% if @driver_datasets.size == 1 %>
+                        <p class="text-justify mn-2">
+                            Voici la base de donnée disponible en ligne sur ce sujet:
+                        <p>
+                    <% elsif @driver_datasets.size != 1 %>
+                        <p class="text-justify mb-2">
+                            Voici les principales bases de données disponibles en ligne sur ce sujet:
+                        <p>
+                    <% else @driver_datasets.size == 0 %>
+                    <% end %>
                     <div class="block-body block-post-body">
                         <%= render partial: "dataset", collection: @driver_datasets  %>
                     </div>
                 </div>
                 <br><br><br>
-                <div class="container-fluid">
-                    <div class="text-center">
-                        <%= image_tag @topic.main_picture, class: "w-100 img-responsive rounded" %>
-                    </div>
-                </div>
-                <br><br>
                 <div id="pressure_section" class="section-title section-title--style-1 text-center mb-4 ">
                     <h3 class="section-title-inner heading-3 strong-400">
                     <span>
@@ -58,18 +62,22 @@
                     <p class="text-justify">
                         <%=@topic.pressure_section_intro%>
                     </p>
-                <br><br>
+                    <br><br>
+                    <% if @pressure_datasets.size == 1 %>
+                    <p class="text-justify mb-2">
+                        Voici la base de donnée disponible en ligne sur ce sujet:
+                    <p>
+                    <% elsif @pressure_datasets.size != 1 %>
+                    <p class="text-justify mb-2">
+                        Voici les principales bases de données disponibles en ligne sur ce sujet:
+                    <p>
+                    <% else @pressure_datasets.size == 0 %>
+                    <% end %>
                     <div class="block-body block-post-body">
                         <%= render partial: "dataset", collection: @pressure_datasets  %>
                     </div>
                 </div>
                 <br><br><br>
-                <div class="container-fluid">
-                    <div class="text-center">
-                        <%= image_tag @topic.main_picture, class: "w-100 img-responsive rounded" %>
-                    </div>
-                </div>
-                <br><br>
                 <div id="state_section" class="section-title section-title--style-1 text-center mb-4 ">
                     <h3 class="section-title-inner heading-3 strong-400">
                     <span>
@@ -82,17 +90,21 @@
                         <%=@topic.state_section_intro%>
                     </p>
                     <br><br>
+                    <% if @state_datasets.size == 1 %>
+                        <p class="text-justify mn-2">
+                            Voici la base de donnée disponible en ligne sur ce sujet:
+                        <p>
+                    <% elsif @state_datasets.size != 1 %>
+                        <p class="text-justify mb-2">
+                            Voici les principales bases de données disponibles en ligne sur ce sujet:
+                        <p>
+                    <% else @state_datasets.size == 0 %>
+                    <% end %>
                     <div class="block-body block-post-body">
                         <%= render partial: "dataset", collection: @state_datasets  %>
                     </div>
                 </div>
                 <br><br><br>
-                <div class="container-fluid">
-                    <div class="text-center">
-                        <%= image_tag @topic.main_picture, class: "w-100 img-responsive rounded" %>
-                    </div>
-                </div>
-                <br><br>
                 <div id="impact_section" class="section-title section-title--style-1 text-center mb-4 ">
                     <h3 class="section-title-inner heading-3 strong-400">
                     <span>
@@ -105,17 +117,21 @@
                         <%=@topic.impact_section_intro%>
                     </p>
                     <br><br>
+                    <% if @impact_datasets.size == 1 %>
+                        <p class="text-justify mb-2">
+                            Voici la base de donnée disponible en ligne sur ce sujet:
+                        <p>
+                    <% elsif @impact_datasets.size != 1 %>
+                        <p class="text-justify mb-2">
+                            Voici les principales bases de données disponibles en ligne sur ce sujet:
+                        <p>
+                    <% else @impact_datasets.size == 0 %>
+                    <% end %>
                     <div class="block-body block-post-body">
                         <%= render partial: "dataset", collection: @impact_datasets  %>
                     </div>
                 </div>
                 <br><br><br>
-                <div class="container-fluid">
-                    <div class="text-center">
-                        <%= image_tag @topic.main_picture, class: "w-100 img-responsive rounded" %>
-                    </div>
-                </div>
-                <br><br>
                 <div id="response_section" class="section-title section-title--style-1 text-center mb-4 ">
                     <h3 class="section-title-inner heading-3 strong-400">
                     <span>
@@ -128,17 +144,21 @@
                         <%=@topic.response_section_intro%>
                     </p>
                     <br><br>
+                    <% if @response_datasets.size == 1 %>
+                        <p class="text-justify mb-2">
+                            Voici la base de donnée disponible en ligne sur ce sujet:
+                        <p>
+                    <% elsif @response_datasets.size != 1 %>
+                        <p class="text-justify mb-2">
+                            Voici les principales bases de données disponibles en ligne sur ce sujet:
+                        <p>
+                    <% else @response_datasets.size == 0 %>
+                    <% end %>
                     <div class="block-body block-post-body">
                         <%= render partial: "dataset", collection: @response_datasets  %>
                     </div>
                 </div>
                 <br><br><br>
-                <div class="container-fluid">
-                    <div class="text-center">
-                        <%= image_tag @topic.main_picture, class: "w-100 img-responsive rounded" %>
-                    </div>
-                </div>
-                <br><br>
             </div>
             <div class="col-lg-3">
                 <div class="sidebar--sticky" data-stick-in-parent="true" id="scroll_data_target">
