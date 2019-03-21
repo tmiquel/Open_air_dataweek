@@ -1,0 +1,30 @@
+<div id="<%=category_section%>" class="section-title section-title--style-1 text-center mb-4 ">
+    <h3 class="section-title-inner heading-3 strong-400">
+    <span>
+        <%=category_section_title%>
+    </span>
+    </h3>
+    <span class="section-title-delimiter clearfix"></span>
+</div>
+<div class="block-body block-post-body">
+    <p class="text-justify">
+        <%=category_section_intro%>
+    </p>
+    <br>
+    <% if category_datasets.size == 1 %>
+    <p class="text-justify mb-2">
+        Voici la base de donnée disponible en ligne sur ce sujet :
+    </p>
+    <br>
+    <% elsif category_datasets.size > 1 %>
+    <p class="text-justify mb-2">
+        Voici les principales bases de données disponibles en ligne sur ce sujet :
+    </p>
+    <br>
+    <% else category_datasets.size == 0 %>
+    <% end %>
+    <div class="block-body block-post-body">
+        <%= render partial: "dataset", collection: category_datasets  %>
+    </div>
+</div>
+<br><br><br>

@@ -12,7 +12,7 @@
         </div>
         <br><br><br><br>
         <div class="row">
-            <div class="col-lg-9">
+            <div class="col-sm-9">
                 <div class="block block-post">
                     <div class="container-fluid">
                         <div class="text-center">
@@ -25,186 +25,17 @@
                         </p>
                     </div>
                     <br><br><br>
-                    <div id="driver_section" class="section-title section-title--style-1 text-center mb-4 ">
-                        <h3 class="section-title-inner heading-3 strong-400 ">
-                            <span>
-                                <%=@topic.driver_section_title%>
-                            </span>
-                        </h3>
-                        <span class="section-title-delimiter clearfix"></span>
-                    </div>
-                    <p class="text-justify">
-                        <%=@topic.driver_section_intro%>
-                    </p>
-                    <br><br>
-                    <% if @driver_datasets.size == 1 %>
-                        <p class="text-justify mn-2">
-                            Voici la base de donnée disponible en ligne sur ce sujet:
-                        <p>
-                    <% elsif @driver_datasets.size != 1 %>
-                        <p class="text-justify mb-2">
-                            Voici les principales bases de données disponibles en ligne sur ce sujet:
-                        <p>
-                    <% else @driver_datasets.size == 0 %>
-                    <% end %>
-                    <div class="block-body block-post-body">
-                        <%= render partial: "dataset", collection: @driver_datasets  %>
-                    </div>
+                    <%= render partial: "dpsir_category_section", locals: {category_section: 'driver_section', category_section_title: @topic.driver_section_title, category_section_intro: @topic.driver_section_intro, category_datasets: @driver_datasets } %>
+                    <%= render partial: "dpsir_category_section", locals: {category_section: 'pressure_section', category_section_title: @topic.pressure_section_title, category_section_intro: @topic.pressure_section_intro, category_datasets: @pressure_datasets } %>
+                    <%= render partial: "dpsir_category_section", locals: {category_section: 'state_section', category_section_title: @topic.state_section_title, category_section_intro: @topic.state_section_intro, category_datasets: @state_datasets } %>
+                    <%= render partial: "dpsir_category_section", locals: {category_section: 'impact_section', category_section_title: @topic.impact_section_title, category_section_intro: @topic.impact_section_intro, category_datasets: @impact_datasets } %>
+                    <%= render partial: "dpsir_category_section", locals: {category_section: 'response_section', category_section_title: @topic.response_section_title, category_section_intro: @topic.response_section_intro, category_datasets: @response_datasets } %>
+                    
                 </div>
-                <br><br><br>
-                <div id="pressure_section" class="section-title section-title--style-1 text-center mb-4 ">
-                    <h3 class="section-title-inner heading-3 strong-400">
-                        <span>
-                            <%=@topic.pressure_section_title%> 
-                        </span>
-                    </h3>
-                    <span class="section-title-delimiter clearfix"></span>
-                </div>
-                <div class="block-body block-post-body">
-                    <p class="text-justify">
-                        <%=@topic.pressure_section_intro%>
-                    </p>
-                    <br><br>
-                    <% if @pressure_datasets.size == 1 %>
-                        <p class="text-justify mb-2">
-                            Voici la base de donnée disponible en ligne sur ce sujet:
-                        <p>
-                    <% elsif @pressure_datasets.size != 1 %>
-                        <p class="text-justify mb-2">
-                            Voici les principales bases de données disponibles en ligne sur ce sujet:
-                        <p>
-                    <% else @pressure_datasets.size == 0 %>
-                    <% end %>
-                    <div class="block-body block-post-body">
-                        <%= render partial: "dataset", collection: @pressure_datasets  %>
-                    </div>
-                </div>
-                <br><br><br>
-                <div id="state_section" class="section-title section-title--style-1 text-center mb-4 ">
-                    <h3 class="section-title-inner heading-3 strong-400">
-                        <span>
-                            <%=@topic.state_section_title%>
-                        </span>
-                    </h3>
-                    <span class="section-title-delimiter clearfix"></span>
-                </div>
-                <div class="block-body block-post-body">
-                    <p class="text-justify">
-                        <%=@topic.state_section_intro%>
-                    </p>
-                    <br><br>
-                    <% if @state_datasets.size == 1 %>
-                        <p class="text-justify mn-2">
-                            Voici la base de donnée disponible en ligne sur ce sujet:
-                        <p>
-                    <% elsif @state_datasets.size != 1 %>
-                        <p class="text-justify mb-2">
-                            Voici les principales bases de données disponibles en ligne sur ce sujet:
-                        <p>
-                    <% else @state_datasets.size == 0 %>
-                    <% end %>
-                    <div class="block-body block-post-body">
-                        <%= render partial: "dataset", collection: @state_datasets  %>
-                    </div>
-                </div>
-                <br><br><br>
-                <div id="impact_section" class="section-title section-title--style-1 text-center mb-4 ">
-                    <h3 class="section-title-inner heading-3 strong-400">
-                        <span>
-                            <%=@topic.impact_section_title%> 
-                        </span>
-                    </h3>
-                    <span class="section-title-delimiter clearfix"></span>
-                </div>
-                <div class="block-body block-post-body">
-                    <p class="text-justify">
-                        <%=@topic.impact_section_intro%>
-                    </p>
-                    <br><br>
-                    <% if @impact_datasets.size == 1 %>
-                        <p class="text-justify mb-2">
-                            Voici la base de donnée disponible en ligne sur ce sujet:
-                        <p>
-                    <% elsif @impact_datasets.size != 1 %>
-                        <p class="text-justify mb-2">
-                            Voici les principales bases de données disponibles en ligne sur ce sujet:
-                        <p>
-                    <% else @impact_datasets.size == 0 %>
-                    <% end %>
-                    <div class="block-body block-post-body">
-                        <%= render partial: "dataset", collection: @impact_datasets  %>
-                    </div>
-                </div>
-                <br><br><br>
-                <div id="response_section" class="section-title section-title--style-1 text-center mb-4 ">
-                    <h3 class="section-title-inner heading-3 strong-400">
-                        <span>
-                            <%=@topic.response_section_title%> 
-                        </span>
-                    </h3>
-                    <span class="section-title-delimiter clearfix"></span>
-                </div>
-                <div class="block-body block-post-body">
-                    <p class="text-justify">
-                        <%=@topic.response_section_intro%>
-                    </p>
-                    <br><br>
-                    <% if @response_datasets.size == 1 %>
-                        <p class="text-justify mb-2">
-                            Voici la base de donnée disponible en ligne sur ce sujet:
-                        <p>
-                    <% elsif @response_datasets.size != 1 %>
-                        <p class="text-justify mb-2">
-                            Voici les principales bases de données disponibles en ligne sur ce sujet:
-                        <p>
-                    <% else @response_datasets.size == 0 %>
-                    <% end %>
-                    <div class="block-body block-post-body">
-                        <%= render partial: "dataset", collection: @response_datasets  %>
-                    </div>
-                </div>
-                <br><br><br>
             </div>
-            <div class="col-lg-3">
-                <div class="sidebar--sticky" data-stick-in-parent="true" id="scroll_data_target">
-                    <ul class="categories categories--style-3">
-                        <li>
-                            <a href="#driver_section" data-scroll-to="#driver_section" data-scroll-to-offset="20">
-                                <span class="category-name">
-                                    <%= @topic.driver_section_title %>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#pressure_section" data-scroll-to="#pressure_section" data-scroll-to-offset="20">
-                                <span class="category-name">
-                                    <%= @topic.pressure_section_title %>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#state_section" data-scroll-to="#state_section" data-scroll-to-offset="20">
-                                <span class="category-name">
-                                    <%= @topic.state_section_title %>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#impact_section" data-scroll-to="#impact_section" data-scroll-to-offset="20">
-                                <span class="category-name">
-                                    <%= @topic.impact_section_title %>
-                                </span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#response_section" data-scroll-to="#response_section" data-scroll-to-offset="20">
-                                <span class="category-name">
-                                    <%= @topic.response_section_title %>
-                                </span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+            <div class="col-sm-3">
+                <!-- SIDEBAR MENU -->
+                <%= render partial: "topic_sidebar_menu", locals: {topic: @topic} %>
             </div>
         </div>
     </div>
