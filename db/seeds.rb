@@ -8,7 +8,7 @@
 # frozen_string_literal: true
 
 Rails.application.eager_load!
-models_array = [User, Topic, Dataset]
+models_array = [User, Topic, Dataset, DatasetCollection]
 # Sets the locale to "France":
 Faker::Config.locale = 'fr'
 
@@ -36,7 +36,7 @@ puts "Database generation for #{models_array.join(' ')}"
 puts '-' * 50
 puts
 
-models_items_count = Hash[[['User', 5], ['Topic', 9], ['Dataset', 15]]]
+models_items_count = Hash[[['User', 5], ['Topic', 9], ['Dataset', 15], ['DatasetCollection', 12]]]
 topics_pics_paths_array = Rails.env.production? ? Dir.glob(Rails.root.join("public", "assets", "air-quality", "*.jpg")) :
  Dir.glob(Rails.root.join("app", "assets", "images", "air-quality", "*.jpg")) 
 
@@ -64,9 +64,6 @@ models_array.each do |model|
       model.create(first_name: Faker::Name.first_name,
                    last_name: Faker::Name.last_name,
                    email: email,
-                   address: Faker::Address.street_address + " " +
-                    Faker::Address.zip_code + " " +
-                     Faker::Address.city,
                    password: password,
                    password_confirmation: password)
 
@@ -80,7 +77,6 @@ models_array.each do |model|
         unless topic_count == 0        
           my_topic = model.new(title: Faker::Lorem.paragraph_by_chars(50, false),
                         short_description: Faker::Lorem.paragraph_by_chars(256, false),
-                        highlighted_category: 'State',
                         driver_section_title: 'Besoins socio-économiques', 
                         driver_section_intro: topic_driver_text,
                         pressure_section_title: 'Emissions',
@@ -89,7 +85,7 @@ models_array.each do |model|
                         state_section_intro: topic_state_text, 
                         impact_section_title: 'Impacts', 
                         impact_section_intro: topic_impact_text, 
-                        response_section_title:'Réglementations',
+                        response_section_title: 'Réglementations',
                         response_section_intro: topic_response_text)
           my_topic.main_picture.attach(io: File.open(topics_pics_paths_array.pop), filename: ('picture ' + my_topic.title.to_s + '.jpg'))
         else
@@ -97,7 +93,6 @@ models_array.each do |model|
           my_topic = model.new(title: "L'impact des zones portuaires sur la qualité de l'air",
                         short_description: "La pollution d’origine maritime s’intègre dans la pollution générale de la zone portuaire qui comprend aussi la pollution secondaire aux infrastructures, en particulier de transport routier nécessaire au port et la pollution propre à la ville, transport routier, chauffage, etc.
 Pour Marseille, par exemple, cette pollution maritime représente 5 à 10 pourcents de la pollution totale.",
-                        highlighted_category: 'State',
                         driver_section_title: "Fondements économiques du Port", 
                         driver_section_intro: 'Port généraliste et 1er port de France, le Port de Marseille traite tout type de marchandise : hydrocarbures et vracs liquides (pétrole, gaz et produits chimiques), marchandises diverses (conteneurs et autres conditionnements), vracs solides (minerais et céréales).',
                         pressure_section_title: 'Emissions de polluants',
@@ -115,6 +110,12 @@ Pour Marseille, par exemple, cette pollution maritime représente 5 à 10 pource
         my_topic.save
         topic_count +=  1
       end
+		when 'DatasetCollection'
+			while true
+      	dataset_collection = model.new(user: User.all.sample, dataset: Dataset.all.sample)
+				break if dataset_collection.save
+			end
+
     when 'Dataset'
       if Dataset.all.size  > 7  #once we have created datasets linked to Topic.first - Maritime pollution
         FactoryBot.create(:dataset) if Dataset.all.size < models_items_count[model.name]
@@ -251,17 +252,9 @@ models_array.each do |model|
   puts
   tp model.last(3)
   puts
+
+	puts "create admin user"
+	User.create(first_name: "Had", last_name: "Minh", email: "admin@admin.com", password: "AdminAdmin")
+	puts "done."
+
 end
-
-
-# 10.times do
-#   cart = FactoryBot.create(:cart)
-# end
-
-# 10.times do
-# 	while true
-#   	single_cart_pic = FactoryBot.build(:single_cart_pic)
-# 		break if single_cart_pic.save 
-# 	end
-# end
-

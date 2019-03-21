@@ -39,6 +39,89 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
-
+  #admin's page title
   config.main_app_name = ["Open Air"]
+
+  #change fields label
+  
+    config.model 'Topic' do
+      list do
+        field :id
+        field :title do
+          label "Titre"
+        end
+        field :short_description do
+          label "description courte"
+        end
+        field :created_at do
+          label "Crée le:"
+          date_format :default
+        end
+        field :updated_at do
+          label "Modifié le:"
+          date_format :default
+        end
+      end
+      #change fiels in edit page
+      
+        edit do
+          field :title do
+            label "Titre"
+            help "Obligatoire - Titre de l'article" 
+          end
+          field :short_description do
+            label "description courte"
+            help "Obligatoire - Une description qui s'affichera sur la page des articles"
+          end
+          field :driver_section_title do
+            label "Forces: titre"
+            help "Obligatoire - Titre pour 'Driver'"
+          end
+          field :driver_section_intro do
+            label "Forces: introduction"
+          end
+          field :pressure_section_title do
+            label "Pressions: titre"
+            help "Obligatoire - Titre pour 'Pressure'"
+          end
+          field :pressure_section_intro do
+            label "Pressions: introduction"
+          end
+          field :state_section_title do
+            label "État: titre"
+            help "Obligatoire - Titre pour 'State'"
+          end
+          field :state_section_intro do
+            label "État: introduction"
+          end
+          field :impact_section_title do
+            label "Impacts: titre"
+            help "Obligatoire - Titre pour 'Impact'"
+          end
+          field :impact_section_intro do
+            label "Impacts: introduction"
+          end
+          field :response_section_title do
+            label "Réponses: titre"
+            help "Obligatoire - Titre pour 'Response'"
+          end
+          field :response_section_intro do
+            label "Réponses: introduction"
+          end
+          field :main_picture do
+            label "Photo pricipale"
+          end
+          field :datasets
+        end
+
+
+
+      
+    end
+
+
+
+
+
+
 end
