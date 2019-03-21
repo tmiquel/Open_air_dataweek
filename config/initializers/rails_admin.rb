@@ -7,7 +7,6 @@ RailsAdmin.config do |config|
     config.authorize_with do
     redirect_to main_app.root_path unless (current_user && current_user.is_admin?)
   end
-  
 
   ## == Cancan ==
   # config.authorize_with :cancan
@@ -41,6 +40,12 @@ RailsAdmin.config do |config|
   end
   #admin's page title
   config.main_app_name = ["Open Air"]
+
+
+    config.model 'DatasetCollection' do
+      visible false
+    end
+
 
   #change fields label
   
@@ -113,15 +118,9 @@ RailsAdmin.config do |config|
           end
           field :datasets
         end
-
-
-
-      
-    end
-
-
-
-
-
+      end
 
 end
+
+
+   
