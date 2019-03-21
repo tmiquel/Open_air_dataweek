@@ -2,6 +2,7 @@ class TopicsController < ApplicationController
 
     def index
         @topics = Topic.with_attached_main_picture.all
+        @marseille_indice = AtmoSud.new.marseille_air_indice
     end
 
     def show
