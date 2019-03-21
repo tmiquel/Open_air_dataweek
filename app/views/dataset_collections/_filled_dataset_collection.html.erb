@@ -1,0 +1,35 @@
+
+				<table class="table table-sm table-hover">
+					<thead>
+						<tr>
+							<th>Titre</th>
+							<th>Source</th>
+							<th>Téléchargement</th>
+							<th>Supprimer</th>
+						</tr>
+					</thead>
+
+
+					<tbody>
+						<% @datasets.each do |dataset| %>
+						<tr>
+							<td>
+								<%= dataset.title %>
+							</td>
+							<td>
+								<span class="badge badge--2 mr-4">
+								<i class="bg-blue"></i><%= link_to "Source ", dataset.db_link, class: "text-dark" %>
+								</span>
+							</td>
+							<td>
+								<%= button_to "Download .gif", root_path, class: "btn btn-styled btn-round btn-md border border-dark" %>
+							</td>
+							<td>
+							 	<%= link_to user_dataset_collection_path(dataset: dataset), method: :delete, class: "text-right pl-4" do %>
+                                 <i class="ion-trash-a"></i>
+								<% end %>
+							</td>
+							</tr>
+						<% end %>
+					</tbody>
+				</table>
