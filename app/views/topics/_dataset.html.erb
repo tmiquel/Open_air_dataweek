@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-9">
                 <h4 class="card-title">
-                <%= dataset.title %>
+                    <%= dataset.title %>
                 </h4>
             </div>
             <ul class="list-inline">
@@ -13,7 +13,8 @@
 								<% if user_signed_in? %>
 									<li>
 										<div class='card-icon-actions text-right col-2 align-top'>
-												<%= link_to user_dataset_collection_path(current_user, :dataset => dataset), method: :post, class: "favorite active" do %><i class="fa fa-star"></i><% end %>
+												<% active_css = (@user_dataset_collection.include?(dataset) ? "active" : "") %>
+												<%= link_to user_dataset_collection_path(current_user, :dataset => dataset), method: :post, class: "favorite #{active_css}", :rel => 'tooltip', "title" => "Ajouter à ma librairie", "data-placement" => "top" do %><i class="fa fa-star"></i><% end %>
 										</div>
 									</li>
 								<% end %>
