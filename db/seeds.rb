@@ -146,7 +146,7 @@ Tableau 8 : Part des superficies en sites « Natura 2000 »',
             model.create(
             topic: Topic.first,
             title: 'Activité maritime',
-            db_link: 'https://trouver.datasud.fr/dataset/les-lignes-maritimes-regulieres-touchant-le-port-de-marseille-fos/resource/57223ded-43ca-493c-8831-378aace9a8ef/view/20052ead-ee6c-4c31-a159-9dff67bdf7e4',
+            db_link: 'https://trouver.datasud.fr/dataset/les-lignes-maritimes-regulieres-touchant-le-port-de-marseille-fos',
             dpsir_category: 'Driver',
             description: '55 services maritimes réguliers relient le Port de Marseille-Fos à plus de 500 autres ports et desservent près de 160 pays dans le monde. ',
             rendered: false,
