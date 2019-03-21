@@ -13,7 +13,6 @@
 //= require rails-ujs
 //= require jquery
 //= require activestorage
-//= require turbolinks
 //= require_tree .
 
 //= require jquery/jquery.min
@@ -57,3 +56,4 @@
 //= require deso-slide/js/jquery.desoslide.min
 
 //= require boomerang.min
+jQuery( function($) { $('a').tooltip(); } );
