@@ -42,6 +42,7 @@ RailsAdmin.config do |config|
   #admin's page title
   config.main_app_name = ["Open Air"]
 
+  #--------------------ARTICLES--------------------------#
   #change fields label for Articles
   
     config.model 'Topic' do
@@ -115,7 +116,7 @@ RailsAdmin.config do |config|
           field :datasets
         end
     end
-
+#-------------------------------DATASETS---------------------------#
     #change fields label for Datasets
   
     config.model 'Dataset' do
@@ -164,7 +165,62 @@ RailsAdmin.config do |config|
         field :dataset_collections
       end
     end
-
+    #-----------------------------USERS---------------------------#
+    
+    #change fieds label for Users
+    config.model 'User' do
+      list do
+        field :id
+        field :first_name do
+          label "Prènoms"
+        end
+        field :last_name do
+          label "Noms"
+        end
+        field :email do
+          label "Courriel"
+        end
+        field :is_admin do
+          label "Administrateur"
+        end
+        field :created_at do
+          label "Crée le :"
+          date_format :default
+        end
+        field :updated_at do
+          label "Modifié le :"
+          date_format :default
+        end
+        field :dataset_collections
+      end
+      #Chage fields label for users edit page
+    edit do
+      field :first_name do
+        label "Prènom"
+        help "Obligatoire."
+      end
+      field :last_name do
+        label "Nom"
+        help "Obligatoire."
+      end
+      field :email do
+        label "Courriel"
+        help "Obligatoire."
+      end
+      field :encrypted_password do
+        label "Mot de passe"
+        help "Obligatoire - 6 caractères minimum."
+      end
+      field :password_confirmation do
+        label "Confirmation du mot de passe"
+        help "Obligatoire."
+      end
+      field :is_admin
+      field :dataset_collections
+    end
+    
+    
+  end
 
 
 
