@@ -117,7 +117,7 @@ RailsAdmin.config do |config|
           field :main_picture do
             label "Photo pricipale"
           end
-          field :datasets
+          
         end
     end
 #-------------------------------DATASETS---------------------------#
@@ -166,7 +166,7 @@ RailsAdmin.config do |config|
         field :description do
           help "Obligatoire"
         end
-        field :dataset_collections
+        
       end
     end
     #-----------------------------USERS---------------------------#
