@@ -13,7 +13,8 @@
 								<% if user_signed_in? %>
 									<li>
 										<div class='card-icon-actions text-right col-2 align-top'>
-												<%= link_to user_dataset_collection_path(current_user, :dataset => dataset), method: :post, class: "favorite active" do %><i class="fa fa-star"></i><% end %>
+												<% active_css = (@user_dataset_collection.include?(dataset) ? "active" : "") %>
+												<%= link_to user_dataset_collection_path(current_user, :dataset => dataset), method: :post, class: "favorite #{active_css}" do %><i class="fa fa-star"></i><% end %>
 										</div>
 									</li>
 								<% end %>
