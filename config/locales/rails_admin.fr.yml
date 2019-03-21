@@ -50,9 +50,9 @@ fr:
       object_not_found: "%{model} avec id '%{id}' n'a pas été trouvé"
     table_headers:
       model_name: "Nom du modèle"
-      last_used: "Utilisé"
+      last_used: "Dernier Crée"
       records: "Enregistrements"
-      username: "Utilisateur"
+      username: "Utilisateurs"
       changes: "Changements"
       created_at: "Date/Heure"
       item: "Objet"
@@ -63,7 +63,7 @@ fr:
         menu: "Administration"
         breadcrumb: "Administration"
       index:
-        title: "Listing des %{model_label_plural}"
+        title: "Liste des %{model_label_plural}"
         menu: "Liste"
         breadcrumb: "%{model_label_plural}"
       show:
@@ -97,8 +97,8 @@ fr:
         bulk_link: "Supprimer les %{model_label_plural} sélectionné(e)s"
       export:
         title: "Export de %{model_label_plural}"
-        menu: "Export"
-        breadcrumb: "Export"
+        menu: "Exporter"
+        breadcrumb: "Exporter"
         link: "Export des %{model_label_plural} trouvé(e)s"
         bulk_link: "Exporter les %{model_label_plural} sélectionné(e)s"
         done: "exporté(e)s"

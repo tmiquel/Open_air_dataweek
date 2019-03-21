@@ -257,3 +257,11 @@ models_array.each do |model|
   puts
 
 end
+
+puts "*"*80
+puts
+puts "Vous pouvez vous connecter directement en tant qu'administrateur avec les identifiants suivants :"
+puts "login > admin@admin.com"
+puts "password > AdminAdmin"
+puts
+puts "*"*80 

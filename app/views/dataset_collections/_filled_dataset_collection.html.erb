@@ -21,7 +21,7 @@
 								</span>
 							</td>
 							<td>
-							 	<%= link_to user_dataset_collection_path(dataset: dataset), method: :delete, class: "text-right pl-4" do %>
+							 	<%= link_to user_dataset_collection_path(dataset: dataset), method: :delete, :remote => true, :class => 'delete_data_set' do %>
                                  <i class="ion-trash-a"></i>
 								<% end %>
 							</td>
