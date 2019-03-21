@@ -116,7 +116,9 @@ RailsAdmin.config do |config|
           end
           field :main_picture do
             label "Photo pricipale"
+            help "Facultatif - Une fois cet article enregistré, créez des datasets que vous lui associez."
           end
+          
           
         end
     end
