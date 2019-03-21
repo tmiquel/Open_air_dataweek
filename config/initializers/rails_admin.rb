@@ -45,6 +45,7 @@ RailsAdmin.config do |config|
   #change fields label
   
     config.model 'Topic' do
+      label "Articles"
       list do
         field :id
         field :highlighted_category do
