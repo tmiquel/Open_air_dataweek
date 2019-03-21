@@ -10,9 +10,13 @@
                 <li><div class="col-1 text-right">
                     <span class="card-title badge badge-md badge-secondary text-right align-top">Base de données</span>
                 </div></li>
-                <li><div class='card-icon-actions text-right col-2 align-top'>
-                    <a href="#" class="favorite active" data-toggle="tooltip" data-original-title="Save to favorites"><i class="fa fa-star"></i></a>
-                </div></li>
+								<% if user_signed_in? %>
+									<li>
+										<div class='card-icon-actions text-right col-2 align-top'>
+												<%= link_to user_dataset_collection_path(current_user, :dataset => dataset), method: :post, class: "favorite active" do %><i class="fa fa-star"></i><% end %>
+										</div>
+									</li>
+								<% end %>
             </ul>    
         </div>
         <p class="card-text"> <%= dataset.description %> </p>
