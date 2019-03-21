@@ -1,61 +1,63 @@
-<!-- Card storie -->
 <!DOCTYPE html>
 <html>
-    <head>
-    </head>
-    <body>
-        <section class="bg-base-5 slice sct-color-1">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-6">
-                        <h3 class="heading heading-6 strong-600 text-uppercase mb-0">Sujets</h3>
-                    </div>
+
+<head>
+</head>
+
+<body>
+    <section class="bg-base-5 slice sct-color-1">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-6">
+                    <h3 class="heading heading-6 strong-600 text-uppercase mb-0">Sujets</h3>
                 </div>
-                <span class="space-xs-lg"></span>
-                <div class="cols-md-space cols-sm-space cols-xs-space d-flex flex-wrap">
+            </div>
+            <span class="space-xs-lg"></span>
+            <div class="cols-md-space cols-sm-space cols-xs-space d-flex flex-wrap">
                 <% @topics.each do |topic| %>
-                        <div class="col-lg-4 mb-5">
-                            <div class="card z-depth-2-top h-auto">
-                                <div class="card-image">
-                                    <div class="view view-first">
-                                        <%= link_to topic_path(topic, anchor: "top") do %>
-                                        <%= image_tag topic.main_picture.variant(resize: "1000x760!") %>
-                                        <% end %>
-                                    </div>
-                                </div>
-                                <div class="card-body h-25">
-                                    <h3 class="heading heading-5 strong-600 mb-0">
-                                        <%= link_to topic_path(topic, anchor: "top") do %>
-                                        <%=topic.title%>
-                                        <% end %>
-                                    </h3>
-                                </div>
-                                <div class="card-footer">
-                                    <div class="row">
-                                        <div class="col">
-                                            <div class="block-author">
-                                                <div class="author-info">
-                                                    <div class="author-name">
-                                                        <%= link_to topic_path(topic, anchor: "top") do %>
-                                                        <%=topic.short_description%>
-                                                        <% end %>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>    
-                                    <div class="col text-right text-xs-right">
-                                        <ul class="heading heading-sm strong-400 text-muted mt-3 mb-0">
-                                            <li>
-                                                Temps de lecture: <%= Random.rand(5..30) %> min
-                                            </li>
-                                        </ul>
-                                    </div> 
-                                </div>
+                <div class="col-lg-4 mb-5">
+                    <div class="card z-depth-2-top h-auto">
+                        <div class="card-image">
+                            <div class="view view-first">
+                                <%= link_to topic_path(topic, anchor: "top") do %>
+                                <%= image_tag topic.main_picture.variant(resize: "1000x760!") %>
+                                <% end %>
                             </div>
                         </div>
-                <% end %> 
+                        <div class="card-body h-25">
+                            <h3 class="heading heading-5 strong-600 mb-0">
+                                <%= link_to topic_path(topic, anchor: "top") do %>
+                                <%=topic.title%>
+                                <% end %>
+                            </h3>
+                        </div>
+                        <div class="card-footer">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="block-author">
+                                        <div class="author-info">
+                                            <div class="author-name">
+                                                <%= link_to topic_path(topic, anchor: "top") do %>
+                                                <%=topic.short_description%>
+                                                <% end %>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col text-right text-xs-right">
+                                <ul class="heading heading-sm strong-400 text-muted mt-3 mb-0">
+                                    <li>
+                                        Temps de lecture: <%= Random.rand(5..30) %> min
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% end %>
             </div>
-        </section>
-    </body>
+        </div>
+    </section>
+</body>
 </html>
