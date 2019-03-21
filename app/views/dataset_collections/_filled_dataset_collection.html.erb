@@ -21,11 +21,10 @@
 								</span>
 							</td>
 							<td>
-							 	<%= link_to user_dataset_collection_path(dataset: dataset), method: :delete, class: "text-right pl-4" do %>
-                                 <i class="ion-trash-a"></i>
-								<% end %>
+<%= link_to 'Destroy', user_dataset_collection_path(dataset: dataset), method: :delete, :remote => true, :class => 'delete_data_set' %>
 							</td>
 							</tr>
 						<% end %>
 					</tbody>
 				</table>
+<%= link_to 'Destroy', user_dataset_collection_path, method: :delete, data: { confirm: 'Are you sure?' }, :remote => true, :class => 'delete_data_set' %>
