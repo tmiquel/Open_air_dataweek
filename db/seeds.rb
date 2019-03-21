@@ -56,17 +56,20 @@ models_array.each do |model|
     #                zip_code: Faker::Number.number(5).to_s)
 
     when 'User'
-      password = Faker::Internet.password(13, 25, true, true)
-      email = Faker::Internet.unique.email
+			if (User.all.size == models_items_count[model.name] - 1)
+				User.create(first_name: "Had", last_name: "Minh", email: "admin@admin.com", password: "AdminAdmin", is_admin: true)
+			else
+				password = Faker::Internet.password(13, 25, true, true)
+				email = Faker::Internet.unique.email
 
-      puts "The password of User #{email} is #{password}"
+				puts "The password of User #{email} is #{password}"
 
-      model.create(first_name: Faker::Name.first_name,
-                   last_name: Faker::Name.last_name,
-                   email: email,
-                   password: password,
-                   password_confirmation: password)
-
+				model.create(first_name: Faker::Name.first_name,
+										 last_name: Faker::Name.last_name,
+										 email: email,
+										 password: password,
+										 password_confirmation: password)
+			end
     when 'Topic'
       if topics_pics_paths_array.size == 0
         puts
@@ -77,7 +80,6 @@ models_array.each do |model|
         unless topic_count == 0        
           my_topic = model.new(title: Faker::Lorem.paragraph_by_chars(50, false),
                         short_description: Faker::Lorem.paragraph_by_chars(256, false),
-                        highlighted_category: 'State',
                         driver_section_title: 'Besoins socio-économiques', 
                         driver_section_intro: topic_driver_text,
                         pressure_section_title: 'Emissions',
@@ -94,7 +96,6 @@ models_array.each do |model|
           my_topic = model.new(title: "L'impact des zones portuaires sur la qualité de l'air",
                         short_description: "La pollution d’origine maritime s’intègre dans la pollution générale de la zone portuaire qui comprend aussi la pollution secondaire aux infrastructures, en particulier de transport routier nécessaire au port et la pollution propre à la ville, transport routier, chauffage, etc.
 Pour Marseille, par exemple, cette pollution maritime représente 5 à 10 pourcents de la pollution totale.",
-                        highlighted_category: 'State',
                         driver_section_title: "Fondements économiques du Port", 
                         driver_section_intro: 'Port généraliste et 1er port de France, le Port de Marseille traite tout type de marchandise : hydrocarbures et vracs liquides (pétrole, gaz et produits chimiques), marchandises diverses (conteneurs et autres conditionnements), vracs solides (minerais et céréales).',
                         pressure_section_title: 'Emissions de polluants',
@@ -254,9 +255,5 @@ models_array.each do |model|
   puts
   tp model.last(3)
   puts
-
-	puts "create admin user"
-	User.create(first_name: "Had", last_name: "Minh", email: "admin@admin.com", password: "AdminAdmin")
-	puts "done."
 
 end
