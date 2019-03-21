@@ -2,10 +2,10 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-12">
-                <div class="section-title section-title--style-2 text-center mb-4">
-                    <h2 class="section-title-inner heading-2 strong-400">
+                <div class="section-title section-title--style-1 text-center mb-4">
+                    <h2 class="section-title-inner heading-1 strong-400">
                     <span>
-                    <%=@topic.title%> </span>
+                    <%=@topic.title%></span>
                     </h2>
                 </div>
             </div>
@@ -27,8 +27,9 @@
                     <br><br><br>
                     <div id="driver_section" class="section-title section-title--style-1 text-center mb-4 ">
                         <h3 class="section-title-inner heading-3 strong-400 ">
-                        <span>
-                        <%=@topic.driver_section_title%> </span>
+                            <span>
+                                <%=@topic.driver_section_title%>
+                            </span>
                         </h3>
                         <span class="section-title-delimiter clearfix"></span>
                     </div>
@@ -53,8 +54,9 @@
                 <br><br><br>
                 <div id="pressure_section" class="section-title section-title--style-1 text-center mb-4 ">
                     <h3 class="section-title-inner heading-3 strong-400">
-                    <span>
-                    <%=@topic.pressure_section_title%> </span>
+                        <span>
+                            <%=@topic.pressure_section_title%> 
+                        </span>
                     </h3>
                     <span class="section-title-delimiter clearfix"></span>
                 </div>
@@ -64,13 +66,13 @@
                     </p>
                     <br><br>
                     <% if @pressure_datasets.size == 1 %>
-                    <p class="text-justify mb-2">
-                        Voici la base de donnée disponible en ligne sur ce sujet:
-                    <p>
+                        <p class="text-justify mb-2">
+                            Voici la base de donnée disponible en ligne sur ce sujet:
+                        <p>
                     <% elsif @pressure_datasets.size != 1 %>
-                    <p class="text-justify mb-2">
-                        Voici les principales bases de données disponibles en ligne sur ce sujet:
-                    <p>
+                        <p class="text-justify mb-2">
+                            Voici les principales bases de données disponibles en ligne sur ce sujet:
+                        <p>
                     <% else @pressure_datasets.size == 0 %>
                     <% end %>
                     <div class="block-body block-post-body">
@@ -80,8 +82,9 @@
                 <br><br><br>
                 <div id="state_section" class="section-title section-title--style-1 text-center mb-4 ">
                     <h3 class="section-title-inner heading-3 strong-400">
-                    <span>
-                    <%=@topic.state_section_title%> </span>
+                        <span>
+                            <%=@topic.state_section_title%>
+                        </span>
                     </h3>
                     <span class="section-title-delimiter clearfix"></span>
                 </div>
@@ -107,8 +110,9 @@
                 <br><br><br>
                 <div id="impact_section" class="section-title section-title--style-1 text-center mb-4 ">
                     <h3 class="section-title-inner heading-3 strong-400">
-                    <span>
-                    <%=@topic.impact_section_title%> </span>
+                        <span>
+                            <%=@topic.impact_section_title%> 
+                        </span>
                     </h3>
                     <span class="section-title-delimiter clearfix"></span>
                 </div>
@@ -134,8 +138,9 @@
                 <br><br><br>
                 <div id="response_section" class="section-title section-title--style-1 text-center mb-4 ">
                     <h3 class="section-title-inner heading-3 strong-400">
-                    <span>
-                    <%=@topic.response_section_title%> </span>
+                        <span>
+                            <%=@topic.response_section_title%> 
+                        </span>
                     </h3>
                     <span class="section-title-delimiter clearfix"></span>
                 </div>
