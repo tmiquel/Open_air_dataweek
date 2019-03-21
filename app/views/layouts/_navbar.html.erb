@@ -28,6 +28,11 @@
 									<%= link_to "Espace rédaction", rails_admin.dashboard_path, class: "nav-link dropdown-item" %>
 							<% end %>
 								</li>
+								<li class="nav-item">
+              <% if (user_signed_in?) %>
+                  <%= link_to "Ma Librairie", user_dataset_collection_path(current_user.id), class: "nav-link dropdown-item" %>
+              <% end %>
+                </li>
               <li class="nav-item">
                 <% unless user_signed_in? %>
                 <% unless (controller_name == "devise") %>
@@ -35,8 +40,10 @@
                 <%= link_to "S'inscrire", new_user_registration_path(anchor: "top"), class: "nav-link dropdown-item"  %>
                 <% end %>
                 <% else %>
-                <%= link_to "Mon profil", edit_user_registration_path(anchor: "top"), class: "nav-link dropdown-item" %>
+								<% unless (controller_name == "registrations") && (action_name == "edit") %>
+                <%= link_to "Editer Mon Profil", edit_user_registration_path(anchor: "top"), class: "nav-link dropdown-item" %>
                 <% end %>
+								<% end %>
               </li>
             </ul>
           </div>
@@ -45,10 +52,10 @@
             <% unless user_signed_in? %>
             <% unless (controller_name == "devise") %>
             <!-- Sign in button shall not appear when user is  in  the sign in page -->
-            <%= link_to "Se connecter", new_user_session_path(anchor: "top"), class: "btn btn-styled btn-base-1 btn-round text-white" %>
+            <%= link_to "Se Connecter", new_user_session_path(anchor: "top"), class: "btn btn-styled btn-base-1 btn-round text-white" %>
             <% end %>
             <% else %>
-            <%= button_to "Se déconnecter", destroy_user_session_path, :method => :delete, class: "btn btn-styled btn-base-1 btn-round text-white" %>
+            <%= button_to "Se Déconnecter", destroy_user_session_path, :method => :delete, class: "btn btn-styled btn-base-1 btn-round text-white" %>
             <% end %>
           </div>
         </div>

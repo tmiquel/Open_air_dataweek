@@ -1,5 +1,6 @@
 class Dataset < ApplicationRecord
 	belongs_to :topic
+	has_many :dataset_collections
 	
 	validates :title, presence: true
 	validates :db_link, presence: true

@@ -2,7 +2,6 @@ FactoryBot.define do
   factory :topic do
   	title {Faker::Lorem.paragraph_by_chars(50, false)}
 	  short_description {Faker::Lorem.paragraph_by_chars(256, false)}
-	  highlighted_category {'State'}
 	  driver_section_title {'Besoins socio-économiques'} 
 	  driver_section_intro {Faker::Lorem.paragraph_by_chars(256, false)}
 	  pressure_section_title {'Emissions'}

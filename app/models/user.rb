@@ -1,7 +1,7 @@
 class User < ApplicationRecord
 	after_create :welcome_send
 	before_destroy :goodbye_user
-	
+	has_many :dataset_collections	
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -10,7 +10,6 @@ class User < ApplicationRecord
 
 	validates :first_name, presence: true, length: { maximum: 45 }
 	validates :last_name, presence: true, length: { maximum: 45 }
-	
 
 	def full_name
 		"#{self.first_name} #{self.last_name}"

@@ -14,7 +14,7 @@ RSpec.describe User, type: :model do
 
     describe "#first_name" do
       it "should not be valid without first_name" do
-        bad_user = User.create(last_name: "Doe", email: "baduser@email.com", password: "foo_bar", address: "25, Avenue des oliviers, 13200, Provence")
+        bad_user = User.create(last_name: "Doe", email: "baduser@email.com", password: "foo_bar")
         expect(bad_user).not_to be_valid
         expect(bad_user.errors.include?(:first_name)).to eq(true)
       end
@@ -22,17 +22,9 @@ RSpec.describe User, type: :model do
 
     describe "#last_name" do
       it "should not be valid without last_name" do
-        bad_user = User.create(first_name: "John", email: "baduser@email.com", password: "foo_bar", address: "25, Avenue des oliviers, 13200, Provence")
+        bad_user = User.create(first_name: "John", email: "baduser@email.com", password: "foo_bar")
         expect(bad_user).not_to be_valid
         expect(bad_user.errors.include?(:last_name)).to eq(true)
-      end
-    end
-
-		describe "#address" do
-      it "should not be valid without address" do
-        bad_user = User.create(first_name: "John", last_name: "Doe", email: "baduser@email.com", password: "foo_bar")
-        expect(bad_user).not_to be_valid
-        expect(bad_user.errors.include?(:address)).to eq(true)
       end
     end
 

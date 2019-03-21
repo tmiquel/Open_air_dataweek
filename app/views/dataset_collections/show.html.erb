@@ -1,0 +1,17 @@
+<div class="col-lg-8 mx-auto">
+	<div class="main-content">
+
+		<!-- Order history table -->
+		<div class="card no-border">
+			<div>
+<% if (@datasets.length > 0) %>
+<%= render "filled_dataset_collection" %>
+<% else %>
+<%= render "empty_dataset_collection" %>
+<% end %>
+
+
+			</div>
+		</div>
+	</div>
+</div>
