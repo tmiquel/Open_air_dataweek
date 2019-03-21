@@ -7,7 +7,7 @@ class Dataset < ApplicationRecord
 	validates :description, presence: true
 	validates :dpsir_category, presence: true
 	validates :dpsir_category, :inclusion => { :in => ['Driver', 'Pressure', 'State', 'Impact', 'Response'] }
-	validates_inclusion_of :rendered, in: [true, false]
-	validates :file_type, presence: true
+	
+	
 
 end
