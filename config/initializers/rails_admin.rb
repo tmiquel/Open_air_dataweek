@@ -158,7 +158,7 @@ RailsAdmin.config do |config|
         end
         field :db_link do
           label "Lien BDD"
-          help "Obligatoire - Lien vers la base de donnée, ex:"
+          help "Obligatoire - Lien vers la base de donnée, ex: https://trouver.datasud.fr/dataset/les-lignes-maritimes-regulieres-touchant-le-port-de-marseille-fos"
         end
         field :dpsir_category do
           label "Catégorie DPSIR"
