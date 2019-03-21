@@ -58,6 +58,7 @@ models_array.each do |model|
     when 'User'
 			if (User.all.size == models_items_count[model.name] - 1)
 				User.create(first_name: "Had", last_name: "Minh", email: "admin@admin.com", password: "AdminAdmin", is_admin: true)
+                puts "The password of User admin@admin.com is AdminAdmin (admin rights)"
 			else
 				password = Faker::Internet.password(13, 25, true, true)
 				email = Faker::Internet.unique.email
@@ -260,7 +261,7 @@ end
 
 puts "*"*80
 puts
-puts "Vous pouvez vous connecter directement en tant qu'administrateur avec les identifiants suivants :"
+puts "Please note you have an Admin Access (required for the Content Writer Dashboard): "
 puts "login > admin@admin.com"
 puts "password > AdminAdmin"
 puts
