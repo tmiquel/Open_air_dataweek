@@ -254,17 +254,9 @@ models_array.each do |model|
   puts
   tp model.last(3)
   puts
+
+	puts "create admin user"
+	User.create(first_name: "Had", last_name: "Minh", email: "admin@admin.com", password: "AdminAdmin")
+	puts "done."
+
 end
-
-
-# 10.times do
-#   cart = FactoryBot.create(:cart)
-# end
-
-# 10.times do
-# 	while true
-#   	single_cart_pic = FactoryBot.build(:single_cart_pic)
-# 		break if single_cart_pic.save 
-# 	end
-# end
-
