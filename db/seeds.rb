@@ -123,7 +123,7 @@ Pour Marseille, par exemple, cette pollution maritime représente 5 à 10 pource
       end
 
     when 'Dataset'
-      if Dataset.all.size  > 7  #once we have created datasets linked to Topic.first - Maritime pollution
+      if Dataset.all.size > 7 # once we have created datasets linked to Topic.first - Maritime pollution
         FactoryBot.create(:dataset, topic: Topic.all[1..-1].sample) if Dataset.all.size < models_items_count[model.name]
 
       else
