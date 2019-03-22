@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class AddCategoryTitlesAndIntrosToTopics < ActiveRecord::Migration[5.2]
   def change
     add_column :topics, :driver_section_title, :string

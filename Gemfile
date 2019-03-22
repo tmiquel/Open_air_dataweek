@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -36,24 +38,24 @@ gem 'mini_magick', '~> 4.8'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
 
-#add features to validates attached file (example : is a pic?)
+# add features to validates attached file (example : is a pic?)
 gem 'file_validators'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-	gem 'rspec-rails'
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'rails-controller-testing'
+  gem 'rspec-rails'
 end
 
 group :development do
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
-  gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
+  gem 'web-console', '>= 3.3.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'rails_real_favicon'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'rails_real_favicon'
 end
 
 group :test do
@@ -62,34 +64,33 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
   gem 'chromedriver-helper'
-  gem 'shoulda-matchers'
   gem 'nyan-cat-formatter'
-
+  gem 'shoulda-matchers'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'aws-sdk-s3', require: false
 gem 'bootstrap', '~> 4.3.1'
 gem 'devise'
+gem 'devise-i18n'
 gem 'dotenv-rails'
 gem 'factory_bot_rails'
 gem 'faker'
 gem 'font-awesome-rails'
+gem 'guard-rspec', require: false
+gem 'high_voltage', '~> 3.1'
 gem 'ionicons-rails'
 gem 'jquery-rails'
+gem 'letter_opener', group: :development
 gem 'linea'
 gem 'mini_racer'
+gem 'rails_admin', github: 'sferik/rails_admin'
+gem 'rails_admin_rollincode', '~> 1.0', git: 'https://github.com/Nic0b/rails_admin_theme.git'
 gem 'simple-line-icons-rails'
 gem 'table_print'
-gem 'guard-rspec', require: false
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-gem "letter_opener", :group => :development
-gem "aws-sdk-s3", require: false
-gem 'devise-i18n'
-gem 'high_voltage', '~> 3.1'
-gem 'rails_admin', github: 'sferik/rails_admin'
-gem 'rails_admin_rollincode', '~> 1.0', git:'https://github.com/Nic0b/rails_admin_theme.git'
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
-#https://stackoverflow.com/questions/23727468/error-with-active-record-translations
-gem 'rails-i18n', '~> 5.1'
+# https://stackoverflow.com/questions/23727468/error-with-active-record-translations
 gem 'nokogiri'
+gem 'rails-i18n', '~> 5.1'
 gem 'twitter'
