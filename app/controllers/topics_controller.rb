@@ -6,10 +6,7 @@ class TopicsController < ApplicationController
 
     def show
         @topic = Topic.with_attached_main_picture.find(params[:id])
-        @related_topics = []
-        3.times do
-            @related_topics << Topic.all.sample
-        end
+        @related_topics = Topic.all.sample(3)
         @driver_datasets, 
         @pressure_datasets, 
         @state_datasets, 

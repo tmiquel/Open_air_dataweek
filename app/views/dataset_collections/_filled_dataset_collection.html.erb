@@ -1,31 +1,30 @@
+<table class="table table-sm table-hover">
+	<thead>
+		<tr>
+			<th>Titre</th>
+			<th>Source</th>
+			<th>Supprimer</th>
+		</tr>
+	</thead>
 
-				<table class="table table-sm table-hover">
-					<thead>
-						<tr>
-							<th>Titre</th>
-							<th>Source</th>
-							<th>Supprimer</th>
-						</tr>
-					</thead>
 
-
-					<tbody>
-						<% @datasets.each do |dataset| %>
-						<tr>
-							<td>
-								<%= dataset.title %>
-							</td>
-							<td>
-								<span class="badge badge--2 mr-4">
-								<i class="bg-blue"></i><%= link_to "Lien vers la base de données", dataset.db_link, class: "text-dark" %>
-								</span>
-							</td>
-							<td>
-							 	<%= link_to user_dataset_collection_path(dataset: dataset), method: :delete, :remote => true, :class => 'delete_data_set' do %>
-                                 <i class="ion-trash-a"></i>
-								<% end %>
-							</td>
-							</tr>
-						<% end %>
-					</tbody>
-				</table>
+	<tbody>
+		<% @datasets.each do |dataset| %>
+		<tr>
+			<td>
+				<%= dataset.title %>
+			</td>
+			<td>
+				<span class="badge badge--2 mr-4">
+					<i class="bg-blue"></i><%= link_to "Lien vers la base de données", dataset.db_link, class: "text-dark" %>
+				</span>
+			</td>
+			<td>
+				<%= link_to user_dataset_collection_path(dataset: dataset), method: :delete, :remote => true, :class => 'delete_data_set' do %>
+				<i class="ion-trash-a"></i>
+				<% end %>
+			</td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
