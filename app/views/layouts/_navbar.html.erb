@@ -31,10 +31,8 @@
 								<% end %>
 							</li>
 							<li class="nav-item">
-              	<% if (user_signed_in?) %>
-									<% until (controller_name == 'dataset_collections') %>
+              	<% if (user_signed_in? && (controller_name != 'dataset_collections')) %>
                   	<%= link_to "Ma Librairie", user_dataset_collection_path(current_user.id), class: "nav-link dropdown-item" %>
-									<% end %>
               	<% end %>
               </li>
               <li class="nav-item">
