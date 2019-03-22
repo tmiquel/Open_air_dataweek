@@ -11,8 +11,8 @@ ___Challenge:___ Education & data-based Information about Air Quality
 
 ___Solution:___ Open Air web magazine
 > A web magazine where Air Quality experts write **Articles** which:
->  * follows the same **explanatory structure**: 1. Drivers 2. Pressures 3. State 4. Impacts and 5. Responses (further info below)
-> * lists **all available open databases** on the topic.
+>  * follow the same **explanatory structure**: 1. Drivers 2. Pressures 3. State 4. Impacts and 5. Responses (further info below)
+> * list **all available open databases** on the topic.
 
 This solution has been designed with [A Lab in the AIR](https://www.alabintheair.cc/), as a forerunner to the 5-years-long [Air-DIAMS](https://www.air-diams.org/) EU programme.
 
@@ -21,7 +21,7 @@ Therefore it focuses on the **Provence** area.
 
 ### Further insights
 
-Air Quality is a growing concern as both **Pollution** and **Urban Population** increase. **Open data** from public authorities are available but hard to find and understand on the web in France following the 2016 regulation *Loi Lemaire*. Our challenge is to improve the general understanding on this topic so as to have better understanding on it and eventually better decisions by the general public.
+Air Quality is a growing concern as both **Pollution** and **Urban Population** increase. **Open data** from public authorities are available but hard to find and understand on the web. Our challenge is to improve the general understanding on this topic so as to have better understanding on it and eventually better decisions by the general public.
 
 Current issues are: 
 
