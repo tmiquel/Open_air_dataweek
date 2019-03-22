@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe 'topics/index', type: :view do
   before(:each) do
-    @topic = FactoryBot.build(:topic, :with_main_picture)
+    @topic = FactoryBot.create(:topic, :with_main_picture)
     @topics = [@topic]
   end
 
