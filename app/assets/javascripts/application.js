@@ -56,6 +56,9 @@
 //= require deso-slide/js/jquery.desoslide.min
 
 //= require boomerang.min
+
+//= require_self
+
 jQuery( function($) { $('a').tooltip(); } );
 
 $(document).ready( function() {
