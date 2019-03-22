@@ -50,7 +50,7 @@ RailsAdmin.config do |config|
   #change fields label 
   
     config.model 'Topic' do
-      label "Articles"
+      label "Article(s)"
         list do
           field :id
           field :title do

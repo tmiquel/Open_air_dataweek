@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/Nic0b/rails_admin_theme.git
-  revision: 52c00c1f7a6edcdc0c4d35c1ca46b3d07525f771
+  revision: 156f7d28fb9e8e15334b017db746ef0e1854e1e4
   specs:
     rails_admin_rollincode (1.2.1)
       rails (>= 4.0, < 6)
@@ -75,17 +75,17 @@ GEM
     autoprefixer-rails (9.5.0)
       execjs
     aws-eventstream (1.0.2)
-    aws-partitions (1.144.0)
+    aws-partitions (1.145.0)
     aws-sdk-core (3.48.2)
       aws-eventstream (~> 1.0, >= 1.0.2)
       aws-partitions (~> 1.0)
       aws-sigv4 (~> 1.1)
       jmespath (~> 1.0)
-    aws-sdk-kms (1.15.0)
-      aws-sdk-core (~> 3, >= 3.48.0)
+    aws-sdk-kms (1.16.0)
+      aws-sdk-core (~> 3, >= 3.48.2)
       aws-sigv4 (~> 1.1)
-    aws-sdk-s3 (1.33.0)
-      aws-sdk-core (~> 3, >= 3.48.0)
+    aws-sdk-s3 (1.34.0)
+      aws-sdk-core (~> 3, >= 3.48.2)
       aws-sdk-kms (~> 1)
       aws-sigv4 (~> 1.0)
     aws-sigv4 (1.1.0)
