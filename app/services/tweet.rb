@@ -18,10 +18,10 @@ Dotenv.load
 	  return client
 	end
 	def tweet_text
-		text = "Un article vient d'être publié: " + Topic.last.title
+		text = "Un article vient d'être publié: " + Topic.last.title + "\n" + "https://open-air-dev.herokuapp.com/topics/" + Topic.last.id.to_s
 
 	end
 	def tweet
 	  login_twitter.update(tweet_text)
-	end
+	end 
 end
