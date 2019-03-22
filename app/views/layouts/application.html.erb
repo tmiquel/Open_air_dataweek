@@ -31,11 +31,9 @@
               <%= render "layouts/navbar" %>
               <!-- Header -->  
               <%= render "topics/topic-index-banner" %>
-              <div class="container">
-                <%= render 'layouts/flash' %>
-              </div>
               <section class="bg-base-5 slice sct-color-1">
                 <div class="bg-base-5 container">
+                  <%= render 'layouts/flash' %>
                   <%= yield %>
                 </div>
               </section>
