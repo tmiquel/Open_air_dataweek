@@ -9,12 +9,11 @@
               <%= image_tag asset_path("air-quality-logo/logo-1-a.svg"), height:"60px", alt:"Open Air" %><br>
               <br>
             </div>
-
           </div>
           <div class="form-body">
             <div class="section-title section-title--style-2 text-center mb-2">
               <h4 class="section-title-inner heading-2 strong-400 text-dark">
-              <span>Se Connecter</span>
+                <span>Se Connecter</span>
               </h4>
             </div>
             <form class="form-default" role="form">
@@ -42,27 +41,23 @@
                 <div class="col-md-6">
                   <%= render "devise/shared/forgott_pwd_link" %>
                   <%= render "devise/shared/links" %>
-                  
                 </div>
-                <div class="col-md-6 text-right">
+                <div class="col-md-6 mt-4 text-right">
                   <%= f.submit "Se connecter", class:"btn btn-styled btn-base-1 px-4" %>
                 </div>
               </div>
-              
               <% if devise_mapping.rememberable? %>
               <div class="field">
                 <%= f.check_box :remember_me %>
                 <%= f.label :Se_souvenir_de_moi %>
               </div>
               <% end %>
-              
               <% end %>
-              
             </form>
-          </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
   </div>
 </section>

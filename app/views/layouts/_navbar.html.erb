@@ -30,7 +30,7 @@
 								</li>
 								<li class="nav-item">
               <% if (user_signed_in?) %>
-                  <%= link_to "Ma Librairie", user_dataset_collection_path(current_user.id), class: "nav-link dropdown-item" %>
+                  <%= link_to "Ma Librairie", user_dataset_collection_path(current_user.id), class: "nav-link dropdown-item", anchor: ("top") %>
               <% end %>
                 </li>
               <li class="nav-item">
