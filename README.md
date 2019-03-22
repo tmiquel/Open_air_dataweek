@@ -29,7 +29,7 @@ Current issues are:
 
 1. Second, **data are Available** but 
    1. Hard to **find** as they are **dispersed** in several locations
-   1. Hard to **read**. Main open data currently requires expert software to be read (data visualisation issues)
+   1. Hard to **read**. Many open data currently require expert software to be visualised (web data visualisation issues)
 
 Our solution addresses 1. (Pedagogical explanations of Air Quality Issues) and 2.i (A Common place to find all relevant databases). 
 
