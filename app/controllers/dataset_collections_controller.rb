@@ -20,8 +20,19 @@ class DatasetCollectionsController < ApplicationController
 	def destroy
 		@dataset_collection = DatasetCollection.where(user: DatasetCollection.find(params[:user_id])).where(dataset: Dataset.find(params[:dataset])).first
 		@dataset_collection.destroy
-		redirect_to user_dataset_collection_path(current_user)
-	end
+ 
+    respond_to do |format|
+
+      format.js
+      format.html do
+        redirect_to user_dataset_collection_path(current_user), notice: "data correctement supprimé"
+      end
+
+      format.json
+
+
+  end
+end
 
 private
 

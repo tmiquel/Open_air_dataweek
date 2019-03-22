@@ -56,17 +56,21 @@ models_array.each do |model|
     #                zip_code: Faker::Number.number(5).to_s)
 
     when 'User'
-      password = Faker::Internet.password(13, 25, true, true)
-      email = Faker::Internet.unique.email
+			if (User.all.size == models_items_count[model.name] - 1)
+				User.create(first_name: "Had", last_name: "Minh", email: "admin@admin.com", password: "AdminAdmin", is_admin: true)
+                puts "The password of User admin@admin.com is AdminAdmin (admin rights)"
+			else
+				password = Faker::Internet.password(13, 25, true, true)
+				email = Faker::Internet.unique.email
 
-      puts "The password of User #{email} is #{password}"
+				puts "The password of User #{email} is #{password}"
 
-      model.create(first_name: Faker::Name.first_name,
-                   last_name: Faker::Name.last_name,
-                   email: email,
-                   password: password,
-                   password_confirmation: password)
-
+				model.create(first_name: Faker::Name.first_name,
+										 last_name: Faker::Name.last_name,
+										 email: email,
+										 password: password,
+										 password_confirmation: password)
+			end
     when 'Topic'
       if topics_pics_paths_array.size == 0
         puts
@@ -142,7 +146,7 @@ Tableau 8 : Part des superficies en sites « Natura 2000 »',
             model.create(
             topic: Topic.first,
             title: 'Activité maritime',
-            db_link: 'https://trouver.datasud.fr/dataset/les-lignes-maritimes-regulieres-touchant-le-port-de-marseille-fos/resource/57223ded-43ca-493c-8831-378aace9a8ef/view/20052ead-ee6c-4c31-a159-9dff67bdf7e4',
+            db_link: 'https://trouver.datasud.fr/dataset/les-lignes-maritimes-regulieres-touchant-le-port-de-marseille-fos',
             dpsir_category: 'Driver',
             description: '55 services maritimes réguliers relient le Port de Marseille-Fos à plus de 500 autres ports et desservent près de 160 pays dans le monde. ',
             rendered: false,
@@ -253,8 +257,12 @@ models_array.each do |model|
   tp model.last(3)
   puts
 
-	puts "create admin user"
-	User.create(first_name: "Had", last_name: "Minh", email: "admin@admin.com", password: "AdminAdmin")
-	puts "done."
-
 end
+
+puts "*"*80
+puts
+puts "Please note you have an Admin Access (required for the Content Writer Dashboard): "
+puts "login > admin@admin.com"
+puts "password > AdminAdmin"
+puts
+puts "*"*80 

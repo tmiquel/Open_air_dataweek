@@ -15,7 +15,12 @@ class TopicsController < ApplicationController
         @state_datasets, 
         @impact_datasets, 
         @response_datasets  = @topic.get_datasets_by_categories
-
+				if current_user
+					@user_dataset_collection = []
+					DatasetCollection.where(user: current_user).each do |datasetcollection|
+						@user_dataset_collection << datasetcollection.dataset
+					end
+				end
     end
 
     def create

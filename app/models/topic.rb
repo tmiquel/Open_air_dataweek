@@ -28,4 +28,19 @@ class Topic < ApplicationRecord
     [driver_datasets, pressure_datasets, state_datasets, impact_datasets, response_datasets]
   end
 
+  def reading_time
+      topic_full_text = (self.short_description + 
+        self.driver_section_intro + 
+        self.pressure_section_intro + 
+        self.state_section_intro + 
+        self.impact_section_intro + 
+        self.response_section_intro)
+      datasets_length = self.datasets.to_a.map{|dataset| dataset.description.size}.
+      reduce{|sum, dataset_length| sum + dataset_length}
+      datasets_length ||= 0
+# It is considered that a 1000-letter long text is read in 1 min
+     (((topic_full_text.size + datasets_length)/1000).to_f).ceil
+  end
+
+
 end
