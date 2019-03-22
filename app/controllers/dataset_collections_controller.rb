@@ -16,7 +16,7 @@ class DatasetCollectionsController < ApplicationController
 
 			format.js
 			format.html do
-					render :js => "window.location = '#{user_dataset_collection_path(current_user)}'"
+					redirect_to user_dataset_collection_path(current_user), notice: "donnée enregistrée avec succès"
 			end
 			format.json
   	end
@@ -32,7 +32,7 @@ class DatasetCollectionsController < ApplicationController
     respond_to do |format|
 			format.js
 			format.html do
-				redirect_to user_dataset_collection_path(current_user), notice: "data correctement supprimé"
+				redirect_to user_dataset_collection_path(current_user), notice: "donnée correctement supprimée"
 			end
       format.json
   	end
