@@ -11,6 +11,7 @@ class TopicsController < ApplicationController
 				(@related_topics << (Topic.all - [@topic]).sample).uniq!
 				break if @related_topics.size >= 3
 		end
+		@related_topics_size = @related_topics.size
 		@driver_datasets, 
 		@pressure_datasets, 
 		@state_datasets, 
