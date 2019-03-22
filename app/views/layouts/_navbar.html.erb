@@ -1,12 +1,13 @@
 <div class="navbar-floating">
   <div class="container">
     <div class="header">
+
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg  navbar-opaque navbar- bg-light ">
         <div class="container navbar-container">
           <!-- Brand/Logo -->
           <%= link_to root_path do %>
-          <%= image_tag asset_path("air-quality-logo/logo-1-a.svg"), class:"mb-3", height:"40px", alt:"Open Air" %>
+          	<%= image_tag asset_path("air-quality-logo/logo-1-a.svg"), class:"mb-3", height:"40px", alt:"Open Air" %>
           <% end %>
 
           
@@ -15,34 +16,35 @@
             <!-- Navbar toggler  -->
             <button class="navbar-toggler hamburger hamburger-js hamburger--spring" type="button" data-toggle="collapse" data-target="#navbar_main" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
             <span class="hamburger-box">
-              <span class="hamburger-inner"></span>
+            	<span class="hamburger-inner">
+							</span>
             </span>
-            </button>
+           </button>
           </div>
           <div class="collapse navbar-collapse align-items-center justify-content-around" id="navbar_main">
             <!-- Navbar links -->
             <!-- RIGHT ALIGNED NAVBAR -->
             <ul class="navbar-nav ml-lg-auto">
-								<li class="nav-item">
-							<% if (current_user && current_user.is_admin) %>
+							<li class="nav-item">
+								<% if (current_user && current_user.is_admin) %>
 									<%= link_to "Espace rédaction", rails_admin.dashboard_path, class: "nav-link dropdown-item" %>
-							<% end %>
-								</li>
-								<li class="nav-item">
-              <% if (user_signed_in?) %>
-                  <%= link_to "Ma Librairie", user_dataset_collection_path(current_user.id), class: "nav-link dropdown-item", anchor: ("top") %>
-              <% end %>
-                </li>
+								<% end %>
+							</li>
+							<li class="nav-item">
+              	<% if (user_signed_in? && (controller_name != 'dataset_collections')) %>
+                  	<%= link_to "Ma Librairie", user_dataset_collection_path(current_user.id), class: "nav-link dropdown-item" %>
+              	<% end %>
+              </li>
               <li class="nav-item">
                 <% unless user_signed_in? %>
-                <% unless (controller_name == "devise") %>
+              	  <% unless (controller_name == "devise") %>
                 <!-- Sign in button shall not appear when user is  in  the sign in page -->
-                <%= link_to "S'inscrire", new_user_registration_path(anchor: "top"), class: "nav-link dropdown-item"  %>
-                <% end %>
+                		<%= link_to "S'inscrire", new_user_registration_path(anchor: "top"), class: "nav-link dropdown-item"  %>
+                	<% end %>
                 <% else %>
-								<% unless (controller_name == "registrations") && (action_name == "edit") %>
-                <%= link_to "Editer Mon Profil", edit_user_registration_path(anchor: "top"), class: "nav-link dropdown-item" %>
-                <% end %>
+									<% unless (controller_name == "registrations") && (action_name == "edit") %>
+                		<%= link_to "Editer Mon Profil", edit_user_registration_path(anchor: "top"), class: "nav-link dropdown-item" %>
+                	<% end %>
 								<% end %>
               </li>
             </ul>
@@ -50,17 +52,19 @@
           <!-- BUTTON CALL TO ACTION LEFT, OUTSIDE HAMBURGER MENU -->
           <div class="pl-4 d-none d-lg-inline-block">
             <% unless user_signed_in? %>
-            <% unless (controller_name == "devise") %>
+            	<% unless (controller_name == "devise") %>
             <!-- Sign in button shall not appear when user is  in  the sign in page -->
-            <%= link_to "Se Connecter", new_user_session_path(anchor: "top"), class: "btn btn-styled btn-base-1 btn-round text-white" %>
-            <% end %>
+            		<%= link_to "Se Connecter", new_user_session_path(anchor: "top"), class: "btn btn-styled btn-base-1 btn-round text-white" %>
+            	<% end %>
             <% else %>
-            <%= button_to "Se Déconnecter", destroy_user_session_path, :method => :delete, class: "btn btn-styled btn-base-1 btn-round text-white" %>
+            	<%= button_to "Se Déconnecter", destroy_user_session_path, :method => :delete, class: "btn btn-styled btn-base-1 btn-round text-white" %>
             <% end %>
           </div>
-        </div>
-        
+
+
+        </div>        
       </nav>
+
     </div>
   </div>
 </div>

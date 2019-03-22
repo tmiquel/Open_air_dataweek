@@ -9,30 +9,35 @@ class DatasetCollectionsController < ApplicationController
   end
 
 	def create
-		dataset_collection = DatasetCollection.new(user: User.find(params[:user_id]), dataset: Dataset.find(params[:dataset]))
-		if dataset_collection.save
-			redirect_to user_dataset_collection_path(current_user)
-		else
-			redirect_to root_path
-		end
+		@user = User.find(params[:user_id])
+		@dataset = Dataset.find(params[:dataset])
+		@dataset_collection = DatasetCollection.new(user: @user, dataset: @dataset)
+		respond_to do |format|
+
+			format.js
+			format.html do
+					render :js => "window.location = '#{user_dataset_collection_path(current_user)}'"
+			end
+			format.json
+  	end
+
 	end
 
 	def destroy
-		@dataset_collection = DatasetCollection.where(user: DatasetCollection.find(params[:user_id])).where(dataset: Dataset.find(params[:dataset])).first
+		@user = DatasetCollection.find(params[:user_id])
+		@dataset = Dataset.find(params[:dataset])
+		@dataset_collection = DatasetCollection.where(user: @user).where(dataset: @dataset).first
 		@dataset_collection.destroy
  
     respond_to do |format|
-
-      format.js
-      format.html do
-        redirect_to user_dataset_collection_path(current_user), notice: "data correctement supprimé"
-      end
-
+			format.js
+			format.html do
+				redirect_to user_dataset_collection_path(current_user), notice: "data correctement supprimé"
+			end
       format.json
+  	end
 
-
-  end
-end
+	end
 
 private
 
@@ -41,4 +46,5 @@ private
       redirect_to root_url, alert: 'Accessing or modifying another user data is not allowed.'
     end
   end
+
 end
