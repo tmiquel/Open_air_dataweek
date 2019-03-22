@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # spec/features/visitor_signs_up_spec.rb
 require 'spec_helper'
 
