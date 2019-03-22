@@ -9,15 +9,18 @@ class DatasetCollectionsController < ApplicationController
   end
 
 	def create
+    @topic = Topic.find(params[:id])
 		@user = User.find(params[:user_id])
 		@dataset = Dataset.find(params[:dataset])
-		@dataset_collection = DatasetCollection.new(user: @user, dataset: @dataset)
+		@dataset_collection = DatasetCollection.create(user: @user, dataset: @dataset)
 		respond_to do |format|
 
 			format.js
 			format.html do
-					render :js => "window.location = '#{user_dataset_collection_path(current_user)}'"
-			end
+          redirect_to topic_path(@topic) , notice: "votre donnée a été correctement enregistrée et se trouve désormais dans votre librairie"
+      end
+
+			
 			format.json
   	end
 
