@@ -7,6 +7,7 @@ RSpec.describe 'topics/show', type: :view do
     @topic = FactoryBot.create(:topic, :with_main_picture)
     @topics = [@topic]
     @related_topics = [@topic, @topic, @topic]
+    @related_topics_size = @related_topics.size
     @driver_datasets,
     @pressure_datasets,
     @state_datasets,
