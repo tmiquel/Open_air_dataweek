@@ -7,11 +7,7 @@ class TopicsController < ApplicationController
 
   def show
     @topic = Topic.with_attached_main_picture.find(params[:id])
-    @related_topics = []
-    6.times do
-      (@related_topics << (Topic.all - [@topic]).sample).uniq!
-      break if @related_topics.size >= 3
-    end
+    @related_topics = (Topic.all - [@topic]).sample(3)
     @related_topics_size = @related_topics.size
     @driver_datasets,
     @pressure_datasets,
