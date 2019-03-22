@@ -34,14 +34,14 @@ RSpec.describe DatasetCollection, type: :model do
 		
 		describe "#dataset" do
 			it "should belongs to a dataset" do
-				expect(@dataset_collection.dataset).no_to be_nil
+				expect(@dataset_collection.dataset).not_to be_nil
 				expect(@dataset_collection.dataset).to be_a(Dataset)
 			end
 		end
 
 		describe "#user" do
       it "should belongs to a topic" do  
-        expect(@dataset_collection.user).no_to be_nil
+        expect(@dataset_collection.user).not_to be_nil
         expect(@dataset_collection.user).to be_a(User)
       end
     end

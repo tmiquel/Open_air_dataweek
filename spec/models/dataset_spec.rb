@@ -58,7 +58,7 @@ RSpec.describe Dataset, type: :model do
 		
 		describe "#topic" do
 			it "should belongs to a topic" do
-				expect(@dataset.topic).no_to be_nil
+				expect(@dataset.topic).not_to be_nil
 				expect(@dataset.topic).to be_a(Topic)
 			end
 		end
