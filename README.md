@@ -1,8 +1,6 @@
-# Open Air 
+![alt text](https://github.com/stug43/Open_air/blob/development/app/assets/images/air-quality-logo/logo-1-d.png "")
 
 Open Air is a 2-week long project (March 2019) to validate *[The Hacking Project](https://www.thehackingproject.org/)* training on Ruby on Rails. 
-
-![alt text](https://github.com/stug43/Open_air/blob/development/app/assets/images/air-quality-logo/logo-1-d.png "")
 
 ## Value Proposition
 
