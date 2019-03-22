@@ -1,5 +1,5 @@
 class Topic < ApplicationRecord
-  # after_create :tweet_new_topic
+  after_create :tweet_new_topic
 	has_one_attached :main_picture
 	has_many :datasets
 
