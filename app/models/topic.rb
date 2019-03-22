@@ -1,5 +1,5 @@
 class Topic < ApplicationRecord
-
+  after_create :tweet_new_topic
 	has_one_attached :main_picture
 	has_many :datasets
 
@@ -28,6 +28,12 @@ class Topic < ApplicationRecord
     [driver_datasets, pressure_datasets, state_datasets, impact_datasets, response_datasets]
   end
 
+
+  def tweet_new_topic
+    Tweet.new.tweet
+  end
+
+
   def reading_time
       topic_full_text = (self.short_description + 
         self.driver_section_intro + 
@@ -41,6 +47,7 @@ class Topic < ApplicationRecord
 # It is considered that a 1000-letter long text is read in 1 min
      (((topic_full_text.size + datasets_length)/1000).to_f).ceil
   end
+
 
 
 end
