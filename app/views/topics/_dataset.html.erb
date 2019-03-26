@@ -14,7 +14,7 @@
                 <li>
                     <div class='card-icon-actions text-right col-2 align-top'>
                         <% active_css = (@user_dataset_collection.include?(dataset) ? "active" : "") %>
-                        <%= link_to user_dataset_collection_path(current_user, :dataset => dataset, :id => @topic.id), method: :post, class: "favorite #{active_css}", :rel => 'tooltip', "title" => "Ajouter à ma librairie", "data-placement" => "top" do %><i class="fa fa-star"></i><% end %>
+                        <%= link_to user_dataset_collection_path(current_user, :dataset => dataset, :id => @topic.id), method: :post,:remote => true, class: "create_data_set favorite #{active_css}", :rel => 'tooltip', "title" => "Ajouter à ma librairie", "data-placement" => "top" do %><i class="fa fa-star"></i><% end %>
                     </div>
                 </li>
                 <% end %>
