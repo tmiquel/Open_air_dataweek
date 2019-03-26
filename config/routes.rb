@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :users do
     resource 'dataset_collection', only: %i[show create destroy]
   end
+  resource 'atmo_sud', only: 'show' 
   root to: 'topics#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
