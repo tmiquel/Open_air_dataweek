@@ -1,1 +1,46 @@
-<h1>Hi</h1>
+<div class="container">
+	<h1>Indices de la qualité de l'air en temps réel</h1>
+	<p>Le niveau de pollution est exprimé grâce à un indice global de 0 (Très bon) à 100 (Très mauvais) sur l'ensemble de la région.</p>
+	<p>L'indice correspond, en chaque point du territoire, au sous-indice maximum issu des concentrations de trois polluants réglementés : le dioxyde d'azote (NO2), les particules fines (PM10) et l'ozone (O3), bons indicateurs de la pollution atmosph?rique ? laquelle la population est expos?e, en milieu urbain, périurbain ou rural.
+		Pour chaque polluant, le calcul se base sur les seuils d?information (INFO) et d'alerte (ALE) qui lui sont propres (En savoir plus).
+	Une valeur de 90 correspond au seuil d'information réglementaire pour l'un des polluants (O3, NO2, PM10). Une valeur de 100 correspond au seuil d'alerte.</p>
+</div>
+<section class="slice-lg sct-color-1 border-top">
+	<div class="container">
+<%= form_tag metodh: 'get' do %>
+  <label for="lookup">Lookup</label>
+  <%= text_field_tag :search %>
+ <%= submit_tag "Submit" %>
+<% end %>
+		<div class="row align-items-center cols-xs-space cols-sm-space cols-md-space">
+			<div class="col-lg-5 order-lg-2 ml-lg-auto">
+				<div class="">
+					<% @atmo = @atmos.city_air_indice %>
+					<% @atmo_name = @atmos.array_name %>
+					
+					<%i = 0 %>
+					<% @atmo.each do |value| %>
+					
+					<div class="progress-wrapper">
+						<h4 class="progress-label text-uppercase strong-500"> <%= @atmo_name[i] %> </h4>
+						<% i += 1 %>
+						<h4 class="progress-percentage text-uppercase strong-600"><%= value %>%</h4>
+						<div class="progress progress-sm">
+
+							<% define_alerte = AtmoSud.new.define_color_alerte(value) %>
+							<div class= "progress-bar" role="progressbar" aria-valuenow="<%= value %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= value %>%; background-color: <%= define_alerte %>" ></div>
+						</div>
+					</div>
+					
+					<% end %>
+					<footer class="blockquote-footer text-right">Source <cite title="Source Title">Atmo Sud</cite></footer>
+				</div>
+			</div>
+			<div class="col-lg-6 order-lg-1">
+				
+				<%= image_tag('atmo/atmo.png', class:"img-fluid")%>
+			</div>
+		</div>
+	</div>
+</section>
+<br><br>

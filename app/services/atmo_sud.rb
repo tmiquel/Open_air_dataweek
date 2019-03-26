@@ -36,13 +36,31 @@ require 'nokogiri'
   def define_alerte(a)
 
     if a.to_i > 80 
-  	  return "bg-danger"
+  	  return "#008B8B"
   	elsif a.to_i > 49 && a.to_i < 79
-  	  return 'bg-warning'
+  	  return '#008B8B'
     else
-  	  return "bg-success"
+  	  return "#008B8B"
 
     end
 
   end
+
+def define_color_alerte(a)
+	case a.to_i
+	when 1..20
+		return "#008B8B"
+when 21..50 
+	return "#006400"
+	when 51..70
+		return "#8B0000"
+	end 
+end
+
+def city(a)
+  page  = Nokogiri::HTML(open("https://www.atmosud.org/monair/commune/13055")) 
+  puts page.xpath('/html/body/main/section[1]/div[2]/div/div/div/div[1]/div[1]/a/div[1]/div[1]/div[1]/div[1]').text
+
+end
+
 end
