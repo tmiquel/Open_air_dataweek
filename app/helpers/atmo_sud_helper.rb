@@ -1,0 +1,2 @@
+module AtmoSudHelper
+end

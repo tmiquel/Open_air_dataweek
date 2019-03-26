@@ -1,0 +1,2 @@
+class AtmoSudController < ApplicationController
+end
