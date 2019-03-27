@@ -7,13 +7,17 @@
 </div>
 <section class="slice-lg sct-color-1 border-top">
 	<div class="container">
-<%= form_tag metodh: 'get' do %>
-  <label for="lookup">Lookup</label>
-  <%= text_field_tag :search %>
- <%= submit_tag "Submit" %>
-<% end %>
 		<div class="row align-items-center cols-xs-space cols-sm-space cols-md-space">
 			<div class="col-lg-5 order-lg-2 ml-lg-auto">
+				<%= form_tag metodh: 'get' do %>
+				
+				<label for="lookup">Rechercher votre ville</label>
+				<%= text_field_tag :search %>
+				<%= submit_tag "Submit", class:"btn btn-primary mb-2" %>
+				<% end %>
+
+
+
 				<div class="">
 					<% @atmo = @atmos.city_air_indice %>
 					<% @atmo_name = @atmos.array_name %>
@@ -26,21 +30,20 @@
 						<% i += 1 %>
 						<h4 class="progress-percentage text-uppercase strong-600"><%= value %>%</h4>
 						<div class="progress progress-sm">
-
 							<% define_alerte = AtmoSud.new.define_color_alerte(value) %>
 							<div class= "progress-bar" role="progressbar" aria-valuenow="<%= value %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= value %>%; background-color: <%= define_alerte %>" ></div>
 						</div>
 					</div>
 					
 					<% end %>
-					<footer class="blockquote-footer text-right">Source <cite title="Source Title">Atmo Sud</cite></footer>
-				</div>
-			</div>
-			<div class="col-lg-6 order-lg-1">
-				
-				<%= image_tag('atmo/atmo.png', class:"img-fluid")%>
+				<footer class="blockquote-footer text-right">Source <cite title="Source Title">Atmo Sud</cite></footer>
 			</div>
 		</div>
+		<div class="col-lg-6 order-lg-1">
+			
+			<%= image_tag('atmo/atmo.png', class:"img-fluid")%>
+		</div>
 	</div>
+</div>
 </section>
 <br><br>

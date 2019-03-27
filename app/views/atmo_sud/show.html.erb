@@ -1,1 +1,25 @@
-show.html.erb
+<div class="container border border-primary rounded">
+	<div class= "row">
+		<div class="card text-white bg-success mb-6 ">
+			<div class="card-header">
+				Header
+			</div>
+			<div class="card-body">
+				<h5 class="card-title">VILLE</h5>
+				<p class="card-text">Sport: Conseillé.</p>
+				<p class="card-text">Sport: Conseillé.</p>
+				<p class="card-text">Sport: Conseillé.</p>
+				<p class="card-text">Sport: Conseillé.</p>
+			</div>
+		</div>
+		<div class="set-size charts-container">
+			<div class="pie-wrapper progress-<%=@chart%>">
+				<span class="label"><%= @atmos %><span class="smaller">%</span></span>
+				<div class="pie">
+					<div class="left-side half-circle"></div>
+					<div class="right-side half-circle"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

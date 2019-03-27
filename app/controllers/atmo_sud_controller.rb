@@ -6,7 +6,8 @@ class AtmoSudController < ApplicationController
 	end
 
 	def show 
-		@atmos = AtmoSud.new.city(params[:search])
+		@atmos = AtmoSud.new.city(params[:id])
+		@chart = (@atmos.to_i / 10)*10 + 5
 	end
 	def create
 		@atmos = AtmoSud.new.city(params[:search])

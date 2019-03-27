@@ -58,8 +58,10 @@ when 21..50
 end
 
 def city(a)
-  page  = Nokogiri::HTML(open("https://www.atmosud.org/monair/commune/13055")) 
-  puts page.xpath('/html/body/main/section[1]/div[2]/div/div/div/div[1]/div[1]/a/div[1]/div[1]/div[1]/div[1]').text
+	puts a
+  i = hash_city.fetch(a)
+  page  = Nokogiri::HTML(open("https://www.atmosud.org/monair/commune/#{i.to_i}")) 
+  return page.xpath('/html/body/main/section[1]/div[2]/div/div/div/div[1]/div[1]/a/div[1]/div[1]/div[1]/div[1]').text
 
 end
 
