@@ -33,29 +33,19 @@ require 'nokogiri'
   end
 
 
-  def define_alerte(a)
-
-    if a.to_i > 80 
-  	  return "#008B8B"
-  	elsif a.to_i > 49 && a.to_i < 79
-  	  return '#008B8B'
-    else
-  	  return "#008B8B"
-
-    end
-
-  end
-
 def define_color_alerte(a)
 	case a.to_i
 	when 1..20
 		return "#008B8B"
-when 21..50 
-	return "#006400"
-	when 51..70
-		return "#8B0000"
+when 20..50 
+  return "green"
+  when 50..70 
+  return "orange"
+when 70..100 
+  return "red"
 	end 
 end
+
 
 def city(a)
 	puts a

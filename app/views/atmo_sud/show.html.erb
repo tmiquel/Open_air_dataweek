@@ -1,25 +1,37 @@
-<div class="container border border-primary rounded">
-	<div class= "row">
-		<div class="card text-white bg-success mb-6 ">
-			<div class="card-header">
-				Header
-			</div>
-			<div class="card-body">
-				<h5 class="card-title">VILLE</h5>
-				<p class="card-text">Sport: Conseillé.</p>
-				<p class="card-text">Sport: Conseillé.</p>
-				<p class="card-text">Sport: Conseillé.</p>
-				<p class="card-text">Sport: Conseillé.</p>
+<div class="container">
+	<div class= "row justify-content-between">
+		<div class="card border-secondary md-3 col-4" style="max-width: 18rem;">
+			<div class="card-header">MARSEILLE</i></div>
+			<div class="card-body text-secondary">
+				<h5 class="card-title">Activitées:</h5><br>
+				<i class="fas fa-running"> - Footing </i><br><br>
+				<i class="fas fa-bicycle"> - Vélo</i><br><br>
+				<i class="fas fa-mug-hot"> - Café en terrasse</i><br><br>
+				<i class="fas fa-frown"> - Activitées extérieur déconseillées </i>
+				<i class="material-icons">cloud</i>
+				
+
 			</div>
 		</div>
-		<div class="set-size charts-container">
-			<div class="pie-wrapper progress-<%=@chart%>">
-				<span class="label"><%= @atmos %><span class="smaller">%</span></span>
-				<div class="pie">
-					<div class="left-side half-circle"></div>
-					<div class="right-side half-circle"></div>
+		<div class="col-4">
+			<h2> Marseille city</h2>
+			<p class="card-text">La ville la plus polluée de France ! Pourquoi ?<br>Venez le découvir dans nos articles</p>
+		</div>
+		<div class="col-4 align-self-center">
+			<h3> Indice actuel:</h3>
+			
+			<div class="set-size charts-container">
+				<div class="pie-wrapper progress-<%=@chart%>">
+					<span class="label"><%= @atmos %><span class="smaller">%</span></span>
+					<div class="pie">
+						<div class="left-side half-circle"></div>
+						<div class="right-side half-circle"></div>
+					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
+
+<br>
+<br>
