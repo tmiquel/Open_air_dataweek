@@ -73,7 +73,7 @@ RailsAdmin.config do |config|
       field :title, :wysihtml5 do
         label 'Titre'
         help "Obligatoire - Titre de l'article"
-        config_options toolbar: { fa: true }, # use font-awesome instead of glyphicon
+        config_options toolbar: { fa: true, color: true }, # use font-awesome instead of glyphicon
         html: true, # enables html editor
         parserRules: { tags: { p:1 } } # support for <p> in html mode
       end   
