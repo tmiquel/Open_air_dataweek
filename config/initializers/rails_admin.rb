@@ -70,48 +70,85 @@ RailsAdmin.config do |config|
     # change fiels in Article's edit page
 
     edit do
-      field :title do
+      field :title, :wysihtml5 do
         label 'Titre'
         help "Obligatoire - Titre de l'article"
-      end
-      field :short_description do
+        config_options toolbar: { fa: true }, # use font-awesome instead of glyphicon
+        html: true, # enables html editor
+        parserRules: { tags: { p:1 } } # support for <p> in html mode
+      end   
+      
+      field :short_description, :wysihtml5 do
         label 'description courte'
         help "Obligatoire - Une description qui s'affichera sur la page des articles"
+        config_options toolbar: { fa: true }, # use font-awesome instead of glyphicon
+        html: true, # enables html editor
+        parserRules: { tags: { p:1 } } # support for <p> in html mode
       end
-      field :driver_section_title do
+      field :driver_section_title, :wysihtml5 do
         label 'Forces: titre'
         help "Obligatoire - Titre pour 'Driver'"
+        config_options toolbar: { fa: true }, # use font-awesome instead of glyphicon
+        html: true, # enables html editor
+        parserRules: { tags: { p:1 } } # support for <p> in html mode
       end
-      field :driver_section_intro do
+      field :driver_section_intro, :wysihtml5 do
         label 'Forces: introduction'
+        config_options toolbar: { fa: true }, # use font-awesome instead of glyphicon
+        html: true, # enables html editor
+        parserRules: { tags: { p:1 } } # support for <p> in html mode
       end
-      field :pressure_section_title do
+      field :pressure_section_title, :wysihtml5 do
         label 'Pressions: titre'
         help "Obligatoire - Titre pour 'Pressure'"
+        config_options toolbar: { fa: true }, # use font-awesome instead of glyphicon
+        html: true, # enables html editor
+        parserRules: { tags: { p:1 } } # support for <p> in html mode
       end
-      field :pressure_section_intro do
+      field :pressure_section_intro, :wysihtml5 do
         label 'Pressions: introduction'
+        config_options toolbar: { fa: true }, # use font-awesome instead of glyphicon
+        html: true, # enables html editor
+        parserRules: { tags: { p:1 } } # support for <p> in html mode
       end
-      field :state_section_title do
+      field :state_section_title, :wysihtml5 do
         label 'État: titre'
         help "Obligatoire - Titre pour 'State'"
+        config_options toolbar: { fa: true }, # use font-awesome instead of glyphicon
+        html: true, # enables html editor
+        parserRules: { tags: { p:1 } } # support for <p> in html mode
       end
-      field :state_section_intro do
+      field :state_section_intro, :wysihtml5 do
         label 'État: introduction'
+        config_options toolbar: { fa: true }, # use font-awesome instead of glyphicon
+        html: true, # enables html editor
+        parserRules: { tags: { p:1 } } # support for <p> in html mode
       end
-      field :impact_section_title do
+      field :impact_section_title, :wysihtml5 do
         label 'Impacts: titre'
         help "Obligatoire - Titre pour 'Impact'"
+        config_options toolbar: { fa: true }, # use font-awesome instead of glyphicon
+        html: true, # enables html editor
+        parserRules: { tags: { p:1 } } # support for <p> in html mode
       end
-      field :impact_section_intro do
+      field :impact_section_intro, :wysihtml5 do
         label 'Impacts: introduction'
+        config_options toolbar: { fa: true }, # use font-awesome instead of glyphicon
+        html: true, # enables html editor
+        parserRules: { tags: { p:1 } } # support for <p> in html mode
       end
-      field :response_section_title do
+      field :response_section_title, :wysihtml5 do
         label 'Réponses: titre'
         help "Obligatoire - Titre pour 'Response'"
+        config_options toolbar: { fa: true }, # use font-awesome instead of glyphicon
+        html: true, # enables html editor
+        parserRules: { tags: { p:1 } } # support for <p> in html mode
       end
-      field :response_section_intro do
+      field :response_section_intro, :wysihtml5 do
         label 'Réponses: introduction'
+        config_options toolbar: { fa: true }, # use font-awesome instead of glyphicon
+        html: true, # enables html editor
+        parserRules: { tags: { p:1 } } # support for <p> in html mode
       end
       field :main_picture do
         label 'Photo pricipale'
