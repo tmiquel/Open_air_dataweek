@@ -59,5 +59,3 @@
 //= require boomerang.min
 
 //= require_tree .
-
-//= require_self
