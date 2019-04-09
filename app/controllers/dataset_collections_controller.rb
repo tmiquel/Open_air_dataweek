@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class DatasetCollectionsController < ApplicationController
   before_action :access_my_collection_only
 
@@ -8,36 +10,40 @@ class DatasetCollectionsController < ApplicationController
     end
   end
 
-	def create
-		dataset_collection = DatasetCollection.new(user: User.find(params[:user_id]), dataset: Dataset.find(params[:dataset]))
-		if dataset_collection.save
-			redirect_to user_dataset_collection_path(current_user)
-		else
-			redirect_to root_path
-		end
-	end
-
-	def destroy
-		@dataset_collection = DatasetCollection.where(user: DatasetCollection.find(params[:user_id])).where(dataset: Dataset.find(params[:dataset])).first
-		@dataset_collection.destroy
- 
+  def create
+    @topic = Topic.find(params[:id])
+    @user = User.find(params[:user_id])
+    @dataset = Dataset.find(params[:dataset])
+    @dataset_collection = DatasetCollection.create(user: @user, dataset: @dataset)
     respond_to do |format|
-
       format.js
       format.html do
-        redirect_to user_dataset_collection_path(current_user), notice: "data correctement supprimé"
+        redirect_to topic_path(@topic), notice: 'votre donnée a été correctement enregistrée et se trouve désormais dans votre librairie'
       end
 
       format.json
-
-
+    end
   end
-end
 
-private
+  def destroy
+    @user = DatasetCollection.find(params[:user_id])
+    @dataset = Dataset.find(params[:dataset])
+    @dataset_collection = DatasetCollection.where(user: @user).where(dataset: @dataset).first
+    @dataset_collection.destroy
+
+    respond_to do |format|
+      format.js
+      format.html do
+        redirect_to user_dataset_collection_path(current_user), notice: 'data correctement supprimé'
+      end
+      format.json
+    end
+  end
+
+  private
 
   def access_my_collection_only
-    unless ((current_user) && (params[:user_id].to_i == current_user.id))
+    unless current_user && (params[:user_id].to_i == current_user.id)
       redirect_to root_url, alert: 'Accessing or modifying another user data is not allowed.'
     end
   end

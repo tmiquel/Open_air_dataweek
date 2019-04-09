@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'boot'
 
 require 'rails/all'
@@ -20,7 +22,5 @@ module OpenAirThp
     # cf https://devcenter.heroku.com/articles/rails-4-asset-pipeline
     config.serve_static_assets = true
     config.api_only = false
-
   end
 end
-

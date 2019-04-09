@@ -43,8 +43,8 @@ fr:
       log_out: "Log out"
       ago: ""
     flash:
-      successful: "%{name} a été %{action} avec succès"
-      error: "%{name} n'a pas pu être %{action}"
+      successful: "Votre %{name} a été %{action} avec succès"
+      error: "Votre %{name} n'a pas pu être %{action}"
       noaction: "Aucune action !"
       model_not_found: "Le model '%{model}' n'a pas été trouvé"
       object_not_found: "%{model} avec id '%{id}' n'a pas été trouvé"
@@ -80,7 +80,7 @@ fr:
         done: "créé(e)"
       edit:
         title: "Édition %{model_label} '%{object_label}'"
-        menu: "Édition"
+        menu: "Éditer"
         breadcrumb: "Édition"
         link: "Éditer ce(tte) %{model_label}"
         done: "modifié(e)"

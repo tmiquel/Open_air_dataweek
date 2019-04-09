@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-</head>
-
-<body>
-    <section class="bg-base-5 slice sct-color-1">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-6">
-                    <h3 class="heading heading-6 strong-600 text-uppercase mb-0">Sujets</h3>
+    <head>
+    </head>
+    <body>
+        <section class="bg-base-5 slice sct-color-1">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-6">
+                        <h3 class="heading heading-6 strong-600 text-uppercase mb-0">Nos articles</h3>
+                    </div>
+                </div>
+                <span class="space-xs-lg"></span>
+                <div class="cols-md-space cols-sm-space cols-xs-space d-flex flex-wrap">
+                    <% @topics.each do |topic| %>
+                    <%= render partial: "topic_card", locals: {topic: topic} %>
+                    <% end %>
                 </div>
             </div>
-            <span class="space-xs-lg"></span>
-            <div class="cols-md-space cols-sm-space cols-xs-space d-flex flex-wrap">
-                <% @topics.each do |topic| %>
-                    <%= render partial: "topic_card", locals: {topic: topic} %>
-                <% end %>
-            </div>
-        </div>
-    </section>
-</body>
+        </section>
+    </body>
 </html>

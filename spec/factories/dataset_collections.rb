@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 FactoryBot.define do
   factory :dataset_collection do
-		user { User.all.sample }
-		dataset { Dataset.all.sample }    
+    user { FactoryBot.create(:user) }
+    dataset { FactoryBot.create(:dataset) }
   end
 end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # spec/features/visitor_signs_up_spec.rb
 require 'spec_helper'
 
@@ -24,7 +26,6 @@ feature 'Visitor signs up' do
     visit new_user_registration_path
     fill_in 'user_first_name', with: 'Thibaut'
     fill_in 'user_last_name', with: 'Miquel'
-    fill_in  'user_address', with: '7 rue Larcourt 13007 Marseille'
     fill_in 'user_email', with: email
     fill_in 'user_password', with: password
     fill_in 'user_password_confirmation', with: password
