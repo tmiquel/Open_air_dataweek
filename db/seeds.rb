@@ -20,22 +20,22 @@ puts 'Open Air Seed'
 puts '*' * 50
 puts
 puts "Deleting Database for the following models: #{models_array.join(' ')}."
-puts '-' * 50
+puts '~' * 50
 puts
 models_array.each(&:destroy_all)
 Faker::UniqueGenerator.clear
 puts 'Done'
 puts
-puts 'Reinitiating tables index at  1'
+puts 'Reinitiating tables index at 1'
 ActiveRecord::Base.connection.tables.each do |t|
-  ActiveRecord::Base.connection.reset_pk_sequence!(t)
+ActiveRecord::Base.connection.reset_pk_sequence!(t)
 end
-puts '-' * 50
+puts '~' * 50
 puts
 puts 'Done'
 puts
 puts "Database generation for #{models_array.join(' ')}"
-puts '-' * 50
+puts '~' * 50
 puts
 
 models_items_count = Hash[[['User', 5], ['Topic', 9], ['Dataset', 15], ['DatasetCollection', 12]]]
@@ -51,6 +51,8 @@ topic_count = 0
 models_array.each do |model|
   puts
   puts "Generating #{models_items_count[model.name]} items for #{model.name}"
+	puts "~"*50
+	puts
   models_items_count[model.name].times do
     case model.name
     # when 'City'
@@ -76,41 +78,58 @@ models_array.each do |model|
     when 'Topic'
       if topics_pics_paths_array.empty?
         puts
-        puts "Issue: Unsufficient number of pics to generate the required amount (#{models_items_count[model.name]}) of topic items"
+        puts "Issue: Unsufficient number of pics to generate the required amount of (#{models_items_count[model.name]}) topic items"
         puts
 
       else
-        if topic_count == 0
-          # Maritime topic
-          my_topic = model.new(title: "L'impact des zones portuaires sur la qualité de l'air",
-                               short_description: "La pollution d’origine maritime s’intègre dans la pollution générale de la zone portuaire qui comprend aussi la pollution secondaire aux infrastructures, en particulier de transport routier nécessaire au port et la pollution propre à la ville, transport routier, chauffage, etc.
-Pour Marseille, par exemple, cette pollution maritime représente 5 à 10 pourcents de la pollution totale.",
-                               driver_section_title: 'Fondements économiques du Port',
-                               driver_section_intro: 'Port généraliste et 1er port de France, le Port de Marseille traite tout type de marchandise : hydrocarbures et vracs liquides (pétrole, gaz et produits chimiques), marchandises diverses (conteneurs et autres conditionnements), vracs solides (minerais et céréales).',
-                               pressure_section_title: 'Emissions de polluants',
-                               pressure_section_intro: 'Ci-dessous figurent une estimation des émissions annuelles totales des principaux polluants atmosphériques (SO2 - NOx équivalent NO2 - particules en suspension PM10 - particules en suspension PM2.5 - benzène C6H6 - Composés Organiques Volatils Non Méthaniques COVNM - Ammoniac NH3 - monoxyde de carbone CO - As - Cd - Ni - Pb – BaP sur la région Sud pour les années 2007, 2012 et 2010 à 2016. Toutes les données fournies sont kg. Le nombre de décimales varie en fonction du polluant.',
-                               state_section_title: 'Mesures de pollution',
-                               state_section_intro: "Ci-dessous figurent les niveaux annuels des polluants dioxyde d’azote NO2, particules en suspension PM10, ozone O3 et de l'Indice Synthétique air (ISA) dans l'air ambiant, issus de la modélisation de la région Sud par année sur les 5 dernières années. Toutes les données fournies sont en μg/m³ (microgramme par mètre cube).",
-                               impact_section_title: 'Populations exposées',
-                               impact_section_intro: 'Vous trouverez ici les populations et territoires exposés au dépassement des valeurs limites des PM10, PM2.5 et NO2 sur la région Sud pour les 5 dernières années.',
-                               response_section_title: 'Indicateurs pilotes de la Politique Régionale',
-                               response_section_intro: "Les 12 indicateurs annuels de Lutte contre le changement climatique et de protection de l'atmosphère ont pour objectif d’éclairer la prise de décision et la mise en œuvre d’actions permettant de répondre aux défis auxquels la région Provence-Alpes-Côte d’Azur est confrontée")
+        case topic_count
+					when 0
+					# Maritime topic
+						first_topic = model.new(title: "L'impact des zones portuaires sur la qualité de l'air",
+																 short_description: "La pollution d’origine maritime s’intègre dans la pollution générale de la zone portuaire qui comprend aussi la pollution secondaire aux infrastructures, en particulier de transport routier nécessaire au port et la pollution propre à la ville, transport routier, chauffage, etc.
+	Pour Marseille, par exemple, cette pollution maritime représente 5 à 10 pourcents de la pollution totale.",
+																 driver_section_title: 'Fondements économiques du Port',
+																 driver_section_intro: 'Port généraliste et 1er port de France, le Port de Marseille traite tout type de marchandise : hydrocarbures et vracs liquides (pétrole, gaz et produits chimiques), marchandises diverses (conteneurs et autres conditionnements), vracs solides (minerais et céréales).',
+																 pressure_section_title: 'Emissions de polluants',
+																 pressure_section_intro: 'Ci-dessous figurent une estimation des émissions annuelles totales des principaux polluants atmosphériques (SO2 - NOx équivalent NO2 - particules en suspension PM10 - particules en suspension PM2.5 - benzène C6H6 - Composés Organiques Volatils Non Méthaniques COVNM - Ammoniac NH3 - monoxyde de carbone CO - As - Cd - Ni - Pb – BaP sur la région Sud pour les années 2007, 2012 et 2010 à 2016. Toutes les données fournies sont kg. Le nombre de décimales varie en fonction du polluant.',
+																 state_section_title: 'Mesures de pollution',
+																 state_section_intro: "Ci-dessous figurent les niveaux annuels des polluants dioxyde d’azote NO2, particules en suspension PM10, ozone O3 et de l'Indice Synthétique air (ISA) dans l'air ambiant, issus de la modélisation de la région Sud par année sur les 5 dernières années. Toutes les données fournies sont en μg/m³ (microgramme par mètre cube).",
+																 impact_section_title: 'Populations exposées',
+																 impact_section_intro: 'Vous trouverez ici les populations et territoires exposés au dépassement des valeurs limites des PM10, PM2.5 et NO2 sur la région Sud pour les 5 dernières années.',
+																 response_section_title: 'Indicateurs pilotes de la Politique Régionale',
+																 response_section_intro: "Les 12 indicateurs annuels de Lutte contre le changement climatique et de protection de l'atmosphère ont pour objectif d’éclairer la prise de décision et la mise en œuvre d’actions permettant de répondre aux défis auxquels la région Provence-Alpes-Côte d’Azur est confrontée")
 
-          my_topic.main_picture.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'port-marseille.jpg')), filename: 'port-marseille.jpg')
-        else
-          my_topic = model.new(title: Faker::Lorem.paragraph_by_chars(50, false),
-                               short_description: Faker::Lorem.paragraph_by_chars(256, false),
-                               driver_section_title: 'Besoins socio-économiques',
-                               driver_section_intro: topic_driver_text,
-                               pressure_section_title: 'Emissions',
-                               pressure_section_intro: topic_pressure_text,
-                               state_section_title: 'Etats',
-                               state_section_intro: topic_state_text,
-                               impact_section_title: 'Impacts',
-                               impact_section_intro: topic_impact_text,
-                               response_section_title: 'Réglementations',
-                               response_section_intro: topic_response_text)
-          my_topic.main_picture.attach(io: File.open(topics_pics_paths_array.pop), filename: ('picture ' + my_topic.title.to_s + '.jpg'))
+						first_topic.main_picture.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'port-marseille.jpg')), filename: 'port-marseille.jpg')
+					
+					when 1
+					# Pollen topic
+						second_topic = model.new(title: "Impact de la pollution urbaine sur les pollens en région PACA", 
+																		short_description: "Dans la région, les concentrations de pollen dans l'air restent très élevés (cyprès, chênes, bouleaux, platanes oliviers). Un rapport de l'Anses (Agence nationale de sécurité sanitaire de l'alimentation, de l'environnement et du travail) informe sur l'action de l'ozone et du dioxyde d'azote sur les pollens.", 
+																		driver_section_title: "La région PACA, une région dynamique et un pôle d'activité", 
+																		driver_section_intro: "Avec ses 5 millions d'habitants, cette région connaît une activité économique qui génère un important trafic routier ainsi que des besoins énergétiques. Garante d'un riche patrimoine naturel, la région est reconnue pour l'exceptionnelle variété d'espèces qui composent son paysage.", 
+																		pressure_section_title: "Le pollen menacé par notre activité", 
+																		pressure_section_intro: "Lorsque l'on se chauffe, ou l'on prend les transports en commun, cela répand des oxydes d'azotes qui sont ensuite libérés dans l'air extérieur. On estime aujourd'hui que plus de la moitié de ces émissions sont due au trafic routier et à près de 20 % la part générée par le chauffage.", 
+																		state_section_title: "L'activité pollinique en France", 
+																		state_section_intro: "40 % de la population française inspire quotidiennement trop de particules fines. L'impact est problématique, particulièrement pour les personnes allergiques qui présentent un risque accru de développer un asthme allergique ou bronchique. De plus l'ozone présent dans la troposphère nous affecte directement et accroît la perméabilité des muqueuses rendant ainsi la population sensible à un nombre de plus en plus important allergènes.", 
+																		impact_section_title: "Pollen et polluants, une réaction à risques", 
+																		impact_section_intro: "Si certains pollens sont naturellement allergènes il est désormais admis que la pollution atmosphérique présente un impact sur les fonctions reproductrices des plantes, mais également sur le de transport des pollens, puisque la fragilisation de la membrane cytoplasmique des grains de pollen augmente le risque que l'allergène soit libéré et peut également fragmenter les particules allergènes et ainsi leur faire atteindre une taille qui leur permet ensuite de pénétrer dans le système respiratoire bien plus profondément que les grains de pollen sains (en deça de 4.5 micromètres).", 
+																		response_section_title: "Lois et règlementation", 
+																		response_section_intro: "
+
+        	else
+						my_topic = model.new(title: Faker::Lorem.paragraph_by_chars(50, false),
+																 short_description: Faker::Lorem.paragraph_by_chars(256, false),
+																 driver_section_title: 'Besoins socio-économiques',
+																 driver_section_intro: topic_driver_text,
+																 pressure_section_title: 'Emissions',
+																 pressure_section_intro: topic_pressure_text,
+																 state_section_title: 'Etats',
+																 state_section_intro: topic_state_text,
+																 impact_section_title: 'Impacts',
+																 impact_section_intro: topic_impact_text,
+																 response_section_title: 'Réglementations',
+																 response_section_intro: topic_response_text)
+						my_topic.main_picture.attach(io: File.open(topics_pics_paths_array.pop), filename: ('picture ' + my_topic.title.to_s + '.jpg'))
         end
 
         my_topic.save
