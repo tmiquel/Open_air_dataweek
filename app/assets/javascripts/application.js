@@ -13,7 +13,7 @@
 //= require rails-ujs
 //= require jquery
 //= require activestorage
-//= require leaflet
+
 
 
 //= require jquery/jquery.min
@@ -57,5 +57,5 @@
 //= require deso-slide/js/jquery.desoslide.min
 
 //= require boomerang.min
-
+//= require leaflet
 //= require_tree .
