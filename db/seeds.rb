@@ -20,22 +20,22 @@ puts 'Open Air Seed'
 puts '*' * 50
 puts
 puts "Deleting Database for the following models: #{models_array.join(' ')}."
-puts '-' * 50
+puts '~' * 50
 puts
 models_array.each(&:destroy_all)
 Faker::UniqueGenerator.clear
 puts 'Done'
 puts
-puts 'Reinitiating tables index at  1'
+puts 'Reinitiating tables index at 1'
 ActiveRecord::Base.connection.tables.each do |t|
-  ActiveRecord::Base.connection.reset_pk_sequence!(t)
+ActiveRecord::Base.connection.reset_pk_sequence!(t)
 end
-puts '-' * 50
+puts '~' * 50
 puts
 puts 'Done'
 puts
 puts "Database generation for #{models_array.join(' ')}"
-puts '-' * 50
+puts '~' * 50
 puts
 
 models_items_count = Hash[[['User', 5], ['Topic', 9], ['Dataset', 15], ['DatasetCollection', 12]]]
@@ -51,6 +51,8 @@ topic_count = 0
 models_array.each do |model|
   puts
   puts "Generating #{models_items_count[model.name]} items for #{model.name}"
+	puts "~"*50
+	puts
   models_items_count[model.name].times do
     case model.name
     # when 'City'
@@ -76,41 +78,90 @@ models_array.each do |model|
     when 'Topic'
       if topics_pics_paths_array.empty?
         puts
-        puts "Issue: Unsufficient number of pics to generate the required amount (#{models_items_count[model.name]}) of topic items"
+        puts "Issue: Unsufficient number of pics to generate the required amount of (#{models_items_count[model.name]}) topic items"
         puts
 
       else
-        if topic_count == 0
-          # Maritime topic
-          my_topic = model.new(title: "L'impact des zones portuaires sur la qualité de l'air",
-                               short_description: "La pollution d’origine maritime s’intègre dans la pollution générale de la zone portuaire qui comprend aussi la pollution secondaire aux infrastructures, en particulier de transport routier nécessaire au port et la pollution propre à la ville, transport routier, chauffage, etc.
-Pour Marseille, par exemple, cette pollution maritime représente 5 à 10 pourcents de la pollution totale.",
-                               driver_section_title: 'Fondements économiques du Port',
-                               driver_section_intro: 'Port généraliste et 1er port de France, le Port de Marseille traite tout type de marchandise : hydrocarbures et vracs liquides (pétrole, gaz et produits chimiques), marchandises diverses (conteneurs et autres conditionnements), vracs solides (minerais et céréales).',
-                               pressure_section_title: 'Emissions de polluants',
-                               pressure_section_intro: 'Ci-dessous figurent une estimation des émissions annuelles totales des principaux polluants atmosphériques (SO2 - NOx équivalent NO2 - particules en suspension PM10 - particules en suspension PM2.5 - benzène C6H6 - Composés Organiques Volatils Non Méthaniques COVNM - Ammoniac NH3 - monoxyde de carbone CO - As - Cd - Ni - Pb – BaP sur la région Sud pour les années 2007, 2012 et 2010 à 2016. Toutes les données fournies sont kg. Le nombre de décimales varie en fonction du polluant.',
-                               state_section_title: 'Mesures de pollution',
-                               state_section_intro: "Ci-dessous figurent les niveaux annuels des polluants dioxyde d’azote NO2, particules en suspension PM10, ozone O3 et de l'Indice Synthétique air (ISA) dans l'air ambiant, issus de la modélisation de la région Sud par année sur les 5 dernières années. Toutes les données fournies sont en μg/m³ (microgramme par mètre cube).",
-                               impact_section_title: 'Populations exposées',
-                               impact_section_intro: 'Vous trouverez ici les populations et territoires exposés au dépassement des valeurs limites des PM10, PM2.5 et NO2 sur la région Sud pour les 5 dernières années.',
-                               response_section_title: 'Indicateurs pilotes de la Politique Régionale',
-                               response_section_intro: "Les 12 indicateurs annuels de Lutte contre le changement climatique et de protection de l'atmosphère ont pour objectif d’éclairer la prise de décision et la mise en œuvre d’actions permettant de répondre aux défis auxquels la région Provence-Alpes-Côte d’Azur est confrontée")
+        case topic_count
+					when 0
+					# Maritime topic
+						my_topic = model.new(title: "L'impact des zones portuaires sur la qualité de l'air",
+																 short_description: "La pollution d’origine maritime s’intègre dans la pollution générale de la zone portuaire qui comprend aussi la pollution secondaire aux infrastructures, en particulier de transport routier nécessaire au port et la pollution propre à la ville, transport routier, chauffage, etc.
+	Pour Marseille, par exemple, cette pollution maritime représente 5 à 10 pourcents de la pollution totale.",
+																 driver_section_title: 'Fondements économiques du Port',
+																 driver_section_intro: 'Port généraliste et 1er port de France, le Port de Marseille traite tout type de marchandise : hydrocarbures et vracs liquides (pétrole, gaz et produits chimiques), marchandises diverses (conteneurs et autres conditionnements), vracs solides (minerais et céréales).',
+																 pressure_section_title: 'Emissions de polluants',
+																 pressure_section_intro: 'Ci-dessous figurent une estimation des émissions annuelles totales des principaux polluants atmosphériques (SO2 - NOx équivalent NO2 - particules en suspension PM10 - particules en suspension PM2.5 - benzène C6H6 - Composés Organiques Volatils Non Méthaniques COVNM - Ammoniac NH3 - monoxyde de carbone CO - As - Cd - Ni - Pb – BaP sur la région Sud pour les années 2007, 2012 et 2010 à 2016. Toutes les données fournies sont kg. Le nombre de décimales varie en fonction du polluant.',
+																 state_section_title: 'Mesures de pollution',
+																 state_section_intro: "Ci-dessous figurent les niveaux annuels des polluants dioxyde d’azote NO2, particules en suspension PM10, ozone O3 et de l'Indice Synthétique air (ISA) dans l'air ambiant, issus de la modélisation de la région Sud par année sur les 5 dernières années. Toutes les données fournies sont en μg/m³ (microgramme par mètre cube).",
+																 impact_section_title: 'Populations exposées',
+																 impact_section_intro: 'Vous trouverez ici les populations et territoires exposés au dépassement des valeurs limites des PM10, PM2.5 et NO2 sur la région Sud pour les 5 dernières années.',
+																 response_section_title: 'Indicateurs pilotes de la Politique Régionale',
+																 response_section_intro: "Les 12 indicateurs annuels de Lutte contre le changement climatique et de protection de l'atmosphère ont pour objectif d’éclairer la prise de décision et la mise en œuvre d’actions permettant de répondre aux défis auxquels la région Provence-Alpes-Côte d’Azur est confrontée")
 
-          my_topic.main_picture.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'port-marseille.jpg')), filename: 'port-marseille.jpg')
-        else
-          my_topic = model.new(title: Faker::Lorem.paragraph_by_chars(50, false),
-                               short_description: Faker::Lorem.paragraph_by_chars(256, false),
-                               driver_section_title: 'Besoins socio-économiques',
-                               driver_section_intro: topic_driver_text,
-                               pressure_section_title: 'Emissions',
-                               pressure_section_intro: topic_pressure_text,
-                               state_section_title: 'Etats',
-                               state_section_intro: topic_state_text,
-                               impact_section_title: 'Impacts',
-                               impact_section_intro: topic_impact_text,
-                               response_section_title: 'Réglementations',
-                               response_section_intro: topic_response_text)
-          my_topic.main_picture.attach(io: File.open(topics_pics_paths_array.pop), filename: ('picture ' + my_topic.title.to_s + '.jpg'))
+						my_topic.main_picture.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'port-marseille.jpg')), filename: 'port-marseille.jpg')
+					when 2
+					# Pollen topic
+						my_topic = model.new(title: "Impact de la pollution urbaine sur les pollens en région PACA", 
+																		short_description: "Dans la région, les concentrations de pollen dans l'air restent très élevés (cyprès, chênes, bouleaux, platanes oliviers). Un rapport de l'Anses (Agence nationale de sécurité sanitaire de l'alimentation, de l'environnement et du travail) informe sur l'action de l'ozone et du dioxyde d'azote sur les pollens.", 
+																		driver_section_title: "La région PACA, une région dynamique et un pôle d'activité", 
+																		driver_section_intro: "Avec ses 5 millions d'habitants, cette région connaît une activité économique qui génère un important trafic routier ainsi que des besoins énergétiques. Garante d'un riche patrimoine naturel, la région est reconnue pour l'exceptionnelle variété d'espèces qui composent son paysage.", 
+																		pressure_section_title: "Le pollen menacé par notre activité", 
+																		pressure_section_intro: "Lorsque l'on se chauffe, ou l'on prend les transports en commun, cela répand des oxydes d'azotes qui sont ensuite libérés dans l'air extérieur. On estime aujourd'hui que plus de la moitié de ces émissions sont due au trafic routier et à près de 20 % la part générée par le chauffage.", 
+																		state_section_title: "L'activité pollinique en France", 
+																		state_section_intro: "40 % de la population française inspire quotidiennement trop de particules fines. L'impact est problématique, particulièrement pour les personnes allergiques qui présentent un risque accru de développer un asthme allergique ou bronchique. De plus l'ozone présent dans la troposphère nous affecte directement et accroît la perméabilité des muqueuses rendant ainsi la population sensible à un nombre de plus en plus important allergènes.", 
+																		impact_section_title: "Pollen et polluants, une réaction à risques", 
+																		impact_section_intro: "Si certains pollens sont naturellement allergènes il est désormais admis que la pollution atmosphérique présente un impact sur les fonctions reproductrices des plantes, mais également sur le de transport des pollens, puisque la fragilisation de la membrane cytoplasmique des grains de pollen augmente le risque que l'allergène soit libéré et peut également fragmenter les particules allergènes et ainsi leur faire atteindre une taille qui leur permet ensuite de pénétrer dans le système respiratoire bien plus profondément que les grains de pollen sains (en deça de 4.5 micromètres).", 
+																		response_section_title: "Lois et règlementation", 
+																		response_section_intro: "not written yet")
+
+						my_topic.main_picture.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'pollen.jpg')), filename: 'pollen.jpg')
+					when 3
+					#AéroportMarseilleProvence
+						my_topic = model.new(title: "Aéroport Marseille Provence: Impact territorial",
+                                    short_description: "L’Aéroport Marseille Provence ne se préoccupe pas que de croître en nombre de destinations, de passagers et de fret. Avec ses 9,4 millions de passagers, ses 56 695 tonnes de fret et ses investissements conséquents (500 millions d’euros à l’horizon 2025), il sait que chacune de ses activités engendre un impact sur le territoire.",
+                                    driver_section_title: "Pus de 3.8 millions de passagers par an",
+                                    driver_section_intro: "Après, cela ne nous dédouane pas pour autant. Parmi les actions mises en place, le suivi et le bilan de nos émissions de polluants. Nous sommes en train de finaliser notre adhésion à Atmosud », qui assurera un suivi régulier de la qualité de l’air sur la plateforme courant 2019, et permettra la mise en place d’actions visant à réduire les émissions des différents acteurs de la plateforme. Pour ce qui est des gaz à effet de serre, là encore, sur les 39 millions de tonnes de CO2 de la région Sud, moins de 2% sont liés au secteur aérien. « Et il ne représente que 3,6% des émissions atmosphériques au niveau européen, ce qui là non plus n’est pas significatif. Mais depuis 2013, nous nous sommes lancés dans une démarche volontariste avec l’obtention de la certification Airport Carbon Accreditation.",
+                                    pressure_section_title: "Système de mesure du pollution et suivies des trajectoires",
+                                    pressure_section_intro: "Un système de mesure de bruit et de suivi des trajectoires des aéronefs est en fonctionnement depuis septembre 2004. Il comprend quatre stations de mesure fixes, une station mobile et quatre stations de mesure semi-mobiles réparties sur sept sites : Les Pennes Mirabeau, Marignane, Marseille (quartier de Malmousque), Ensuès-la-Redonne, Rognac, Gignac-la-Nerthe et Vitrolles.",
+                                    state_section_title: "Pollution élevée",
+                                    state_section_intro: "Certains champs de la Responsabilité sociétale des entreprises (RSE), à l’instar de la réduction des nuisances sonores, sont en partie cadrés sur le plan réglementaire, cela n’empêche pas l’aéroport Marseille Provence (AMP) de faire preuve d’initiative en matière de développement durable. Car il sait pertinemment que sa croissance économique est indissociable de sa performance environnementale et donc, de la lutte contre les impacts de son trafic... Panorama des actions engagées.",
+                                    impact_section_title: "Polution du Salin des Lions",
+                                    impact_section_intro: "Enfin, AMP préserve la biodiversité. Il œuvre déjà sur la problématique rencontrée par tous les aéroports et gérée depuis longue date : les impacts du trafic sur la population aviaire. « Un des risques étant d’avoir des collisions entre les oiseaux et les avions. Au sein d’AMP, une équipe est totalement dédiée à la prévention du péril animalier. Elle cultive une très bonne connaissance des populations implantées à proximité, quelles espèces et à quelles périodes de l’année, elle détermine où elles nichent, où elles se nourrissent.",
+                                    response_section_title: "Les énergies renouvelables",
+                                    response_section_intro: "L’appel aux énergies renouvelables se généralise pour les besoins aéroportuaires parallèlement aux efforts de maîtrise de l’énergie (- 60% sur l’éclairage grâce au renouvellement intérieur et extérieur). La future centrale photovoltaïque prévue sur un nouveau parking à étages pourvoira à terme à 10% de l’électricité consommée par la plate-forme. Enfin, AMP œuvre à la préservation de la biodiversité sur ses zones naturelles (2/3 de ses 600 hectares). Près de 110 espèces régulières ont été par exemple recensées sur les salins du Lion, sa « petite Camargue ». La démarche pédagogique de découverte sera accentuée cette année. Une initiative conduite en coopération avec les communes, comme Vitrolles qui songe à un sentier du littoral, et les associations, comme Etang Maintenant.")
+
+            my_topic.main_picture.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'airport.jpg')), filename: 'airport.jpg')
+					when 4
+					
+						my_topic = model.new(title: "Influence des transports publics à Marseille sur la qualité de l'air (article factice)",
+                                    short_description: "Ouverture de lignes de métros et fin du plus grand réseau de tramway français dans les années 80, puis ouverture de nouvelles lignes de tramways dans les années 2010, Marseille a connu de grands changements dernièrement. Pourtant, elle reste à la traine de Lyon en terme de transports publics et sa qualité de l'air est décriée. Quel bilan?",
+                                    driver_section_title: "La stratégie de transport public de la métropôle Aix-Marseille",
+                                    driver_section_intro: "La métropole Aix-Marseille a pris le relais de la Ville de Marseille dans la définition de la politique de transport public. Comment celle-ci est-elle définie aujourd'hui? Le faible développement des transports publics est aujourd'hui notoire. Sur l'exemple du vélo notamment, la métropole phocéenne compte seulement 130 kilomètres de pistes cyclables, contre 750 kilomètres pour l'agglomération lyonnaise. Même constat sur le cas des transports en commun: Marseille n'accueille que 1 129 kilomètres de lignes de bus, tramway et métro, contre 3 886 kilomètres à Lyon.",
+                                    pressure_section_title: "Baisse d'émissions de polluants par les transports publics",
+                                    pressure_section_intro: "Quelle est la part du transport en commun sur les émissions de polluants? Quels polluants sont émis? Quel est le niveau de baisse des polluants suite à l'installation du métro? Il n'existe pas de bases de données disponibles publiquement à ce jour sur ce sujet.",
+                                    state_section_title: "Influence des transports publics sur les taux de NOx et Particules fines",
+                                    state_section_intro: "Cette section détaille les concentrations de polluants dans les zones marquées par l'utilisation des transports publics (10% des transports métropolitains), avant et après leur installation. Il n'existe pas de bases de données disponibles à ce jour sur cette section.",
+																		impact_section_title: "Niveaux de dangerosité pour la population",
+																		impact_section_intro: "Que ce soit en période de pic de pollution ou avec la pollution de fond, les risques des microparticules sur la santé sont principalement respiratoires et cardio-vasculaires. Si chez l'adulte en bonne santé, la pollution aux microparticules (inférieures à 2,5 microns, appelées PM2,5) provoque seulement une gêne passagère (toux, yeux qui piquent...), c'est un facteur aggravant chez les personnes souffrant d’une maladie respiratoire comme une broncho-pneumopathie chronique ou de l'asthme, ainsi que chez les enfants (dont les poumons sont encore immatures) et les personnes âgées ( qui ont une capacité ventilatoire diminuée).",
+                                    response_section_title: "Réglementation & Gouvernance",
+                                    response_section_intro: "Depuis le 1er janvier 2016, la Métropole Aix-Marseille-Provence (créée par la loi MAPTAM du 27 janvier 2014) est l’autorité organisatrice de la mobilité (AOM) sur son territoire, et donc de la RTM (Régie des Transports Métropolitains). Elle dispose d’un budget annexe Transports. Les relations juridiques, administratives et financières RTM/AOM sont déterminées dans un Contrat d’Obligation de Service Public.")
+            
+            my_topic.main_picture.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'electric_bus.jpg')), filename: 'electric_bus.jpg')
+        	else
+						my_topic = model.new(title: Faker::Lorem.paragraph_by_chars(50, false),
+																 short_description: Faker::Lorem.paragraph_by_chars(256, false),
+																 driver_section_title: 'Besoins socio-économiques',
+																 driver_section_intro: topic_driver_text,
+																 pressure_section_title: 'Emissions',
+																 pressure_section_intro: topic_pressure_text,
+																 state_section_title: 'Etats',
+																 state_section_intro: topic_state_text,
+																 impact_section_title: 'Impacts',
+																 impact_section_intro: topic_impact_text,
+																 response_section_title: 'Réglementations',
+																 response_section_intro: topic_response_text)
+						my_topic.main_picture.attach(io: File.open(topics_pics_paths_array.pop), filename: ('picture ' + my_topic.title.to_s + '.jpg'))
         end
 
         my_topic.save
