@@ -1,14 +1,14 @@
 <div id="<%=category_section%>" class="section-title section-title--style-1 text-center mb-4 ">
     <h3 class="section-title-inner heading-3 strong-400">
     <span>
-        <%=category_section_title%>
+        <%=category_section_title.html_safe%>
     </span>
     </h3>
     <span class="section-title-delimiter clearfix"></span>
 </div>
 <div class="block-body block-post-body">
     <p class="text-justify">
-        <%=category_section_intro%>
+        <%=category_section_intro.html_safe%>
     </p>
     <br>
     <% if category_datasets.size == 1 %>
