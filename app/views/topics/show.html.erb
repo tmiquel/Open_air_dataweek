@@ -5,7 +5,7 @@
                 <div class="section-title section-title--style-1 text-center mb-4">
                     <h2 class="section-title-inner heading-1 strong-400">
                     <span>
-                    <%=@topic.title%></span>
+                    <%=@topic.title.html_safe%></span>
                     </h2>
                 </div>
             </div>
@@ -21,7 +21,7 @@
                     </div>
                     <div class="block-body block-post-body">
                         <p class="text-justify">
-                            <%=@topic.short_description%>
+                            <%=@topic.short_description.html_safe%>
                         </p>
                     </div>
                     <br><br><br>
