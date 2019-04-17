@@ -93,5 +93,6 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 # https://stackoverflow.com/questions/23727468/error-with-active-record-translations
 gem 'nokogiri'
 gem 'rails-i18n', '~> 5.1'
+gem 'leaflet-rails'
 gem 'twitter'
 gem 'bootstrap-wysihtml5-rails', '> 0.3.1.24'

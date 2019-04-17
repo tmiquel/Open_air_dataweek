@@ -26,7 +26,7 @@ class DatasetCollectionsController < ApplicationController
   end
 
   def destroy
-    @user = DatasetCollection.find(params[:user_id])
+    @user = User.find(params[:user_id])
     @dataset = Dataset.find(params[:dataset])
     @dataset_collection = DatasetCollection.where(user: @user).where(dataset: @dataset).first
     @dataset_collection.destroy
