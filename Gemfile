@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.1'
+ruby '2.5.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
@@ -96,3 +96,5 @@ gem 'rails-i18n', '~> 5.1'
 gem 'leaflet-rails'
 gem 'twitter'
 gem 'bootstrap-wysihtml5-rails', '> 0.3.1.24'
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
