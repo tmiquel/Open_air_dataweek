@@ -2,13 +2,15 @@
 
   <% if notice %>
   <br>
-  <div  id="inner-message-success" class="alert alert-success" role="alert">
+  <div  id="inner-message-success" class="alert alert-success-alt" role="alert">
+    <span class="glyphicon fa fa-link"></span>
     <%= notice %>
   </div>
   <% end %>
   <% if alert %>
   <br>
-  <div  id="inner-message-danger" class="alert alert-danger" role="alert">
+  <div  id="inner-message-danger" class="alert alert-danger-alt" role="alert">
+    <span class="glyphicon fa fa-exclamation-triangle "></span>
     <%= alert %>
   </div>
   <% end %>

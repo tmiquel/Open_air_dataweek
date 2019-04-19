@@ -9,7 +9,8 @@
     </h2>
     
       <% resource.errors.full_messages.each do |message| %>
-      <div  id="inner-message-success" class="alert alert-success" role="alert">
+  <div  id="inner-message-danger" class="alert alert-danger-alt" role="alert">
+    <span class="glyphicon fa fa-exclamation-triangle "></span>
         <%= message %>
       </div>
       <% end %>
