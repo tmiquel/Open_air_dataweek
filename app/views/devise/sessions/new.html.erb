@@ -1,6 +1,7 @@
 <%= form_for(resource,  url: session_path(resource_name)) do |f| %>
 <body class="slice-lg has-bg-cover bg-size-cover" style="background-image: url(<%= asset_path('air-quality-banner/background1.jpg')%>); background-repeat: no-repeat; background-size: cover; background-position: center;">
   <div id="top" class="container">
+
     <div class="row justify-content-center cols-xs-space">
       <div class="col-lg-6">
         <div class="form-card form-card--style-2 z-depth-2-top">
@@ -25,41 +26,72 @@
                     <%= f.label :email %><br />
                     <div class="input-group input-groupe--style-1">
                       <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control form-control-lg" %>
+
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="row">
-                <div class="col-12">
-                  <div class="form-group">
-                    <%= f.label :Mot_de_passe %><br />
-                    <div class="input-group input-groupe--style-1">
-                      <%= f.password_field :password, autofocus: true, autocomplete: "current_password", class: "form-control form-control-lg" %>
+                <div class="row">
+                  <div class="col-12">
+                    <div class="form-group">
+                      <%= f.label :Mot_de_passe %><br />
+                      <div class="input-group input-groupe--style-1">
+                        <%= f.password_field :password, autofocus: true, autocomplete: "current_password", class: "form-control form-control-lg" %>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="row align-items-center">
-                <div class="col-md-6">
-                  <%= render "devise/shared/forgott_pwd_link" %>
-                  <%= render "devise/shared/links" %>
+                <div class="row align-items-center">
+                  <div class="col-md-6">
+                    <%= render "devise/shared/forgott_pwd_link" %>
+                    
+                  </div>
+                  <div class="col-md-6 mt-4 text-right">
+                    <%= f.submit "Se connecter", class:"btn btn-styled btn-base-1 px-4" %>
+                    
+                  </div>
                 </div>
-                <div class="col-md-6 mt-4 text-right">
-                  <%= f.submit "Se connecter", class:"btn btn-styled btn-base-1 px-4" %>
+                <% if devise_mapping.rememberable? %>
+                <div class="field">
+                  <%= f.check_box :remember_me %>
+                  <%= f.label :Se_souvenir_de_moi %>
                 </div>
+                <%= render "devise/shared/links" %>
+                
+                <% end %>
+                <% end %>
+              </form>
+            </div>
+          </div>
+          
+        </div>
+        
+        <div class="card text-center">
+          <div style="align-self: center">
+            <div class="card-header">
+              <h5 class="card-title"> Socical network </h5>
+            </div>
+            <div class="card-body">
+              <%= link_to user_facebook_omniauth_authorize_path do%>
+              <div class="btn-lg btn-block btn-social btn-facebook">
+                <i class="fa fa-facebook"></i> Sign in with Facebook
               </div>
-              <% if devise_mapping.rememberable? %>
-              <div class="field">
-                <%= f.check_box :remember_me %>
-                <%= f.label :Se_souvenir_de_moi %>
+              <% end %><br>
+              <%= link_to user_google_oauth2_omniauth_authorize_path do%>
+              <div class="btn-lg btn-block btn-social btn-google">
+                <i class="fa fa-google"></i> Sign in with Google
+              </div>
+              <% end %><br>
+              <%= link_to user_twitter_omniauth_authorize_path do%>
+              <div class="btn-lg btn-block btn-social btn-twitter">
+                <i class="fa fa-twitter"></i> Sign in with Twitter
               </div>
               <% end %>
-              <% end %>
-            </form>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+
 </div>
 </body>

@@ -3,7 +3,11 @@
 Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   resources :topics
-  devise_for :users
+  devise_for :users, controllers: {
+        sessions: 'users/sessions',
+        omniauth_callbacks: 'users/omniauth_callbacks'
+      }
+
   resources :users do
     resource 'dataset_collection', only: %i[show create destroy]
   end
