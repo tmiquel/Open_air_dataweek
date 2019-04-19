@@ -62,14 +62,7 @@
 							</div>
 						</div>
 						
-						<div class="col-12">
-							<div class="form-group">
-								<%= f.label :confirmer_le_mot_de_passe %><br />
-								<div class="input-group input-group--style-1">
-									<%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control form-control-lg", placeholder: "Confirmer le mot de passe" %>
-								</div>
-							</div>
-						</div>
+
 						
 						<div class="col-12">
 							<%= render "devise/shared/links" %>
@@ -82,35 +75,28 @@
 					</div>
 				</div>
 			</div>
-			        <div class="col-4 align-self-center">
-          <div>
-
-            <div class="card-body">
-              <%= link_to user_facebook_omniauth_authorize_path do%>
-              <div class="btn-lg btn-block btn-social btn-facebook">
-                <i class="fa fa-facebook"></i> Sign in with Facebook
-              </div>
-              <% end %><br>
-              <%= link_to user_google_oauth2_omniauth_authorize_path do%>
-              <div class="btn-lg btn-block btn-social btn-google">
-                <i class="fa fa-google"></i> Sign in with Google
-              </div>
-              <% end %><br>
-              <%= link_to user_twitter_omniauth_authorize_path do%>
-              <div class="btn-lg btn-block btn-social btn-twitter">
-                <i class="fa fa-twitter"></i> Sign in with Twitter
-              </div>
-              <% end %>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+			<div class="col-4 align-self-center">
+				<div>
+					<div class="card-body">
+						<%= link_to user_facebook_omniauth_authorize_path do%>
+						<div class="btn-lg btn-block btn-social btn-facebook">
+							<i class="fa fa-facebook"></i> Sign in with Facebook
+						</div>
+						<% end %><br>
+						<%= link_to user_google_oauth2_omniauth_authorize_path do%>
+						<div class="btn-lg btn-block btn-social btn-google">
+							<i class="fa fa-google"></i> Sign in with Google
+						</div>
+						<% end %><br>
+						<%= link_to user_twitter_omniauth_authorize_path do%>
+						<div class="btn-lg btn-block btn-social btn-twitter">
+							<i class="fa fa-twitter"></i> Sign in with Twitter
+						</div>
+						<% end %>
+					</div>
+				</div>
+			</div>
 		</div>
-
-	</div>
-
-</section>
+	</section>
 </body>
 <% end %>
