@@ -1,5 +1,6 @@
 <% if resource.errors.any? %>
-  <div id="">
+  <div  id="message" class="toast" style="position: absolute; top: 1%; right: 2%;">
+
     <h2>
       <% I18n.t("errors.messages.not_saved",
                  count: resource.errors.count,
