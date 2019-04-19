@@ -1,6 +1,6 @@
 <%= form_for(resource,  url: session_path(resource_name)) do |f| %>
 <body class="slice-lg has-bg-cover bg-size-cover" style="background-image: url(<%= asset_path('air-quality-banner/background1.jpg')%>); background-repeat: no-repeat; background-size: cover; background-position: center;">
-  <div id="top" class="container">
+  <section id="top" class="container">
 
     <div class="row justify-content-center cols-xs-space">
       <div class="col-lg-6">
@@ -30,6 +30,7 @@
                     </div>
                   </div>
                 </div>
+              </div>
                 <div class="row">
                   <div class="col-12">
                     <div class="form-group">
@@ -65,11 +66,9 @@
           
         </div>
         
-        <div class="card text-center">
-          <div style="align-self: center">
-            <div class="card-header">
-              <h5 class="card-title"> Socical network </h5>
-            </div>
+        <div class="col-4 align-self-center">
+          <div>
+
             <div class="card-body">
               <%= link_to user_facebook_omniauth_authorize_path do%>
               <div class="btn-lg btn-block btn-social btn-facebook">
@@ -93,5 +92,5 @@
     </div>
   </div>
 
-</div>
+</section>
 </body>
