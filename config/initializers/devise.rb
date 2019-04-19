@@ -300,6 +300,6 @@ Devise.setup do |config|
 
 config.omniauth :facebook, ENV['FACEBOOK_API_KEY'], ENV['FACEBOOK_API_SECRET'], callback_url: "http://localhost:3000/users/auth/facebook/callback"
   config.omniauth :google_oauth2, ENV['GOOGLE_CLIENT_ID'], ENV['GOOGLE_CLIENT_SECRET'], scope: 'email', callback_url: "http://localhost:3000/users/auth/facebook/callback"
-  config.omniauth :twitter, ENV['TWITTER_CONSUMER_KEY'], ENV['TWITTER_CONSUMER_SECRET'], scope: 'email', callback_url: "http://localhost:3000/users/auth/facebook/callback"
+  config.omniauth :twitter, ENV['TWITTER_CONSUMER_KEY'], ENV['TWITTER_CONSUMER_SECRET'], scope: 'email', callback_url: "http://localhost:3000/users/auth/twitter/callback"
 
   end
