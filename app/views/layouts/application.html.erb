@@ -18,26 +18,7 @@
     <!-- Favicon -->
     <%= render 'application/favicon' %>
   </head>
-  <body data-spy="scroll" data-target="#scroll_data_target" data-offset="50">
-    <!-- MAIN WRAPPER -->
-    <div class="body-wrap">
-      <div id="st-container" class="st-container">
-        <div class="st-pusher">
-          <div class="st-content">
-
-
-
-                  <%= render 'layouts/flash' %>
-                  <%= yield %>
-
-
-            </div>
-          </div>
-        </div><!-- END: st-pusher -->
-      </div><!-- END: st-container -->
-    </div><!-- END: body-wrap -->
-    <a href="#" class="back-to-top btn-back-to-top"></a>
-    <%= render "layouts/footer" %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
-  </body>        
+  <%= render 'layouts/flash' %>
+  <%= yield %>
+  
 </html>

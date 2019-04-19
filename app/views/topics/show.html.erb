@@ -49,4 +49,7 @@
         </div>
         <%= render partial: "other_articles", locals: {related_topics: @related_topics} %>
     </div>
+    <a href="#" class="back-to-top btn-back-to-top"></a>
+    <%= render "layouts/footer" %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
 </section>

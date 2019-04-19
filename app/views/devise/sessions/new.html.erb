@@ -1,21 +1,21 @@
 <%= form_for(resource,  url: session_path(resource_name)) do |f| %>
-<section class="slice-lg has-bg-cover bg-size-cover">
+<body class="slice-lg has-bg-cover bg-size-cover" style="background-image: url(<%= asset_path('air-quality-banner/background1.jpg')%>); background-repeat: no-repeat; background-size: cover; background-position: center;">
   <div id="top" class="container">
     <div class="row justify-content-center cols-xs-space">
       <div class="col-lg-6">
         <div class="form-card form-card--style-2 z-depth-2-top">
           <div class="form-header text-center">
             <div>
-               <%= link_to root_path do %>
-            <%= image_tag asset_path("air-quality-logo/logo-1-a.svg"), height:"60px", alt:"Open Air", class:"mb-3" %>
-          <% end %><br>
+              <%= link_to root_path do %>
+              <%= image_tag asset_path("air-quality-logo/logo-1-a.svg"), height:"60px", alt:"Open Air", class:"mb-3" %>
+              <% end %><br>
               <br>
             </div>
           </div>
           <div class="form-body">
             <div class="section-title section-title--style-2 text-center mb-2">
               <h4 class="section-title-inner heading-2 strong-400 text-dark">
-                <span>Se Connecter</span>
+              <span>Se Connecter</span>
               </h4>
             </div>
             <form class="form-default" role="form">
@@ -61,5 +61,5 @@
       </div>
     </div>
   </div>
-  </div>
-</section>
+</div>
+</body>

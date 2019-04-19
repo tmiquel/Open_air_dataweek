@@ -1,19 +1,21 @@
 <section class="slice-lg has-bg-cover bg-size-cover">
     <div id="top" class="container">
         <div class="row justify-content-center cols-xs-space">
-            <div class="col-lg-8">
+            <div class="col-lg-7">
                 <div class="form-card form-card--style-2 z-depth-2-top">
                     <div class="form-header text-center">
                         
-                            <%= image_tag asset_path("air-quality-logo/logo-1-a.svg"), height:"60px", alt:"Open Air" %>
+                        <%= link_to root_path do %>
+                        <%= image_tag asset_path("air-quality-logo/logo-1-a.svg"), height:"60px", alt:"Open Air", class:"mb-3" %>
+                        <% end %>
                         
                     </div>
-                     <%= render "devise/shared/error_messages", resource: resource %>
+                    <%= render "devise/shared/error_messages", resource: resource %>
                     <div class="form-body">
                         
-                            <div class="section-title section-title--style-2 text-center mb-2">
+                        <div class="section-title section-title--style-2 text-center mb-2">
                             <h4 class="section-title-inner heading-2 strong-400">
-                                <span>Créer un compte</span>
+                            <span>Créer un compte</span>
                             </h4>
                         </div>
                         
@@ -67,6 +69,6 @@
                             </div>
                         </div>
                         
-                            <div class="col-12">
-                                <%= render "devise/shared/links" %>
-                            </div>
+                        <div class="col-12">
+                            <%= render "devise/shared/links" %>
+                        </div>
