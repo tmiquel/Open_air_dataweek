@@ -1,4 +1,5 @@
 <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+<body class="slice-lg has-bg-cover bg-size-cover" style="background-image: url(<%= asset_path('air-quality-banner/background1.jpg')%>); background-repeat: no-repeat; background-size: cover; background-position: center;">
   <%= render "devise/shared/error_messages", resource: resource %>
 <section class="slice-lg has-bg-cover bg-size-cover">
   <div id="top" class="container">
@@ -45,6 +46,7 @@
     </div>
   </div>
 </section>
+</body>
 
 
 
