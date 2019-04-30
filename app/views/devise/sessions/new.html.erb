@@ -39,25 +39,20 @@
                         <%= f.password_field :password, autofocus: true, autocomplete: "current_password", class: "form-control form-control-lg" %>
                       </div>
                     </div>
+                    <%= f.check_box :remember_me %>
+                    <%= f.label :Se_souvenir_de_moi %>
                   </div>
                 </div>
                 <div class="row align-items-center">
-                  <div class="col-md-6">
-                    <%= render "devise/shared/forgott_pwd_link" %>
-                    
+                  <div class="col-md-12 mt-4 text-center">
+                        <%= f.submit "Se connecter", class:"btn btn-styled btn-base-1 px-4" %>
+                        <% if devise_mapping.rememberable? %>
+                      <div class="field mt-2 mb-2 border-bottom">
+                        <%= render "devise/shared/forgott_pwd_link" %>
+                      </div>
                   </div>
-                  <div class="col-md-6 mt-4 text-right">
-                    <%= f.submit "Se connecter", class:"btn btn-styled btn-base-1 px-4" %>
-                    
-                  </div>
-                </div>
-                <% if devise_mapping.rememberable? %>
-                <div class="field">
-                  <%= f.check_box :remember_me %>
-                  <%= f.label :Se_souvenir_de_moi %>
                 </div>
                 <%= render "devise/shared/links" %>
-                
                 <% end %>
                 <% end %>
               </form>
