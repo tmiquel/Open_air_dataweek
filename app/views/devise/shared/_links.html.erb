@@ -3,7 +3,7 @@
 <% end %>
 
 <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-  <%= link_to "S'inscrire", new_registration_path(resource_name), class: "link link-xs link--style-3" %><br />
+  <%= link_to "Créer un compte", new_registration_path(resource_name), class: "link link-xs link--style-3" %><br />
 <% end %>
 
 <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
