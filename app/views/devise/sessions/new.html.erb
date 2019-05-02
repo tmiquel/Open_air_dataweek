@@ -1,7 +1,6 @@
 <%= form_for(resource,  url: session_path(resource_name)) do |f| %>
 <body class="slice-lg has-bg-cover bg-size-cover" style="background-image: url(<%= asset_path('air-quality-banner/background1.jpg')%>); background-repeat: no-repeat; background-size: cover; background-position: center;">
   <section id="top" class="container">
-
     <div class="row justify-content-center cols-xs-space">
       <div class="col-lg-6">
         <div class="form-card form-card--style-2 z-depth-2-top">
@@ -26,7 +25,6 @@
                     <%= f.label :email %><br />
                     <div class="input-group input-groupe--style-1">
                       <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control form-control-lg" %>
-
                     </div>
                   </div>
                 </div>
@@ -52,7 +50,7 @@
                       </div>
                   </div>
                 </div>
-                <div class="text-center">
+                <div class="text-center mt-1">
                   <%= render "devise/shared/links" %>
                 </div>
                 <% end %>
@@ -60,12 +58,9 @@
               </form>
             </div>
           </div>
-          
         </div>
-        
         <div class="col-4 align-self-center">
           <div>
-
             <div class="card-body">
               <%= link_to user_facebook_omniauth_authorize_path do%>
               <div class="btn-lg btn-block btn-social btn-facebook">
@@ -88,6 +83,5 @@
       </div>
     </div>
   </div>
-
 </section>
 </body>
