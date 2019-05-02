@@ -28,13 +28,17 @@
                   <div class="form-group">
                     <div class="input-group input-groupe--style-1">
                       <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "Votre email" %>
-                        <%= f.submit "Envoyer", class: "btn btn-styled btn-lg btn-block btn-base-1 mt-4"%>
                     </div>
                   </div>
                 </div>
+                <div class="text-center mb-2">
+                  <%= f.submit "Envoyer", class: "btn btn-styled btn-base-1 px-4"%>
+                </div>
+                <div class="text-center">  
+                  <%= render "devise/shared/links" %>
+                </div>
               </div>
               <% end %>
-              <%= render "devise/shared/links" %>
             </form>
           </div>
           </div>
