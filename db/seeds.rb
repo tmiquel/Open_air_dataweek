@@ -100,7 +100,7 @@ models_array.each do |model|
 																 response_section_intro: "Les 12 indicateurs annuels de Lutte contre le changement climatique et de protection de l'atmosphère ont pour objectif d’éclairer la prise de décision et la mise en œuvre d’actions permettant de répondre aux défis auxquels la région Provence-Alpes-Côte d’Azur est confrontée")
 
 						my_topic.main_picture.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'port-marseille.jpg')), filename: 'port-marseille.jpg')
-					when 2
+					when 1
 					# Pollen topic
 						my_topic = model.new(title: "Impact de la pollution urbaine sur les pollens en région PACA", 
 																		short_description: "Dans la région, les concentrations de pollen dans l'air restent très élevés (cyprès, chênes, bouleaux, platanes oliviers). Un rapport de l'Anses (Agence nationale de sécurité sanitaire de l'alimentation, de l'environnement et du travail) informe sur l'action de l'ozone et du dioxyde d'azote sur les pollens.", 
@@ -116,7 +116,7 @@ models_array.each do |model|
 																		response_section_intro: "not written yet")
 
 						my_topic.main_picture.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'pollen.jpg')), filename: 'pollen.jpg')
-					when 3
+					when 2
 					#AéroportMarseilleProvence
 						my_topic = model.new(title: "Aéroport Marseille Provence: Impact territorial",
                                     short_description: "L’Aéroport Marseille Provence ne se préoccupe pas que de croître en nombre de destinations, de passagers et de fret. Avec ses 9,4 millions de passagers, ses 56 695 tonnes de fret et ses investissements conséquents (500 millions d’euros à l’horizon 2025), il sait que chacune de ses activités engendre un impact sur le territoire.",
@@ -132,7 +132,7 @@ models_array.each do |model|
                                     response_section_intro: "L’appel aux énergies renouvelables se généralise pour les besoins aéroportuaires parallèlement aux efforts de maîtrise de l’énergie (- 60% sur l’éclairage grâce au renouvellement intérieur et extérieur). La future centrale photovoltaïque prévue sur un nouveau parking à étages pourvoira à terme à 10% de l’électricité consommée par la plate-forme. Enfin, AMP œuvre à la préservation de la biodiversité sur ses zones naturelles (2/3 de ses 600 hectares). Près de 110 espèces régulières ont été par exemple recensées sur les salins du Lion, sa « petite Camargue ». La démarche pédagogique de découverte sera accentuée cette année. Une initiative conduite en coopération avec les communes, comme Vitrolles qui songe à un sentier du littoral, et les associations, comme Etang Maintenant.")
 
             my_topic.main_picture.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'airport.jpg')), filename: 'airport.jpg')
-					when 4
+					when 3
 					
 						my_topic = model.new(title: "Influence des transports publics à Marseille sur la qualité de l'air (article factice)",
                                     short_description: "Ouverture de lignes de métros et fin du plus grand réseau de tramway français dans les années 80, puis ouverture de nouvelles lignes de tramways dans les années 2010, Marseille a connu de grands changements dernièrement. Pourtant, elle reste à la traine de Lyon en terme de transports publics et sa qualité de l'air est décriée. Quel bilan?",
@@ -145,9 +145,15 @@ models_array.each do |model|
 																		impact_section_title: "Niveaux de dangerosité pour la population",
 																		impact_section_intro: "Que ce soit en période de pic de pollution ou avec la pollution de fond, les risques des microparticules sur la santé sont principalement respiratoires et cardio-vasculaires. Si chez l'adulte en bonne santé, la pollution aux microparticules (inférieures à 2,5 microns, appelées PM2,5) provoque seulement une gêne passagère (toux, yeux qui piquent...), c'est un facteur aggravant chez les personnes souffrant d’une maladie respiratoire comme une broncho-pneumopathie chronique ou de l'asthme, ainsi que chez les enfants (dont les poumons sont encore immatures) et les personnes âgées ( qui ont une capacité ventilatoire diminuée).",
                                     response_section_title: "Réglementation & Gouvernance",
-                                    response_section_intro: "Depuis le 1er janvier 2016, la Métropole Aix-Marseille-Provence (créée par la loi MAPTAM du 27 janvier 2014) est l’autorité organisatrice de la mobilité (AOM) sur son territoire, et donc de la RTM (Régie des Transports Métropolitains). Elle dispose d’un budget annexe Transports. Les relations juridiques, administratives et financières RTM/AOM sont déterminées dans un Contrat d’Obligation de Service Public.")
-            
+                                    response_section_intro: "Depuis le 1er janvier 2016, la Métropole Aix-Marseille-Provence (créée par la loi MAPTAM du 27 janvier 2014) est l’autorité organisatrice de la mobilité (AOM) sur son territoire, et donc de la RTM (Régie des Transports Métropolitains). Elle dispose d’un budget annexe Transports. Les relations juridiques, administratives et financières RTM/AOM sont déterminées dans un Contrat d’Obligation de Service Public.") 
             my_topic.main_picture.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'electric_bus.jpg')), filename: 'electric_bus.jpg')
+
+=begin
+          when 4
+            my_topic = model.new(title: "", short_description: "", driver_section_title: "", driver_section_intro: "", pressure_section_title: "", pressure_section_intro: "", state_section_title: "", state_section_intro: "", impact_section_title: "", impact_section_intro: "", response_section_title: "", response_section_intro: "")
+						my_topic.main_picture.attach(io: File.open(Rails.root.join('app', 'assets', 'images', '.jpg')), filename: '.jpg')
+=end
+
         	else
 						my_topic = model.new(title: Faker::Lorem.paragraph_by_chars(50, false),
 																 short_description: Faker::Lorem.paragraph_by_chars(256, false),
